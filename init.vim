@@ -106,6 +106,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Enhanced {{{
     " Git {{{
         Plug 'airblade/vim-gitgutter'
+        Plug 'tpope/vim-fugitive'
     " }}}
 
     " auto pairs {{{
