@@ -158,6 +158,15 @@ call plug#begin('~/.config/nvim/plugged')
                 \ })
         endif
     " }}}
+    " c & cpp {{{
+        if executable('clangd')
+            au User lsp_setup call lsp#register_server({
+                \ 'name': 'clangd',
+                \ 'cmd': {server_info->['clangd', '-background-index']},
+                \ 'whitelist': ['c', 'cpp'],
+                \ })
+        endif
+    " }}}
 " }}}
 
 " AutoGroups {{{
