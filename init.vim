@@ -42,6 +42,8 @@ call plug#begin('~/.config/nvim/plugged')
     set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
     set termencoding=utf-8
 
+    " mapleader, must put before remapping
+    let mapleader = ','
 " }}}
 
 " Appearance {{{
@@ -167,8 +169,6 @@ call plug#begin('~/.config/nvim/plugged')
 " }}}
 
 " General Keymaping {{{
-    let mapleader = ','
-
     " quicker window switching
     nnoremap <C-h> <C-w>h
     nnoremap <C-j> <C-w>j
