@@ -89,7 +89,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'itchyny/lightline.vim'
         let g:lightline = {
         \   'separator': { 'left': '', 'right': '' },
-        \   'subseparator': { 'left': '', 'right': '' }
+        \   'subseparator': { 'left': '', 'right': '' }
         \ }
     " }}}}
 
