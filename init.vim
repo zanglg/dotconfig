@@ -158,8 +158,18 @@ call plug#begin('~/.config/nvim/plugged')
 
     " rust.vim {{{
         Plug 'rust-lang/rust.vim'
-        let g:rustfmt_autosave = 1
+        let g:rustfmt_autosave = 0
     " }}}
+" }}}
+
+" Formater {{{
+    Plug 'sbdchd/neoformat'
+    nnoremap <silent> <leader>c :Neoformat<CR>
+
+    augroup fmt
+    autocmd!
+        autocmd BufWritePre * undojoin | Neoformat
+    augroup END
 " }}}
 
 " AutoGroups {{{
@@ -179,6 +189,7 @@ call plug#begin('~/.config/nvim/plugged')
     nnoremap <C-l> <C-w>l
 
     " clear highlighted search
+    nnoremap <silent> <leader>n :noh<CR>
 " }}}
 call plug#end()
 
