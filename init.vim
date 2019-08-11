@@ -57,11 +57,6 @@ call plug#begin('~/.config/nvim/plugged')
     set wrap " turn on line wrapping
     set signcolumn=yes
 
-    " completion
-    set wildmenu " show list instead of just completing
-    set wildmode=list:longest,full " use powerful wildmenu
-    set completeopt=longest,menu
-
     " tab control
     set shiftround " round indent to a multiple of 'shiftwidth'
     set shiftwidth=4 " number of spaces to use for indent and unindent
@@ -96,11 +91,6 @@ call plug#begin('~/.config/nvim/plugged')
     " indentLine {{{
         Plug 'Yggdroot/indentLine' " indentation level
     " }}}
-
-    " vim-bufferline {{{
-        Plug 'bling/vim-bufferline' " buffer line
-    " }}}
-
 " }}}
 
 " Enhanced {{{
@@ -114,7 +104,18 @@ call plug#begin('~/.config/nvim/plugged')
         let g:AutoPairsWildClosedPair = ''
     " }}}
 
-    " Completion {{{
+    " completion control {{{
+        set wildmenu " show list instead of just completing
+        set wildmode=list:longest,full " use powerful wildmenu
+        set completeopt=longest,menu,preview
+        autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif " auto close preview window
+        " tab->next, shift-tab->prev, cr->select
+        inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+        inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+        inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+    " }}}
+
+    " LSP {{{
         Plug 'prabirshrestha/asyncomplete.vim'
         Plug 'prabirshrestha/async.vim'
         Plug 'prabirshrestha/vim-lsp'
@@ -123,18 +124,24 @@ call plug#begin('~/.config/nvim/plugged')
         let g:lsp_virtual_text_enabled = 0 " disable inline text error info
         let g:lsp_signs_enabled = 1 " enable sign column
         let g:lsp_diagnostics_echo_cursor = 1 " Enables echo of diagnostic error for the current line to status
-
-        " completion control {{{
-            set completeopt+=preview " enable preview window
-            autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif " auto close preview window
-            " tab->next, shift-tab->prev, cr->select
-            inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-            inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-            inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+        " lsp register {{{
+            if executable('rls')
+                " register to vim-lsp
+                au User lsp_setup call lsp#register_server({
+                    \ 'name': 'rls',
+                    \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+                    \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+                    \ 'whitelist': ['rust'],
+                    \ })
+            endif
+            if executable('clangd')
+                au User lsp_setup call lsp#register_server({
+                    \ 'name': 'clangd',
+                    \ 'cmd': {server_info->['clangd', '-background-index']},
+                    \ 'whitelist': ['c', 'cpp'],
+                    \ })
+            endif
         " }}}
-    " }}}
-
-    " Linter {{{
     " }}}
 " }}}
 
@@ -145,27 +152,13 @@ call plug#begin('~/.config/nvim/plugged')
 " }}}
 
 " Language Specific {{{
+    " language packs {{{
+        Plug 'sheerun/vim-polyglot'
+    " }}}
+
     " rust.vim {{{
         Plug 'rust-lang/rust.vim'
         let g:rustfmt_autosave = 1
-        if executable('rls')
-            " register to vim-lsp
-            au User lsp_setup call lsp#register_server({
-                \ 'name': 'rls',
-                \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-                \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
-                \ 'whitelist': ['rust'],
-                \ })
-        endif
-    " }}}
-    " c & cpp {{{
-        if executable('clangd')
-            au User lsp_setup call lsp#register_server({
-                \ 'name': 'clangd',
-                \ 'cmd': {server_info->['clangd', '-background-index']},
-                \ 'whitelist': ['c', 'cpp'],
-                \ })
-        endif
     " }}}
 " }}}
 
