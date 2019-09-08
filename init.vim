@@ -53,6 +53,7 @@ call plug#begin('~/.config/nvim/plugged')
     set number " show line numbers
     set showcmd " display command writing
     set showmode "display vim mode
+    set showtabline=2 "always show tabline
     set title " set terminal title
     set wrap " turn on line wrapping
     set signcolumn=yes
@@ -82,10 +83,15 @@ call plug#begin('~/.config/nvim/plugged')
 
     " LightLine {{{
         Plug 'itchyny/lightline.vim'
+        Plug 'mengelbrecht/lightline-bufferline'
         let g:lightline = {
-        \   'separator': { 'left': '', 'right': '' },
-        \   'subseparator': { 'left': '', 'right': '' }
+        \   'tabline': {'left': [['buffers']], 'right': [['close']]},
+        \   'component_expand': {'buffers': 'lightline#bufferline#buffers'},
+        \   'component_type': {'buffers': 'tabsel'},
+        \   'separator': {'left': '', 'right': ''},
+        \   'subseparator': {'left': '', 'right': ''}
         \ }
+        let g:lightline#bufferline#filename_modifier = ':t'
     " }}}}
 
     " indentLine {{{
