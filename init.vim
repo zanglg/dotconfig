@@ -142,6 +142,10 @@ call plug#begin('~/.config/nvim/plugged')
                     \ })
             endif
         " }}}
+        " lsp keymaping {{{
+            nnoremap <silent> <leader>d :LspDefinition<CR>
+            nnoremap <silent> <leader>r :LspReferences<CR>
+        " }}}
     " }}}
 " }}}
 
@@ -167,7 +171,7 @@ call plug#begin('~/.config/nvim/plugged')
     nnoremap <silent> <leader>c :Neoformat<CR>
 
     augroup fmt
-    autocmd!
+        autocmd!
         autocmd BufWritePre * undojoin | Neoformat
     augroup END
 " }}}
