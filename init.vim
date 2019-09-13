@@ -159,6 +159,10 @@ call plug#begin('~/.config/nvim/plugged')
     " vista {{{
         Plug 'liuchengxu/vista.vim'
     " }}}
+    " NERDTree {{{
+        Plug 'scrooloose/nerdtree'
+        nnoremap <silent> <leader>N :NERDTreeToggle<CR>
+    " }}}
 " }}}
 
 " Language Specific {{{
