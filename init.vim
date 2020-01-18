@@ -111,8 +111,8 @@ call plug#begin('~/.config/nvim/plugged')
     " }}}
 
     " editorconfig {{{
-+        Plug 'editorconfig/editorconfig-vim'
-+   " }}}
+        Plug 'editorconfig/editorconfig-vim'
+    " }}}
 
     " completion control {{{
         set wildmenu " show list instead of just completing
