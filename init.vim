@@ -110,6 +110,10 @@ call plug#begin('~/.config/nvim/plugged')
         let g:AutoPairsWildClosedPair = ''
     " }}}
 
+    " editorconfig {{{
++        Plug 'editorconfig/editorconfig-vim'
++   " }}}
+
     " completion control {{{
         set wildmenu " show list instead of just completing
         set wildmode=list:longest,full " use powerful wildmenu
