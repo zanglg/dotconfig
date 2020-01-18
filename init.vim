@@ -110,6 +110,15 @@ call plug#begin('~/.config/nvim/plugged')
         let g:AutoPairsWildClosedPair = ''
     " }}}
 
+    " {{{
+        Plug 'junegunn/vim-easy-align'
+
+        " Start interactive EasyAlign in visual mode (e.g. vipga)
+        xmap ga <Plug>(EasyAlign)
+        " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+        nmap ga <Plug>(EasyAlign)
+    " }}}
+
     " editorconfig {{{
         Plug 'editorconfig/editorconfig-vim'
     " }}}
@@ -183,11 +192,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Formater {{{
     Plug 'sbdchd/neoformat'
     nnoremap <silent> <leader>c :Neoformat<CR>
-
-    augroup fmt
-        autocmd!
-        autocmd BufWritePre * undojoin | Neoformat
-    augroup END
 " }}}
 
 " AutoGroups {{{
