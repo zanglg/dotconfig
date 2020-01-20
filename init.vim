@@ -173,6 +173,10 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'liuchengxu/vista.vim'
         let g:vista_default_executive = 'vim_lsp'
     " }}}
+    " fzf {{{
+        Plug 'junegunn/fzf', { 'do': './install --bin' }
+        Plug 'junegunn/fzf.vim'
+    " }}}
     " NERDTree {{{
         Plug 'scrooloose/nerdtree'
         nnoremap <silent> <leader>N :NERDTreeToggle<CR>
