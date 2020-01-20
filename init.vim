@@ -196,7 +196,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Formater {{{
     Plug 'sbdchd/neoformat'
-    nnoremap <silent> <leader>c :Neoformat<CR>
+    noremap <silent> <leader>c :Neoformat<CR>
 " }}}
 
 " AutoGroups {{{
