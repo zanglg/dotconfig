@@ -110,7 +110,7 @@ call plug#begin('~/.config/nvim/plugged')
         let g:AutoPairsWildClosedPair = ''
     " }}}
 
-    " {{{
+    " vim-easy-align {{{
         Plug 'junegunn/vim-easy-align'
 
         " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -171,6 +171,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Navigation {{{
     " vista {{{
         Plug 'liuchengxu/vista.vim'
+        let g:vista_default_executive = 'vim_lsp'
     " }}}
     " NERDTree {{{
         Plug 'scrooloose/nerdtree'
