@@ -96,6 +96,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " indentLine {{{
         Plug 'Yggdroot/indentLine' " indentation level
+        let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'rst']
     " }}}
 " }}}
 
