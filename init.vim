@@ -126,7 +126,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     " completion control {{{
         set wildmenu " show list instead of just completing
-        set wildmode=list:longest,full " use powerful wildmenu
         set completeopt=longest,menu,preview
         autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif " auto close preview window
         " tab->next, shift-tab->prev, cr->select
@@ -198,6 +197,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Formater {{{
     Plug 'sbdchd/neoformat'
     noremap <silent> <leader>c :Neoformat<CR>
+    let g:neoformat_enabled_python = ['yapf', 'autopep8']
 " }}}
 
 " AutoGroups {{{
