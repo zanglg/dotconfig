@@ -74,6 +74,10 @@ call plug#begin('~/.config/nvim/plugged')
         set termguicolors " enable 24 bit color support if supported
         set background=dark
         Plug 'zanglg/nova.vim'
+        Plug 'joshdick/onedark.vim'
+        Plug 'lifepillar/vim-solarized8'
+        Plug 'rafi/awesome-vim-colorschemes'
+        Plug 'chriskempson/base16-vim'
     " }}}
 
     " rainbow parentheses {{{
@@ -177,10 +181,15 @@ call plug#begin('~/.config/nvim/plugged')
     " fzf {{{
         Plug 'junegunn/fzf', { 'do': './install --bin' }
         Plug 'junegunn/fzf.vim'
+        Plug 'yuki-ycino/fzf-preview.vim'
     " }}}
     " NERDTree {{{
         Plug 'scrooloose/nerdtree'
         nnoremap <silent> <leader>N :NERDTreeToggle<CR>
+    " }}}
+    " vim-clap {{{
+        Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+        let g:clap_theme = 'material_design_dark'
     " }}}
 " }}}
 
