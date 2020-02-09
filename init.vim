@@ -71,13 +71,16 @@ call plug#begin('~/.config/nvim/plugged')
     set foldmethod=marker
 
     " colorschemes {{{
-        set termguicolors " enable 24 bit color support if supported
-        set background=dark
+        Plug 'zanglg/indifferent.vim'
         Plug 'zanglg/nova.vim'
+
+        Plug 'chriskempson/base16-vim'
         Plug 'joshdick/onedark.vim'
         Plug 'lifepillar/vim-solarized8'
         Plug 'rafi/awesome-vim-colorschemes'
-        Plug 'chriskempson/base16-vim'
+
+        set termguicolors " enable 24 bit color support if supported
+        set background=dark
     " }}}
 
     " rainbow parentheses {{{
@@ -156,6 +159,9 @@ call plug#begin('~/.config/nvim/plugged')
                     \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
                     \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
                     \ 'whitelist': ['rust'],
+                    \ 'semantic_highlight': {
+                        \ 'entity.name.function.cpp': 'Function'
+                        \ }
                     \ })
             endif
             if executable('clangd')
@@ -233,7 +239,7 @@ call plug#end()
 
 " Colorscheme and final setup {{{
     " this call must happen after the plug#end()
-    colorscheme nova
+    colorscheme indifferent
     filetype plugin indent on
     syntax on
 " }}}
