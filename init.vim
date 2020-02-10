@@ -159,9 +159,6 @@ call plug#begin('~/.config/nvim/plugged')
                     \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
                     \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
                     \ 'whitelist': ['rust'],
-                    \ 'semantic_highlight': {
-                        \ 'entity.name.function.cpp': 'Function'
-                        \ }
                     \ })
             endif
             if executable('clangd')
@@ -169,6 +166,9 @@ call plug#begin('~/.config/nvim/plugged')
                     \ 'name': 'clangd',
                     \ 'cmd': {server_info->['clangd', '-background-index']},
                     \ 'whitelist': ['c', 'cpp'],
+                    \ 'semantic_highlight': {
+                        \ 'entity.name.function.cpp': 'Function'
+                        \ }
                     \ })
             endif
         " }}}
