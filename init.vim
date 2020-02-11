@@ -168,7 +168,9 @@ call plug#begin('~/.config/nvim/plugged')
                     \ 'cmd': {server_info->['clangd', '-background-index']},
                     \ 'whitelist': ['c', 'cpp'],
                     \ 'semantic_highlight': {
-                        \ 'entity.name.function.cpp': 'Function'
+                        \ 'entity.name.function.cpp': 'Function',
+                        \ 'entity.name.function.preprocessor.cpp': 'Macro',
+                        \ 'variable.other.field.cpp': 'Include',
                         \ }
                     \ })
             endif
