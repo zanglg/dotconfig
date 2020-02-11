@@ -86,6 +86,9 @@ call plug#begin('~/.config/nvim/plugged')
     " rainbow parentheses {{{
         Plug 'luochen1990/rainbow'
         let g:rainbow_active = 1
+        let g:rainbow_conf = {
+        \   'guifgs' : ['#6666cc', '#e45649', '#0997b3', '#50a14f', '#a626a4', '#FFA000', '#0184bc']
+        \}
     " }}}
 
     " LightLine {{{
