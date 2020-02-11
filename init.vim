@@ -92,6 +92,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'itchyny/lightline.vim'
         Plug 'mengelbrecht/lightline-bufferline'
         let g:lightline = {
+        \   'colorscheme': 'PaperColor_light',
         \   'tabline': {'left': [['buffers']], 'right': [['close']]},
         \   'component_expand': {'buffers': 'lightline#bufferline#buffers'},
         \   'component_type': {'buffers': 'tabsel'},
