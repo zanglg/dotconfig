@@ -71,7 +71,7 @@ call plug#begin('~/.config/nvim/plugged')
     set foldmethod=marker
 
     " colorschemes {{{
-        Plug 'zanglg/indifferent.vim'
+        Plug 'zanglg/neocc.vim'
         Plug 'zanglg/nova.vim'
 
         Plug 'chriskempson/base16-vim'
@@ -239,7 +239,7 @@ call plug#end()
 
 " Colorscheme and final setup {{{
     " this call must happen after the plug#end()
-    colorscheme indifferent
+    colorscheme neocc
     filetype plugin indent on
     syntax on
 " }}}
