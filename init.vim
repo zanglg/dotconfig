@@ -174,6 +174,11 @@ call plug#begin('~/.config/nvim/plugged')
                         \ 'entity.name.function.cpp': 'Function',
                         \ 'entity.name.function.preprocessor.cpp': 'Macro',
                         \ 'variable.other.field.cpp': 'Include',
+                        \ 'storage.type.primitive.cpp': 'Type',
+                        \ 'entity.name.type.class.cpp': 'Type',
+                        \ 'entity.name.type.enum.cpp': 'Type',
+                        \ 'entity.name.type.typedef.cpp': 'Type',
+                        \ 'variable.parameter.cpp': 'PreCondit',
                         \ }
                     \ })
             endif
