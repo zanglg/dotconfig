@@ -173,11 +173,12 @@ call plug#begin('~/.config/nvim/plugged')
                     \ 'semantic_highlight': {
                         \ 'entity.name.function.cpp': 'Function',
                         \ 'entity.name.function.preprocessor.cpp': 'Macro',
-                        \ 'variable.other.field.cpp': 'Include',
-                        \ 'storage.type.primitive.cpp': 'Type',
                         \ 'entity.name.type.class.cpp': 'Type',
                         \ 'entity.name.type.enum.cpp': 'Type',
                         \ 'entity.name.type.typedef.cpp': 'Type',
+                        \ 'storage.type.primitive.cpp': 'Type',
+                        \ 'variable.other.field.cpp': 'String',
+                        \ 'variable.other.local.cpp': 'Include',
                         \ 'variable.parameter.cpp': 'PreCondit',
                         \ }
                     \ })
