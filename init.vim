@@ -218,21 +218,27 @@ call plug#begin('~/.config/nvim/plugged')
 
     " rust.vim {{{
         Plug 'rust-lang/rust.vim'
-        let g:rustfmt_autosave = 0
+        let g:rustfmt_autosave = 1
     " }}}
 " }}}
 
 " Formater {{{
     Plug 'sbdchd/neoformat'
-    noremap <silent> <leader>c :Neoformat<CR>
     let g:neoformat_enabled_python = ['yapf', 'autopep8']
 " }}}
 
 " AutoGroups {{{
-    " file type specific settings
-    augroup configgroup
+    " file formater
+    augroup formater
         autocmd!
+        autocmd FileType c,cpp nnoremap <silent> <leader>c :LspDocumentFormat<CR>
+        autocmd FileType c,cpp vnoremap <silent> <leader>c :LspDocumentRangeFormat<CR>
+        autocmd FileTYpe python noremap <silent> <leader>c :Neoformat<CR>
+    augroup END
 
+    " write on save
+    augroup wos
+        autocmd!
         autocmd BufWritePost init.vim source %
     augroup END
 " }}}
