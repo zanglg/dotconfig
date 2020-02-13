@@ -117,6 +117,12 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'tpope/vim-fugitive'
     " }}}
 
+    " floating terminal {{{
+        Plug 'voldikss/vim-floaterm'
+        let g:floaterm_position = 'center'
+        nnoremap <silent> t :FloatermToggle<CR>
+    " }}}
+
     " async run {{{
         Plug 'skywind3000/asyncrun.vim'
 
