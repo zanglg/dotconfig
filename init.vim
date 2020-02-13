@@ -208,6 +208,8 @@ call plug#begin('~/.config/nvim/plugged')
     " vim-clap {{{
         Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
         let g:clap_theme = 'material_design_dark'
+        nnoremap <silent> <leader>f :Clap files<CR>
+        nnoremap <silent> <leader>b :Clap buffers<CR>
     " }}}
 " }}}
 
