@@ -171,6 +171,7 @@ call plug#begin('~/.config/nvim/plugged')
         let g:lsp_signs_enabled = 1 " enable sign column
         let g:lsp_diagnostics_echo_cursor = 1 " Enables echo of diagnostic error for the current line to status
         let g:lsp_semantic_enabled = 1 " semantic highlight enabled
+        let g:lsp_highlight_references_enabled = 1 " highlight references to the symbol under the cursor
         " lsp register {{{
             if executable('rls')
                 " register to vim-lsp
