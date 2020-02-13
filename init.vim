@@ -196,20 +196,29 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'liuchengxu/vista.vim'
         let g:vista_default_executive = 'vim_lsp'
     " }}}
+
     " fzf {{{
         Plug 'junegunn/fzf', { 'do': './install --bin' }
         Plug 'junegunn/fzf.vim'
         Plug 'yuki-ycino/fzf-preview.vim'
+
+        " [[B]Commits] Customize the options used by 'git log':
+        let g:fzf_commits_log_options =
+                    \ '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cd by %cn"'
+
+        nnoremap <silent> <leader>f :Files<CR>
+        nnoremap <silent> <leader>b :Buffers<CR>
+        nnoremap <silent> <leader>t :Tags<CR>
     " }}}
+
     " NERDTree {{{
         Plug 'scrooloose/nerdtree'
         nnoremap <silent> <leader>N :NERDTreeToggle<CR>
     " }}}
+
     " vim-clap {{{
         Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
         let g:clap_theme = 'material_design_dark'
-        nnoremap <silent> <leader>f :Clap files<CR>
-        nnoremap <silent> <leader>b :Clap buffers<CR>
     " }}}
 " }}}
 
