@@ -117,6 +117,16 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'tpope/vim-fugitive'
     " }}}
 
+    " async run {{{
+        Plug 'skywind3000/asyncrun.vim'
+
+        " open quickfix windows with 12 lines height when AsynRun is executed
+        let g:asyncrun_open = 12
+        nnoremap <leader>z :AsyncRun
+        " quickfix window toggle
+        nnoremap <silent> <leader>q :call asyncrun#quickfix_toggle(12)<cr>
+    " }}}
+
     " auto pairs {{{
         Plug 'jiangmiao/auto-pairs'
         let g:AutoPairsWildClosedPair = ''
