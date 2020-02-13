@@ -273,6 +273,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " clear highlighted search
     nnoremap <silent> <leader>n :noh<CR>
+
+    " quick quit
+    nnoremap qq :qa!<cr>
 " }}}
 call plug#end()
 
