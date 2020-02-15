@@ -194,7 +194,8 @@ call plug#begin('~/.config/nvim/plugged')
                         \ 'entity.name.type.enum.cpp': 'Type',
                         \ 'entity.name.type.typedef.cpp': 'Type',
                         \ 'storage.type.primitive.cpp': 'Type',
-                        \ 'variable.other.field.cpp': 'String',
+                        \ 'variable.other.enummember.cpp': 'Include',
+                        \ 'variable.other.field.cpp': 'Define',
                         \ 'variable.other.local.cpp': 'Include',
                         \ 'variable.parameter.cpp': 'PreCondit',
                         \ }
