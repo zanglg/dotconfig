@@ -115,6 +115,10 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'tpope/vim-fugitive'
     " }}}
 
+    " vim-multiple-cursors {{{
+        Plug 'terryma/vim-multiple-cursors'
+    " }}}
+
     " floating terminal {{{
         Plug 'voldikss/vim-floaterm'
         let g:floaterm_position = 'center'
@@ -216,7 +220,6 @@ call plug#begin('~/.config/nvim/plugged')
     " fzf {{{
         Plug 'junegunn/fzf', { 'do': './install --bin' }
         Plug 'junegunn/fzf.vim'
-        Plug 'yuki-ycino/fzf-preview.vim'
 
         " [[B]Commits] Customize the options used by 'git log':
         let g:fzf_commits_log_options =
