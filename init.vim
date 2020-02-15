@@ -227,6 +227,9 @@ call plug#begin('~/.config/nvim/plugged')
         nnoremap <silent> <leader>f :Files<CR>
         nnoremap <silent> <leader>b :Buffers<CR>
         nnoremap <silent> <leader>t :Tags<CR>
+
+        let g:fzf_layout =
+                    \ { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Keyword', 'border': 'sharp' } }
     " }}}
 
     " NERDTree {{{
