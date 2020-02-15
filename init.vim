@@ -2,8 +2,9 @@
 
 " ensure vim-plug is installed and then load it
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    !curl --insecure -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    source ~/.config/nvim/autoload/plug.vim
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
