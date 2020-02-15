@@ -217,6 +217,15 @@ call plug#begin('~/.config/nvim/plugged')
         let g:vista_default_executive = 'vim_lsp'
     " }}}
 
+    " ctrlsf {{{
+        Plug 'dyng/ctrlsf.vim'
+        let g:ctrlsf_ackprg = 'rg'
+        let g:ctrlsf_auto_preview = 1
+        let g:ctrlsf_case_sensitive = 'no'
+        let g:ctrlsf_search_mode = 'async'
+        nnoremap <leader>s :CtrlSF
+    " }}}
+
     " fzf {{{
         Plug 'junegunn/fzf', { 'do': './install --bin' }
         Plug 'junegunn/fzf.vim'
@@ -272,7 +281,7 @@ call plug#begin('~/.config/nvim/plugged')
     " write on save
     augroup wos
         autocmd!
-        autocmd BufWritePost init.vim source %
+        autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
     augroup END
 " }}}
 
@@ -288,6 +297,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " quick quit
     nnoremap qq :qa!<cr>
+
+    " quick open MYVIMRC
+    nnoremap <silent> <leader>v :e $MYVIMRC<CR>
 " }}}
 call plug#end()
 
