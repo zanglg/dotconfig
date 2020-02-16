@@ -273,9 +273,11 @@ call plug#begin('~/.config/nvim/plugged')
     " file formater
     augroup formater
         autocmd!
-        autocmd FileType c,cpp nnoremap <silent> <leader>c :LspDocumentFormat<CR>
-        autocmd FileType c,cpp vnoremap <silent> <leader>c :LspDocumentRangeFormat<CR>
-        autocmd FileTYpe python noremap <silent> <leader>c :Neoformat<CR>
+        autocmd FileType c,cpp  nnoremap <silent> <leader>c :LspDocumentFormat<CR>
+        autocmd FileType c,cpp  vnoremap <silent> <leader>c :LspDocumentRangeFormat<CR>
+        autocmd FileTYpe rust   nnoremap <silent> <leader>c :RustFmt<CR>
+        autocmd FileTYpe rust   vnoremap <silent> <leader>c :RustFmtRange<CR>
+        autocmd FileTYpe python noremap  <silent> <leader>c :Neoformat<CR>
     augroup END
 
     " write on save
