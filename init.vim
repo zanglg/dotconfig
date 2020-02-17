@@ -223,7 +223,8 @@ call plug#begin('~/.config/nvim/plugged')
         let g:ctrlsf_auto_preview = 1
         let g:ctrlsf_case_sensitive = 'no'
         let g:ctrlsf_search_mode = 'async'
-        nnoremap <leader>s :CtrlSF
+        nnoremap <leader>s :execute 'CtrlSF<Space>' . expand("<cword>")<CR>
+        nnoremap <leader>/ :CtrlSF<Space>
     " }}}
 
     " fzf {{{
