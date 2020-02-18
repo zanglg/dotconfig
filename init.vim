@@ -115,6 +115,11 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'tpope/vim-fugitive'
     " }}}
 
+    " hexmode {{{
+        Plug 'fidian/hexmode'
+        let g:hexmode_patterns = '*.bin,*.img'
+    " }}}
+
     " vim-multiple-cursors {{{
         Plug 'terryma/vim-multiple-cursors'
     " }}}
