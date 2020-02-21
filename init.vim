@@ -214,17 +214,6 @@ call plug#begin('~/.config/nvim/plugged')
             nnoremap <silent> <leader>r :LspReferences<CR>
         " }}}
     " }}}
-
-    " completion source {{{
-        Plug 'SirVer/ultisnips'
-        Plug 'honza/vim-snippets'
-        Plug 'thomasfaingnaert/vim-lsp-snippets'
-        Plug 'thomasfaingnaert/vim-lsp-ultisnips'
-        " just avoid the conflict between default tab and complete func
-        let g:UltiSnipsExpandTrigger="<c-e>"
-        let g:UltiSnipsJumpForwardTrigger="<c-n>"
-        let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-    " }}}
 " }}}
 
 " Navigation {{{
