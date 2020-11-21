@@ -162,17 +162,22 @@ call plug#begin(g:nvim_config_root . '/plugged')
 
 " completion control {{{
     set wildmenu                                                                " show list instead of just completing
-    set completeopt=menuone,noinsert,noselect                                   " popup even have only one candidate
+    set completeopt=menuone                                                     " popup even have only one candidate
     set completeopt+=noinsert,noselect                                          " disable auto selection
+    set shortmess+=c                                                            " Shut off completion messages"
 
-    " Use <Tab> and <S-Tab> to navigate through popup menu
-    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    Plug 'lifepillar/vim-mucomplete'
+    let g:mucomplete#enable_auto_at_startup = 1
 " }}}
 
 " NeovimLSP {{{
     Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
+                            nnoremap <silent> <leader>d <cmd>lua vim.lsp.buf.definition()<CR>
+                            nnoremap <silent> <leader>r <cmd>lua vim.lsp.buf.references()<CR>
+                            nnoremap <silent> <leader>h <cmd>lua vim.lsp.buf.hover()<CR>
+                            nnoremap <silent> <leader>s <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+    autocmd FileType c,cpp  nnoremap <silent> <leader>c <cmd>lua vim.lsp.buf.formatting()<CR>
+    autocmd FileType c,cpp  vnoremap <silent> <leader>c <cmd>lua vim.lsp.buf.range_formatting()<CR>
 " }}}
 
 " rust.vim {{{
@@ -182,12 +187,11 @@ call plug#begin(g:nvim_config_root . '/plugged')
 
 " Formater {{{
     Plug 'sbdchd/neoformat'
-    let g:neoformat_enabled_python = ['yapf', 'autopep8']
 
-    autocmd FileType c,cpp  nnoremap <silent> <leader>c :LspDocumentFormat<CR>
-    autocmd FileType c,cpp  vnoremap <silent> <leader>c :LspDocumentRangeFormat<CR>
     autocmd FileType rust   nnoremap <silent> <leader>c :RustFmt<CR>
     autocmd FileType rust   vnoremap <silent> <leader>c :RustFmtRange<CR>
+
+    let g:neoformat_enabled_python = ['yapf', 'autopep8']
     autocmd FileType python noremap  <silent> <leader>c :Neoformat<CR>
 " }}}
 
@@ -217,7 +221,8 @@ call plug#end()
     filetype plugin indent on                               " not used now
     syntax on                                               " syntax highligh
 
-    lua require'nvim_lsp'.rust_analyzer.setup   { on_attach=require'completion'.on_attach }
-    lua require'nvim_lsp'.clangd.setup          { on_attach=require'completion'.on_attach }
-    lua require'nvim_lsp'.pyls.setup            { on_attach=require'completion'.on_attach }
+    lua require'lspconfig'.clangd.setup          { }
+    lua require'lspconfig'.rust_analyzer.setup   { }
+    lua require'lspconfig'.pyls.setup            { }
+    autocmd Filetype c,rust,python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " }}}
