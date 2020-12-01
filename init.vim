@@ -111,7 +111,10 @@ call plug#begin(g:nvim_config_root . '/plugged')
     let g:lightline.colorscheme = 'PaperColor_light'
     let g:lightline.separator = { 'left': '', 'right': '' }
     let g:lightline.subseparator = { 'left': '', 'right': '' }
-    let g:lightline.active = {'left': [['mode', 'paste'], ['readonly', 'absolutepath', 'modified']]}
+    let g:lightline.active = { 'left': [['mode', 'paste'], ['readonly', 'absolutepath', 'modified']] }
+    let g:lightline.tabline = { 'left': [ ['buffers']  ], 'right': [ ['close']  ] }
+    let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
+    let g:lightline.component_type = { 'buffers': 'tabsel' }
 
     Plug 'Yggdroot/indentLine'
     let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'rst']
