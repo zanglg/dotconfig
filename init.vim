@@ -115,6 +115,7 @@ call plug#begin(g:nvim_config_root . '/plugged')
     let g:lightline.tabline = { 'left': [ ['buffers']  ], 'right': [ ['close']  ] }
     let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
     let g:lightline.component_type = { 'buffers': 'tabsel' }
+    let g:lightline#bufferline#show_number  = 1 
 
     Plug 'Yggdroot/indentLine'
     let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'rst']
