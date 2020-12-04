@@ -175,6 +175,17 @@ call plug#begin(g:nvim_config_root . '/plugged')
 call plug#end()
 
 " --------------------------------------------------------------------------------------------------
+" custom function
+" --------------------------------------------------------------------------------------------------
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+" --------------------------------------------------------------------------------------------------
 " general key binding
 " --------------------------------------------------------------------------------------------------
     autocmd! bufwritepost $MYVIMRC source $MYVIMRC          " Auto-source vimrc when saved
@@ -209,6 +220,9 @@ call plug#end()
     " quick file open
     nnoremap <silent> <leader>v :e $MYVIMRC<CR>
     nnoremap <silent> <leader>g :e $HOME/.gitconfig<CR>
+
+    " quickfix toggle
+    nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 
     " quick exit without save
     nnoremap qq :qa!<cr>
