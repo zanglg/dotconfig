@@ -170,6 +170,7 @@ call plug#begin(g:nvim_config_root . '/plugged')
 " --------------------------------------------------------------------------------------------------
     Plug 'neovim/nvim-lspconfig'
     Plug 'lifepillar/vim-mucomplete'
+    Plug 'nvim-lua/completion-nvim'
     let g:mucomplete#enable_auto_at_startup = 1
 
 call plug#end()
@@ -234,7 +235,6 @@ endfunction
     filetype plugin indent on                                                   " not used now
     syntax on                                                                   " syntax highligh
 
-    lua require'lspconfig'.clangd.setup          { }
-    lua require'lspconfig'.rust_analyzer.setup   { }
-    lua require'lspconfig'.pyls.setup            { }
-    autocmd Filetype c,rust,python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+    lua require'lspconfig'.clangd.setup          { on_attach=require'completion'.on_attach }
+    lua require'lspconfig'.rust_analyzer.setup   { on_attach=require'completion'.on_attach }
+    lua require'lspconfig'.pyls.setup            { on_attach=require'completion'.on_attach }
