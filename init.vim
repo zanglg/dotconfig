@@ -109,8 +109,8 @@ call plug#begin(g:nvim_config_root . '/plugged')
     Plug 'mengelbrecht/lightline-bufferline'
     let g:lightline = { }
     let g:lightline.colorscheme = 'PaperColor_light'
-    let g:lightline.separator = { 'left': '', 'right': '' }
-    let g:lightline.subseparator = { 'left': '', 'right': '' }
+    let g:lightline.separator = { 'left': "\uE0BC", 'right': "\uE0BE" }
+    let g:lightline.subseparator = { 'left': "\uE0BD", 'right': "\uE0BF" }
     let g:lightline.active = { 'left': [['mode', 'paste'], ['readonly', 'absolutepath', 'modified']] }
     let g:lightline.tabline = { 'left': [ ['buffers']  ], 'right': [ ['close']  ] }
     let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
