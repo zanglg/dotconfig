@@ -78,6 +78,10 @@ endif
     set completeopt+=noinsert,noselect                                          " disable auto selection
     set shortmess+=c                                                            " Shut off completion messages"
 
+    " Use <Tab> and <S-Tab> to navigate through popup menu      
+    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " --------------------------------------------------------------------------------------------------
 " mapleader
 " --------------------------------------------------------------------------------------------------
@@ -169,9 +173,7 @@ call plug#begin(g:nvim_config_root . '/plugged')
 " auto completion
 " --------------------------------------------------------------------------------------------------
     Plug 'neovim/nvim-lspconfig'
-    Plug 'lifepillar/vim-mucomplete'
     Plug 'nvim-lua/completion-nvim'
-    let g:mucomplete#enable_auto_at_startup = 1
 
 call plug#end()
 
