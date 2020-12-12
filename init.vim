@@ -164,7 +164,6 @@ call plug#begin(g:nvim_config_root . '/plugged')
 " navigation
 " --------------------------------------------------------------------------------------------------
     Plug 'liuchengxu/vista.vim'
-    Plug 'liuchengxu/vim-clap', { 'do': { -> clap#installer#force_download() } }
     Plug 'scrooloose/nerdtree'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
