@@ -168,6 +168,7 @@ call plug#begin(g:nvim_config_root . '/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    let $BAT_THEME='GitHub'
 
 " --------------------------------------------------------------------------------------------------
 " auto completion
