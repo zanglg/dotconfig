@@ -198,8 +198,11 @@ endfunction
     nnoremap <silent> <leader>r <cmd>lua vim.lsp.buf.references()<CR>
     nnoremap <silent> <leader>i <cmd>lua vim.lsp.buf.hover()<CR>
     nnoremap <silent> <leader>s <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+    nnoremap <silent> <leader>t <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
     " formater
+    autocmd FileType c      nnoremap <silent> <leader>c <cmd>lua vim.lsp.buf.formatting()<CR>
+    autocmd FileType c      vnoremap <silent> <leader>c <cmd>lua vim.lsp.buf.range_formatting()<CR>
     autocmd FileType rust   nnoremap <silent> <leader>c :RustFmt<CR>
     autocmd FileType rust   vnoremap <silent> <leader>c :RustFmtRange<CR>
     autocmd FileType python noremap  <silent> <leader>c :Neoformat<CR>
@@ -209,7 +212,7 @@ endfunction
 
     " plugin toggle
     nnoremap <silent> <leader>N :NERDTreeToggle<CR>
-    nnoremap <silent> <leader>t :FloatermToggle<CR>
+    nnoremap <silent> <leader>T :FloatermToggle<CR>
 
     " tab navigation
     nnoremap <silent> <leader>h :bp<CR>
