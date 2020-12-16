@@ -176,6 +176,7 @@ call plug#begin(g:nvim_config_root . '/plugged')
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/vim-vsnip-integ'
+    let g:vsnip_snippet_dir = g:nvim_config_root . '/snippet'
     Plug 'nvim-lua/completion-nvim'
     let g:completion_enable_snippet = 'vim-vsnip'
     let g:completion_trigger_on_delete = 1
