@@ -168,12 +168,17 @@ call plug#begin(g:nvim_config_root . '/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     let $BAT_THEME='GitHub'
+    Plug 'ojroques/nvim-lspfuzzy'
 
 " --------------------------------------------------------------------------------------------------
 " auto completion
 " --------------------------------------------------------------------------------------------------
     Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip-integ'
     Plug 'nvim-lua/completion-nvim'
+    let g:completion_enable_snippet = 'vim-vsnip'
+    let g:completion_trigger_on_delete = 1
 
 call plug#end()
 
@@ -243,3 +248,4 @@ endfunction
     lua require'lspconfig'.clangd.setup          { on_attach=require'completion'.on_attach }
     lua require'lspconfig'.rust_analyzer.setup   { on_attach=require'completion'.on_attach }
     lua require'lspconfig'.pyls.setup            { on_attach=require'completion'.on_attach }
+    lua require'lspfuzzy'.setup                  { }
