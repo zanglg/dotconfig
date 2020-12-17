@@ -240,13 +240,17 @@ endfunction
     nnoremap qq :qa!<cr>
 
 " --------------------------------------------------------------------------------------------------
+" lua script setting up
+" --------------------------------------------------------------------------------------------------
+    lua require'lspconfig'.clangd.setup          { }
+    lua require'lspconfig'.rust_analyzer.setup   { }
+    lua require'lspconfig'.pyls.setup            { }
+    lua require'lspfuzzy'.setup                  { }
+    autocmd BufEnter * lua require'completion'.on_attach()
+
+" --------------------------------------------------------------------------------------------------
 " Colorscheme and final setup
 " --------------------------------------------------------------------------------------------------
     colorscheme neocc                                                           " my precious color scheme
     filetype plugin indent on                                                   " not used now
     syntax on                                                                   " syntax highligh
-
-    lua require'lspconfig'.clangd.setup          { on_attach=require'completion'.on_attach }
-    lua require'lspconfig'.rust_analyzer.setup   { on_attach=require'completion'.on_attach }
-    lua require'lspconfig'.pyls.setup            { on_attach=require'completion'.on_attach }
-    lua require'lspfuzzy'.setup                  { }
