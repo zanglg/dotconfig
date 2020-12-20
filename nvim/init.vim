@@ -96,11 +96,8 @@ call plug#begin(g:nvim_config_root . '/plugged')
 " --------------------------------------------------------------------------------------------------
 " colorscheme
 " --------------------------------------------------------------------------------------------------
-    Plug 'zanglg/neocc.vim'
     Plug 'zanglg/nova.vim'
-    Plug 'chriskempson/base16-vim'
     Plug 'joshdick/onedark.vim'
-    Plug 'lifepillar/vim-solarized8'
     Plug 'rafi/awesome-vim-colorschemes'
 
 " --------------------------------------------------------------------------------------------------
