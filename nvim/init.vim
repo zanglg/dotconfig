@@ -24,6 +24,7 @@ endif
     set clipboard=unnamed                                                       " yank to system clipboard
     set backspace=eol,start,indent                                              " endofline, old char, cross indent
     set whichwrap+=<,>,h,l                                                      " keys can move across line
+    set hidden                                                                  " buffer switch without saving
 
 " --------------------------------------------------------------------------------------------------
 " search related
