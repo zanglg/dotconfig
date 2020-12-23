@@ -1,0 +1,18 @@
+{
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for ${1:elem} in ${2:iter} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "for loop"
+    },
+    "derive": {
+        "prefix": "derive",
+        "body": [
+            "#[derive(${1})]"
+        ],
+        "description": "#[derive(…)]"
+    }
+}
