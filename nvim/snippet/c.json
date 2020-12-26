@@ -1,0 +1,31 @@
+{
+    "for":{
+        "prefix":"for",
+        "body":[
+            "for (${1:size_t} ${2:i} = ${3:s}; ${2:i} < ${4:e}; ${2:i}++) {",
+            "\t${5};",
+            "}$0"
+        ],
+        "description":"for loop"
+    },
+    "while":{
+        "prefix":"while",
+        "body":[
+            "while (${1:condition}) {",
+            "\t${2}",
+            "}",
+            "$0"
+        ],
+        "description":"while loop"
+    },
+    "do":{
+        "prefix":"do",
+        "body":[
+            "do {",
+            "\t${2}",
+            "} while (${1:condition})",
+            "$0"
+        ],
+        "description":"do loop"
+    }
+}
