@@ -147,7 +147,8 @@ call plug#begin(g:nvim_config_root . '/plugged')
     let g:hexmode_patterns = '*.bin,*.img'
 
     Plug 'jiangmiao/auto-pairs'
-    let g:AutoPairsWildClosedPair = ''
+    let g:AutoPairsShortcutJump = '<C-l>'
+    let g:AutoPairsFlyMode = 1
 
     Plug 'sbdchd/neoformat'
     let g:neoformat_enabled_python = ['yapf', 'autopep8']
