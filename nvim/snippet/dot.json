@@ -6,8 +6,8 @@
             "\tgraph [fontname=\"Inconsolata, Consolas\", fontsize=10, penwidth=0.5] ",
             "\tnode [fontname=\"Inconsolata, Consolas\", fontsize=10, penwidth=0.5,",
             "\t\tshape=box, style=filled, colorscheme=set312]",
-            "\t\tedge [fontname=\"Inconsolata, Consolas\", fontsize=10, penwidth=0.5]",
-            "\t$0",
+            "\tedge [fontname=\"Inconsolata, Consolas\", fontsize=10, penwidth=0.5]",
+            "\r\n\t$0",
             "}"
         ],
         "description": "digraph template"
