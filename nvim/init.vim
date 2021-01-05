@@ -180,6 +180,7 @@ call plug#begin(g:nvim_config_root . '/plugged')
 
     Plug 'nvim-lua/completion-nvim'
     let g:completion_trigger_on_delete = 1
+    let g:completion_matching_ignore_case = 0
     let g:completion_matching_strategy_list = ['exact']
     let g:completion_enable_snippet = 'vim-vsnip'
 
