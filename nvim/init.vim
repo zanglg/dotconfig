@@ -209,11 +209,8 @@ endfunction
     nnoremap <silent> <leader>t <cmd>lua vim.lsp.buf.document_symbol()<CR>
 
     " formater
-    autocmd FileType c      nnoremap <silent> <leader>c <cmd>lua vim.lsp.buf.formatting()<CR>
-    autocmd FileType c      vnoremap <silent> <leader>c <cmd>lua vim.lsp.buf.range_formatting()<CR>
-    autocmd FileType rust   nnoremap <silent> <leader>c :RustFmt<CR>
-    autocmd FileType rust   vnoremap <silent> <leader>c :RustFmtRange<CR>
-    autocmd FileType python noremap  <silent> <leader>c :Neoformat<CR>
+    vnoremap <silent> <leader>c :Neoformat<CR>
+    noremap  <silent> <leader>c :Neoformat<CR>
 
     " snippet jump
     imap <expr> <C-j> vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<C-j>'
