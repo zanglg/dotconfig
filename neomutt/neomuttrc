@@ -1,0 +1,64 @@
+set realname  = "Leigang Zang"
+set from      = ""
+set editor    = "nvim"
+
+##############################################################################
+##   Mailbox and folders
+##############################################################################
+set mbox_type = Maildir
+set folder    = ""
+set imap_user = ""
+set imap_pass = ""
+set spoolfile = ""
+set postponed = ""
+set record    = ""
+set trash     = ""
+
+##############################################################################
+##   Neomutt Guide Colors
+##############################################################################
+# general
+color status     magenta       default
+color indicator  brightwhite   magenta
+color normal     black         default
+color tilde      black         default
+color tree       black         default
+color markers    red           default
+color error      red           default
+color message    yellow        default
+color prompt     red           default
+color search     yellow        default
+
+# message index
+color index      black         default ~D                                                # deleted messages
+color index      red           default ~F                                                # flagged messages
+color index      blue          default ~N                                                # new messages
+color index      green         default ~Q                                                # messages which have been replied to
+color index      red           default ~T                                                # tagged messages
+
+# message headers
+color hdrdefault cyan          default
+color header     magenta       default ^Subject:.*
+
+# message body
+color body       yellow        default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses
+color body       yellow        default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs
+color body       yellow        default (^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text
+color body       yellow        default (^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text
+color body       yellow        default (^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text
+
+# message element
+color attachment red           default
+color signature  red           default
+
+# quote level
+color quoted     brightcyan    default
+color quoted1    brightred     default
+color quoted2    brightblue    default
+color quoted3    brightgreen   default
+color quoted4    brightmagenta default
+color quoted5    brightcyan    default
+color quoted6    brightred     default
+color quoted7    brightblue    default
+color quoted8    brightgreen   default
+color quoted9    brightmagenta default
