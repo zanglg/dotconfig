@@ -37,7 +37,7 @@ color index      green         default ~Q                                       
 color index      red           default ~T                                                # tagged messages
 
 # message headers
-color hdrdefault cyan          default
+color hdrdefault blue          default
 color header     magenta       default ^Subject:.*
 
 # message body
