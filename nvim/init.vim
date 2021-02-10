@@ -100,6 +100,9 @@ call plug#begin(g:nvim_config_root . '/plugged')
     Plug 'zanglg/nova.vim'
     Plug 'joshdick/onedark.vim'
     Plug 'rafi/awesome-vim-colorschemes'
+    Plug 'sainnhe/edge'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " --------------------------------------------------------------------------------------------------
 " ui appearance
@@ -256,6 +259,6 @@ endfunction
 " --------------------------------------------------------------------------------------------------
 " Colorscheme and final setup
 " --------------------------------------------------------------------------------------------------
-    colorscheme neocc                                                           " my precious color scheme
+    colorscheme edge                                                            " color scheme
     filetype plugin indent on                                                   " not used now
     syntax on                                                                   " syntax highligh
