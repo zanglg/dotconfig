@@ -29,6 +29,7 @@ let s:none          = "none"
 let s:reverse       = "reverse"
 let s:undercurl     = "undercurl"
 let s:underline     = "underline"
+let s:strikethrough = "strikethrough"
 
 fun! s:HL(group, guifg, guibg, gui)
 	let histring = "hi " . a:group
@@ -131,13 +132,51 @@ call s:HL("Type",               s:red           , ''              , s:none)
 call s:HL("Typedef",            s:red           , ''              , s:none)
 call s:HL("Underlined",         s:blue          , ''              , s:underline)
 
-call s:HL("LspErrorText",       s:red           , ''              , '')
-call s:HL("LspWarningText",     s:yellow        , ''              , '')
-call s:HL("LspInformationText", s:blue          , ''              , '')
-call s:HL("lspReference",       ''              , s:line          , '')
-
-call s:HL("FloatermNF",         s:foreground    , s:background    , '')
-call s:HL("FloatermBorderNF",   s:violet        , s:background    , '')
+" treesitter syntax highlight group
+call s:HL("TSBoolean",          s:yellow        , ''              , '')
+call s:HL("TSCharacter",        s:yellow        , ''              , '')
+call s:HL("TSComment",          s:inconspicuous , ''              , '')
+call s:HL("TSConditional",      s:violet        , ''              , '')
+call s:HL("TSConstant",         s:yellow        , ''              , '')
+call s:HL("TSConstBuiltin",     s:yellow        , ''              , '')
+call s:HL("TSConstMacro",       s:yellow        , ''              , '')
+call s:HL("TSError",            s:red           , ''              , s:bold)
+call s:HL("TSException",        s:violet        , ''              , '')
+call s:HL("TSField",            s:purple        , ''              , '')
+call s:HL("TSFloat",            s:yellow        , ''              , '')
+call s:HL("TSFunction",         s:blue          , ''              , '')
+call s:HL("TSFuncBuiltin",      s:blue          , ''              , '')
+call s:HL("TSFuncMacro",        s:blue          , ''              , '')
+call s:HL("TSInclude",          s:purple        , ''              , '')
+call s:HL("TSKeyword",          s:violet        , ''              , '')
+call s:HL("TSKeywordFunction",  s:violet        , ''              , '')
+call s:HL("TSLabel",            s:violet        , ''              , '')
+call s:HL("TSMethod",           s:purple        , ''              , '')
+call s:HL("TSNamespace",        s:violet        , ''              , '')
+call s:HL("TSNumber",           s:yellow        , ''              , '')
+call s:HL("TSOperator",         s:teal          , ''              , '')
+call s:HL("TSParameter",        s:yellow        , ''              , '')
+call s:HL("TSParameterReference",s:teal         , ''              , '')
+call s:HL("TSProperty",         s:purple        , ''              , '')
+call s:HL("TSPunctDelimiter",   s:teal          , ''              , '')
+call s:HL("TSPunctSpecial",     s:teal          , ''              , '')
+call s:HL("TSRepeat",           s:violet        , ''              , '')
+call s:HL("TSString",           s:green         , ''              , '')
+call s:HL("TSStringRegex",      s:green         , ''              , '')
+call s:HL("TSStringEscape",     s:green         , ''              , '')
+call s:HL("TSTag",              s:red           , ''              , '')
+call s:HL("TSTagDelimiter",     s:teal          , ''              , '')
+call s:HL("TSText",             s:foreground    , s:background    , '')
+call s:HL("TSEmphasis",         s:foreground    , s:background    , s:bold)
+call s:HL("TSUnderline",        s:foreground    , s:background    , s:underline)
+call s:HL("TSStrike",           s:foreground    , s:background    , s:strikethrough)
+call s:HL("TSTitle",            s:blue          , ''              , '')
+call s:HL("TSLiteral",          s:blue          , ''              , '')
+call s:HL("TSURI",              s:red           , ''              , s:underline)
+call s:HL("TSType",             s:red           , ''              , '')
+call s:HL("TSTypeBuiltin",      s:red           , ''              , '')
+call s:HL("TSVariable",         s:foreground    , ''              , '')
+call s:HL("TSVariableBuiltin",  s:foreground    , ''              , '')
 
 call s:HL("fzf1",               s:blue          , ''              , '')
 call s:HL("fzf2",               s:blue          , ''              , '')
@@ -156,16 +195,8 @@ let g:fzf_colors = {
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] }
 
-let g:rainbow_conf = { 'guifgs' : [
-            \ s:blue,
-            \ s:green,
-            \ s:purple,
-            \ s:red,
-            \ s:teal,
-            \ s:violet,
-            \ s:yellow,
-            \ ] }
-
+let g:rainbow_conf = { 'guifgs' : [ s:red, s:teal, s:violet, s:yellow, s:blue, s:green, s:purple ] }
+let g:indentLine_color_gui          = s:selection
 if has('nvim')
     let g:terminal_color_0          = s:inconspicuous
     let g:terminal_color_1          = s:red
@@ -174,7 +205,7 @@ if has('nvim')
     let g:terminal_color_4          = s:blue
     let g:terminal_color_5          = s:purple
     let g:terminal_color_6          = s:violet
-    let g:terminal_color_7          = s:line
+    let g:terminal_color_7          = s:teal
     let g:terminal_color_8          = s:inconspicuous
     let g:terminal_color_9          = s:red
     let g:terminal_color_10         = s:green
@@ -182,9 +213,7 @@ if has('nvim')
     let g:terminal_color_12         = s:blue
     let g:terminal_color_13         = s:purple
     let g:terminal_color_14         = s:violet
-    let g:terminal_color_15         = s:line
+    let g:terminal_color_15         = s:teal
     let g:terminal_color_background = s:background
     let g:terminal_color_foreground = s:foreground
 endif
-
-let g:indentLine_color_gui          = s:selection
