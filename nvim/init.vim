@@ -261,6 +261,9 @@ require'nvim-treesitter.configs'.setup   {
         enable = true,
     },
 }
+-- fix conflict of rainbow and treesitter highlight of bracket
+require "nvim-treesitter.highlight"
+vim.treesitter.highlighter.hl_map["punctuation.bracket"] = nil
 EOF
 
 autocmd BufEnter * lua require'completion'.on_attach()
