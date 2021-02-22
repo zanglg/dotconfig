@@ -260,7 +260,7 @@ require'lspconfig'.rust_analyzer.setup   { }
 require'lspconfig'.pyls.setup            { }
 require'lspfuzzy'.setup                  { }
 require'nvim-treesitter.configs'.setup   {
-    ensure_installed = {"c", "rust", "python"},
+    ensure_installed = {"c", "cpp", "rust", "python"},
     highlight = {
         enable = true,
     },
