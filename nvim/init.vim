@@ -103,6 +103,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'sainnhe/edge'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
 " --------------------------------------------------------------------------------------------------
 " ui appearance
@@ -233,16 +234,19 @@ nnoremap <silent> <leader>h :bp<CR>
 nnoremap <silent> <leader>l :bn<CR>
 nnoremap <silent> <leader>n :noh<CR>
 
-" quick open MYVIMRC
+" quick file open
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 
-" quick file open
+" configuration files
 nnoremap <silent> <leader>v :e $MYVIMRC<CR>
 nnoremap <silent> <leader>g :e $HOME/.gitconfig<CR>
 
 " quickfix toggle
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
+
+" show treesitter highlight group
+nnoremap <silent> <leader>s :TSHighlightCapturesUnderCursor<CR>
 
 " quick exit without save
 nnoremap qq :qa!<cr>
