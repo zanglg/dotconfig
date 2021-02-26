@@ -104,13 +104,11 @@ Plug 'sainnhe/edge'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+Plug 'p00f/nvim-ts-rainbow'
 
 " --------------------------------------------------------------------------------------------------
 " ui appearance
 " --------------------------------------------------------------------------------------------------
-Plug 'luochen1990/rainbow'
-let g:rainbow_active = 1
-
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 let g:lightline = { }
@@ -260,14 +258,10 @@ require'lspconfig'.rust_analyzer.setup   { }
 require'lspconfig'.pyls.setup            { }
 require'lspfuzzy'.setup                  { }
 require'nvim-treesitter.configs'.setup   {
-    ensure_installed = {"c", "cpp", "rust", "python"},
-    highlight = {
-        enable = true,
-    },
+    ensure_installed = "maintained",
+    highlight = { enable = true },
+    rainbow = { enable = true },
 }
--- fix conflict of rainbow and treesitter highlight of bracket
-require "nvim-treesitter.highlight"
-vim.treesitter.highlighter.hl_map["punctuation.bracket"] = nil
 EOF
 
 autocmd BufEnter * lua require'completion'.on_attach()
