@@ -230,7 +230,12 @@ nnoremap <silent> <leader>T :FloatermToggle<CR>
 " tab navigation
 nnoremap <silent> <leader>h :bp<CR>
 nnoremap <silent> <leader>l :bn<CR>
+
+" remove highlight
 nnoremap <silent> <leader>n :noh<CR>
+
+" search current word
+nnoremap <leader>/ :Rg <C-R>=expand("<cword>")<CR><CR>
 
 " quick file open
 nnoremap <silent> <leader>f :Files<CR>
