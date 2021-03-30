@@ -1,279 +1,116 @@
-" --------------------------------------------------------------------------------------------------
-" author: Zang Leigang (zang.lg # outlook.com)
-" --------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+-- author: Zang Leigang (zang.lg # outlook.com)
+---------------------------------------------------------------------------------------------------
 
-let g:nvim_config_root = stdpath('config')
+local fn        = vim.fn
+local cmd       = vim.cmd
+local g         = vim.g
+local o         = vim.o
+local b         = vim.bo
+local w         = vim.wo
 
-if empty(glob(g:nvim_config_root . '/autoload/plug.vim'))
-    execute '!curl -fLo ' . g:nvim_config_root . '/autoload/plug.vim --create-dirs '
-        \ . '"https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"'
-	    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+local packer_path = fn.stdpath('config')..'/after/pack/packer/opt/packer.nvim'
 
-" --------------------------------------------------------------------------------------------------
-" file editing
-" --------------------------------------------------------------------------------------------------
-set nobackup                                                                " no backup file
-set noswapfile                                                              " no swap file
-set noundofile                                                              " no undo file
-set encoding=utf-8                                                          " default utf-8
-set ffs=unix,mac,dos                                                        " file format
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,latin1                        " file encoding fallback sequence
-set termencoding=utf-8                                                      " encoding output to terminal
-set autoread                                                                " detect when a file is changed
-set clipboard=unnamed                                                       " yank to system clipboard
-set backspace=eol,start,indent                                              " endofline, old char, cross indent
-set whichwrap+=<,>,h,l                                                      " keys can move across line
-set hidden                                                                  " buffer switch without saving
+if fn.empty(fn.glob(packer_path)) > 0 then
+  cmd('!git clone https://github.com/wbthomason/packer.nvim '..packer_path)
+end
 
-" --------------------------------------------------------------------------------------------------
-" search related
-" --------------------------------------------------------------------------------------------------
-set hlsearch                                                                " highlight search results
-set ignorecase                                                              " case insensitive searching
-set incsearch                                                               " set incremental search, like modern browsers
-set smartcase                                                               " case-sensitive if expresson contains a capital letter
-set nolazyredraw                                                            " don't redraw while executing macros
-set magic                                                                   " Set magic on, comfortable for regex
+---------------------------------------------------------------------------------------------------
+-- file editing
+---------------------------------------------------------------------------------------------------
+o.backup        = false                                -- no backup file
+b.swapfile      = false                                -- no swap file
+b.undofile      = false                                -- no undo file
+o.encoding      = 'utf-8'                              -- default utf-8
+o.fileformats   = 'unix,mac,dos'                       -- file format
+b.fileencoding  = 'utf-8'                              -- default file encoding
+o.fileencodings = 'ucs-bom,utf-8,cp936,gb18030,latin1' -- file encoding fallback sequence
+o.autoread      = true                                 -- detect when a file is changed
+o.clipboard     = 'unnamed'                            -- yank to system clipboard
+o.backspace     = 'eol,start,indent'                   -- endofline, old char, cross indent
+o.whichwrap     = '<,>,h,l,[,]'                        -- keys can move across line
+o.hidden        = true                                 -- buffer switch without saving
 
-" --------------------------------------------------------------------------------------------------
-" bells
-" --------------------------------------------------------------------------------------------------
-set novisualbell                                                            " disable flash screen
-set noerrorbells                                                            " disable error bells
-set t_vb=                                                                   " clear code to flash screen
+---------------------------------------------------------------------------------------------------
+-- search related
+---------------------------------------------------------------------------------------------------
+o.hlsearch      = true                                 -- highlight search results
+o.ignorecase    = true                                 -- case insensitive searching
+o.incsearch     = true                                 -- set incremental search, like modern browsers
+o.smartcase     = true                                 -- case-sensitive if expresson contains a capital letter
+o.lazyredraw    = false                                -- don't redraw while executing macros
+o.magic         = true                                 -- Set magic on, comfortable for regex
 
-" --------------------------------------------------------------------------------------------------
-" appearance
-" --------------------------------------------------------------------------------------------------
-set cursorcolumn                                                            " highlight current column
-set cursorline                                                              " highligh current line
-set laststatus=2                                                            " always show the status line - use 2 lines for the status bar
-set number                                                                  " show line numbers
-set showcmd                                                                 " display command writing
-set showmode                                                                " display vim mode
-set showtabline=2                                                           " always show tabline
-set title                                                                   " set terminal title
-set wrap                                                                    " turn on line wrapping
-set signcolumn=yes                                                          " sign column always on
-set nofoldenable                                                            " disable session fold
-set foldmethod=marker                                                       " use markers as to specify folds.
-set termguicolors                                                           " enable 24 bit color support if supported
-set background=light
+---------------------------------------------------------------------------------------------------
+-- bells
+---------------------------------------------------------------------------------------------------
+o.visualbell    = false                                -- disable flash screen
+o.errorbells    = false                                -- disable errors bells
+o.t_vb          = ''                                   -- clear code to flash screen
 
-" --------------------------------------------------------------------------------------------------
-" tab Control
-" --------------------------------------------------------------------------------------------------
-set shiftround                                                              " round indent to a multiple of 'shiftwidth'
-set shiftwidth=4                                                            " number of spaces to use for indent and unindent
-set smarttab                                                                " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set softtabstop=4                                                           " edit as if the tabs are 4 characters wide
-set tabstop=4                                                               " the visible width of tabs
-set expandtab                                                               " expand tab to space
+---------------------------------------------------------------------------------------------------
+-- appearance
+---------------------------------------------------------------------------------------------------
+w.cursorcolumn  = true                                 -- highlight current column
+w.cursorline    = true                                 -- highligh current line
+o.laststatus    = 2                                    -- always show the status line - use 2 lines for the status bar
+w.number        = true                                 -- show line numbers
+o.showcmd       = true                                 -- display command writing
+o.showmode      = true                                 -- display vim mode
+o.showtabline   = 2                                    -- always show tabline
+o.title         = true                                 -- set terminal title
+w.wrap          = true                                 -- turn on line wrapping
+w.signcolumn    = 'yes'                                -- sign column always on
+w.foldenable    = false                                -- disable session fold
+w.foldmethod    = 'marker'                             -- use markers as to specify folds.
+o.termguicolors = true                                 -- enable 24 bit color support if supported
 
-" --------------------------------------------------------------------------------------------------
-" completion control
-" --------------------------------------------------------------------------------------------------
-set wildmenu                                                                " show list instead of just completing
-set completeopt=menuone                                                     " popup even have only one candidate
-set completeopt+=noinsert,noselect                                          " disable auto selection
-set shortmess+=c                                                            " Shut off completion messages"
+---------------------------------------------------------------------------------------------------
+-- tab Control
+---------------------------------------------------------------------------------------------------
+o.shiftround    = true                                 -- round indent to a multiple of 'shiftwidth'
+b.shiftwidth    = 4                                    -- number of spaces to use for indent and unindent
+o.smarttab      = true                                 -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+b.softtabstop   = 4                                    -- edit as if the tabs are 4 characters wide
+b.tabstop       = 4                                    -- the visible width of tabs
+b.expandtab     = true                                 -- expand tab to space
 
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+vim.cmd [[packadd packer.nvim]]
+require('packer').startup(function()
+    use {'wbthomason/packer.nvim', opt = true}
 
-" --------------------------------------------------------------------------------------------------
-" mapleader
-" --------------------------------------------------------------------------------------------------
-set tm=1000                                                                 " map sequence complete timeout
-let mapleader = ','                                                         " mapleader, must put before remapping
+---------------------------------------------------------------------------------------------------
+-- colorscheme and semantic highlight
+---------------------------------------------------------------------------------------------------
+    use {'zanglg/nova.vim'}
+    use {'joshdick/onedark.vim'}
+    use {'sainnhe/edge'}
+    use {'sheerun/vim-polyglot'}
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use {'p00f/nvim-ts-rainbow'}
 
-" --------------------------------------------------------------------------------------------------
-" plugin Manager
-" --------------------------------------------------------------------------------------------------
-call plug#begin(g:nvim_config_root . '/plugged')
+---------------------------------------------------------------------------------------------------
+-- enhanced text edit
+---------------------------------------------------------------------------------------------------
+    use {'editorconfig/editorconfig-vim'}
+    use {'junegunn/vim-easy-align'}
+    use {'terryma/vim-multiple-cursors'}
+    use {'rust-lang/rust.vim', ft = {'rust'}}
+    use {'sbdchd/neoformat'}
+    use {'fidian/hexmode'}
+    use {'jiangmiao/auto-pairs'}
 
-" --------------------------------------------------------------------------------------------------
-" colorscheme
-" --------------------------------------------------------------------------------------------------
-Plug 'zanglg/nova.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'sainnhe/edge'
-Plug 'sheerun/vim-polyglot'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'p00f/nvim-ts-rainbow'
+---------------------------------------------------------------------------------------------------
+-- git related
+---------------------------------------------------------------------------------------------------
+    use {'airblade/vim-gitgutter'}
+    use {'tpope/vim-fugitive'}
 
-" --------------------------------------------------------------------------------------------------
-" ui appearance
-" --------------------------------------------------------------------------------------------------
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
-let g:lightline = { }
-let g:lightline.colorscheme = 'PaperColor_light'
-let g:lightline.separator = { 'left': "\uE0BC", 'right': "\uE0BE" }
-let g:lightline.subseparator = { 'left': "\uE0BD", 'right': "\uE0BF" }
-let g:lightline.active = { 'left': [['mode', 'paste'], ['readonly', 'absolutepath', 'modified']] }
-let g:lightline.tabline = { 'left': [ ['buffers']  ], 'right': [ ['close']  ] }
-let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
-let g:lightline.component_type = { 'buffers': 'tabsel' }
-let g:lightline#bufferline#show_number  = 1
+---------------------------------------------------------------------------------------------------
+-- utility
+---------------------------------------------------------------------------------------------------
+    use {'voldikss/vim-floaterm'}
 
-Plug 'Yggdroot/indentLine'
-let g:indentLine_fileTypeExclude = ['tex', 'markdown', 'rst']
+end)
 
-" --------------------------------------------------------------------------------------------------
-" git related
-" --------------------------------------------------------------------------------------------------
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-
-" --------------------------------------------------------------------------------------------------
-" language packs
-" --------------------------------------------------------------------------------------------------
-Plug 'editorconfig/editorconfig-vim'
-Plug 'sheerun/vim-polyglot'
-
-Plug 'rust-lang/rust.vim'
-let g:rustfmt_autosave = 1
-
-" --------------------------------------------------------------------------------------------------
-" enhance file editing
-" --------------------------------------------------------------------------------------------------
-Plug 'junegunn/vim-easy-align'
-Plug 'terryma/vim-multiple-cursors'
-
-Plug 'fidian/hexmode'
-let g:hexmode_patterns = '*.bin,*.img'
-
-Plug 'jiangmiao/auto-pairs'
-let g:AutoPairsShortcutJump = '<C-l>'
-
-Plug 'sbdchd/neoformat'
-let g:neoformat_enabled_python = ['yapf', 'autopep8']
-
-" --------------------------------------------------------------------------------------------------
-" floating terminal
-" --------------------------------------------------------------------------------------------------
-Plug 'voldikss/vim-floaterm'
-let g:floaterm_position = 'center'
-
-" --------------------------------------------------------------------------------------------------
-" navigation
-" --------------------------------------------------------------------------------------------------
-Plug 'liuchengxu/vista.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-let $BAT_THEME='GitHub'
-Plug 'ojroques/nvim-lspfuzzy', {'branch': 'main'}
-
-" --------------------------------------------------------------------------------------------------
-" auto completion
-" --------------------------------------------------------------------------------------------------
-Plug 'neovim/nvim-lspconfig'
-
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-let g:vsnip_snippet_dir = g:nvim_config_root . '/snippet'
-
-Plug 'nvim-lua/completion-nvim'
-let g:completion_trigger_on_delete = 1
-let g:completion_matching_ignore_case = 0
-let g:completion_matching_strategy_list = ['exact']
-let g:completion_enable_snippet = 'vim-vsnip'
-
-call plug#end()
-
-" --------------------------------------------------------------------------------------------------
-" custom function
-" --------------------------------------------------------------------------------------------------
-function! ToggleQuickFix()
-    if empty(filter(getwininfo(), 'v:val.quickfix'))
-        copen
-    else
-        cclose
-    endif
-endfunction
-
-" --------------------------------------------------------------------------------------------------
-" general key binding
-" --------------------------------------------------------------------------------------------------
-autocmd! bufwritepost $MYVIMRC source $MYVIMRC          " Auto-source vimrc when saved
-
-" nvim-lspconfig
-nnoremap <silent> <leader>d <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> <leader>r <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> <leader>i <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <leader>s <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> <leader>t <cmd>lua vim.lsp.buf.document_symbol()<CR>
-
-" formater
-vnoremap <silent> <leader>c :Neoformat<CR>
-noremap  <silent> <leader>c :Neoformat<CR>
-
-" snippet jump
-imap <expr> <C-j> vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<C-j>'
-smap <expr> <C-j> vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<C-j>'
-imap <expr> <C-k> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<C-k>'
-smap <expr> <C-k> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<C-k>'
-
-" easy align
-map <silent> <leader>g <Plug>(EasyAlign)
-
-" plugin toggle
-nnoremap <silent> <leader>N :NERDTreeToggle<CR>
-nnoremap <silent> <leader>T :FloatermToggle<CR>
-
-" tab navigation
-nnoremap <silent> <leader>h :bp<CR>
-nnoremap <silent> <leader>l :bn<CR>
-
-" remove highlight
-nnoremap <silent> <leader>n :noh<CR>
-
-" search current word
-nnoremap <leader>/ :Rg <C-R>=expand("<cword>")<CR><CR>
-
-" quick file open
-nnoremap <silent> <leader>f :Files<CR>
-nnoremap <silent> <leader>b :Buffers<CR>
-
-" configuration files
-nnoremap <silent> <leader>v :e $MYVIMRC<CR>
-nnoremap <silent> <leader>g :e $HOME/.gitconfig<CR>
-
-" quickfix toggle
-nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
-
-" show treesitter highlight group
-nnoremap <silent> <leader>s :TSHighlightCapturesUnderCursor<CR>
-
-" quick exit without save
-nnoremap qq :qa!<cr>
-
-" --------------------------------------------------------------------------------------------------
-" lua script setting up
-" --------------------------------------------------------------------------------------------------
-lua <<EOF
-require'lspconfig'.clangd.setup          { }
-require'lspconfig'.rust_analyzer.setup   { }
-require'lspconfig'.pyls.setup            { }
-require'lspfuzzy'.setup                  { }
-require'nvim-treesitter.configs'.setup   {
-    ensure_installed = "maintained",
-    highlight = { enable = true },
-    rainbow = { enable = true },
-}
-EOF
-
-autocmd BufEnter * lua require'completion'.on_attach()
-
-" --------------------------------------------------------------------------------------------------
-" Colorscheme and final setup
-" --------------------------------------------------------------------------------------------------
-colorscheme neocc                                                           " color scheme
-filetype plugin indent on                                                   " not used now
-syntax on                                                                   " syntax highligh
+cmd('colorscheme nova')
