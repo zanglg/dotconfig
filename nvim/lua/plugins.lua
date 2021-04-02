@@ -27,6 +27,11 @@ packer.startup(function()
 -- colorscheme and semantic highlight
     use {'zanglg/nova.vim'}
     use {'sheerun/vim-polyglot'}
+    use {'glepnir/galaxyline.nvim',
+        branch = 'main',
+        config = function() require('statusline') end,
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
 
 -- enhanced text edit
     use {'editorconfig/editorconfig-vim'}

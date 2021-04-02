@@ -2,5 +2,6 @@
 
 require('options')
 require('plugins')
+require('statusline')
 
-vim.cmd('colorscheme nova')
+vim.cmd('colorscheme neocc')
