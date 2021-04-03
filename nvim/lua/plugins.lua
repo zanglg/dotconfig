@@ -46,6 +46,15 @@ packer.startup(function()
     use {'airblade/vim-gitgutter'}
     use {'tpope/vim-fugitive'}
 
+-- completion
+    use {'hrsh7th/nvim-compe',
+        config = function() require('completion') end,
+        requires = {
+            {'neovim/nvim-lspconfig', opt = false},
+            {'hrsh7th/vim-vsnip', opt = true},
+        }
+    }
+
 -- utility
     use {'voldikss/vim-floaterm'}
 
