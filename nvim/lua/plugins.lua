@@ -51,6 +51,7 @@ packer.startup(function()
         config = function() require('completion') end,
         requires = {
             {'neovim/nvim-lspconfig'},
+            {"rafamadriz/friendly-snippets"},
             {'hrsh7th/vim-vsnip'},
         }
     }
