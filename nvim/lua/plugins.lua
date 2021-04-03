@@ -50,8 +50,8 @@ packer.startup(function()
     use {'hrsh7th/nvim-compe',
         config = function() require('completion') end,
         requires = {
-            {'neovim/nvim-lspconfig', opt = false},
-            {'hrsh7th/vim-vsnip', opt = true},
+            {'neovim/nvim-lspconfig'},
+            {'hrsh7th/vim-vsnip'},
         }
     }
 
