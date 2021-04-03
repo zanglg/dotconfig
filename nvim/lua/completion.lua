@@ -18,4 +18,7 @@ require "compe".setup {
     }
 }
 
+local snippet = vim.fn.stdpath('config')..'/snippet'
+vim.g.vsnip_snippet_dir = snippet
+
 vim.cmd("inoremap <silent><expr> <C-j> compe#confirm('<CR>')")
