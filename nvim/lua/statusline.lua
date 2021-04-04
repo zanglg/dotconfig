@@ -1,7 +1,7 @@
 local gl = require("galaxyline")
 local condition = require("galaxyline.condition")
 local gls = gl.section
-gl.short_line_list = {"NvimTree", "vista", "dbui", "packer"}
+gl.short_line_list = {"LuaTree", "vista", "dbui"}
 
 local colors = {
     foreground = "#364349",
@@ -21,28 +21,124 @@ local colors = {
 }
 
 gls.left[1] = {
-    Separator1 = {
+    FirstElement = {
         provider = function()
-            return " "
+            return ""
         end,
-        highlight = {colors.background, colors.blue}
+        highlight = {colors.blue, colors.background}
     }
 }
-
 gls.left[2] = {
-    VimIcon = {
+    ViMode = {
         provider = function()
-            return " "
+            local alias = {
+                n = "NORMAL",
+                i = "INSERT",
+                c = "COMMAND",
+                v = "VISUAL",
+                V = "VISUAL LINE",
+                [""] = "VISUAL BLOCK"
+            }
+            return alias[vim.fn.mode()]
         end,
-        highlight = {colors.line, colors.blue}
+        icon = "  ",
+        separator = "",
+        separator_highlight = {colors.blue, colors.red},
+        highlight = {colors.line, colors.blue, "bold"}
     }
 }
 
 gls.left[3] = {
-    Separator2 = {
+    GitBranch = {
+        provider = "GitBranch",
+        condition = condition.check_git_workspace,
+        icon = "  ",
+        separator = "",
+        separator_highlight = {colors.line, colors.red},
+        highlight = {colors.line, colors.red, "bold"}
+    }
+}
+
+gls.left[4] = {
+    DiffAdd = {
+        provider = "DiffAdd",
+        condition = condition.hide_in_width,
+        icon = "  ",
+        separator = "",
+        separator_highlight = {colors.line, colors.red},
+        highlight = {colors.line, colors.red}
+    }
+}
+gls.left[5] = {
+    DiffModified = {
+        provider = "DiffModified",
+        condition = condition.hide_in_width,
+        icon = " 柳",
+        separator = "",
+        separator_highlight = {colors.line, colors.red},
+        highlight = {colors.line, colors.red}
+    }
+}
+gls.left[6] = {
+    DiffRemove = {
+        provider = "DiffRemove",
+        condition = condition.hide_in_width,
+        icon = "  ",
+        highlight = {colors.line, colors.red}
+    }
+}
+gls.left[10] = {
+    LeftEnd = {
         provider = function()
-            return " "
+            return ""
         end,
-        highlight = {colors.blue, colors.line}
+        highlight = {colors.red, colors.line}
+    }
+}
+gls.mid[1] = {
+    FileIcon = {
+        provider = {"FileIcon", "FileName"},
+        condition = condition.buffer_not_empty,
+        highlight = {colors.foreground, colors.line}
+    }
+}
+gls.right[1] = {
+    FileFormat = {
+        provider = "FileFormat",
+        separator = "",
+        separator_highlight = {colors.red, colors.line},
+        highlight = {colors.line, colors.red}
+    }
+}
+gls.right[2] = {
+    FileEncode = {
+        provider = "FileEncode",
+        separator = "",
+        separator_highlight = {colors.line, colors.red},
+        highlight = {colors.line, colors.red}
+    }
+}
+gls.right[3] = {
+    LineInfo = {
+        provider = "LineColumn",
+        separator = "",
+        separator_highlight = {colors.blue, colors.red},
+        highlight = {colors.line, colors.blue}
+    }
+}
+gls.right[4] = {
+    PerCent = {
+        provider = "LinePercent",
+        separator = "",
+        separator_highlight = {colors.line, colors.blue},
+        highlight = {colors.line, colors.blue}
+    }
+}
+gls.right[5] = {
+    RightEnd = {
+        provider = function()
+            return ""
+        end,
+        highlight = {colors.blue, colors.background}
     }
 }
