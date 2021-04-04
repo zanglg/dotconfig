@@ -1,7 +1,6 @@
 local gl = require("galaxyline")
 local condition = require("galaxyline.condition")
 local gls = gl.section
-gl.short_line_list = {"LuaTree", "vista", "dbui"}
 
 local colors = {
     foreground = "#364349",
@@ -31,15 +30,27 @@ gls.left[1] = {
 gls.left[2] = {
     ViMode = {
         provider = function()
-            local alias = {
-                n = "NORMAL",
-                i = "INSERT",
-                c = "COMMAND",
-                v = "VISUAL",
-                V = "VISUAL LINE",
-                [""] = "VISUAL BLOCK"
+            local mode = {
+                n = {"NORMAL", colors.blue},
+                i = {"INSERT", colors.pink},
+                c = {"COMMAND", colors.cyan},
+                c = {"COMMAND-LINE", colors.cyan},
+                V = {"VISUAL", colors.green},
+                [""] = {"VISUAL", colors.green},
+                v = {"VISUAL", colors.green},
+                Rv = {"VIRTUAL", colors.green},
+                R = {"REPLACE", colors.violet},
+                s = {"SELECT", colors.yellow},
+                S = {"SELECT", colors.yellow},
+                [""] = {"SELECT", colors.yellow},
+                ["r?"] = {":CONFIRM", colors.purple},
+                rm = {"--MORE", colors.purple},
+                ["r"] = {"HIT-ENTER", colors.purple},
+                t = {"TERMINAL", colors.purple},
+                ["!"] = {"SHELL", colors.purple}
             }
-            return alias[vim.fn.mode()]
+            local vmode = vim.fn.mode()
+            return mode[vmode][1]
         end,
         icon = "  ",
         separator = "",
