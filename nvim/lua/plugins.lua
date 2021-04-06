@@ -57,6 +57,7 @@ packer.startup(function()
     }
 
 -- utility
+    use {'junegunn/fzf.vim'}
     use {'voldikss/vim-floaterm'}
 
 end)
