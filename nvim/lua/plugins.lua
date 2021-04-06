@@ -29,7 +29,7 @@ packer.startup(function()
     use {'sheerun/vim-polyglot'}
     use {'glepnir/galaxyline.nvim',
         branch = 'main',
-        config = function() require('statusline') end,
+        config = "require('statusline')",
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
@@ -48,7 +48,7 @@ packer.startup(function()
 
 -- completion
     use {'hrsh7th/nvim-compe',
-        config = function() require('completion') end,
+        config = "require('completion')",
         requires = {
             {'neovim/nvim-lspconfig'},
             {"rafamadriz/friendly-snippets"},
