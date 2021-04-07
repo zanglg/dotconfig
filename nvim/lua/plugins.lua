@@ -50,6 +50,15 @@ packer.startup(
         use {"hrsh7th/vim-vsnip"}
         use {"rafamadriz/friendly-snippets"}
 
+        -- navigation
+        use {
+            "nvim-telescope/telescope.nvim",
+            requires = {
+                {"nvim-lua/popup.nvim"},
+                {"nvim-lua/plenary.nvim"}
+            }
+        }
+
         -- utility
         use {"voldikss/vim-floaterm"}
         use {"tweekmonster/startuptime.vim"}
