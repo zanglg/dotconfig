@@ -61,7 +61,6 @@ packer.startup(
 
         -- utility
         use {"voldikss/vim-floaterm"}
-        use {"tweekmonster/startuptime.vim"}
     end
 )
 
