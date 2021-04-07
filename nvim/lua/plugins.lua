@@ -34,25 +34,25 @@ packer.startup(
 
         -- enhanced text edit
         use {"editorconfig/editorconfig-vim"}
-        use {"junegunn/vim-easy-align"}
-        use {"terryma/vim-multiple-cursors"}
-        use {"rust-lang/rust.vim", ft = {"rust"}}
-        use {"sbdchd/neoformat"}
         use {"fidian/hexmode"}
-        use {"jiangmiao/auto-pairs"}
+
+        -- language specific
+        use {"rust-lang/rust.vim", ft = {"rust"}}
 
         -- git related
         use {"airblade/vim-gitgutter"}
         use {"tpope/vim-fugitive"}
 
         -- completion
-        use {"hrsh7th/nvim-compe"}
         use {"neovim/nvim-lspconfig"}
-        use {"rafamadriz/friendly-snippets"}
+        use {"hrsh7th/nvim-compe"}
+        use {"onsails/lspkind-nvim"}
         use {"hrsh7th/vim-vsnip"}
+        use {"rafamadriz/friendly-snippets"}
 
         -- utility
         use {"voldikss/vim-floaterm"}
+        use {"tweekmonster/startuptime.vim"}
     end
 )
 
