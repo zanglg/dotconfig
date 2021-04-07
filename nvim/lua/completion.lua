@@ -26,4 +26,4 @@ vim.api.nvim_set_keymap('s', '<C-j>', "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-ne
 vim.api.nvim_set_keymap('i', '<C-k>', "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-prev)' : '<C-k>'", {expr = true, noremap = false})
 vim.api.nvim_set_keymap('s', '<C-k>', "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-prev)' : '<C-k>'", {expr = true, noremap = false})
 
-vim.api.nvim_set_keymap('i', '<C-i>', "compe#confirm('<CR>')", {expr = true, noremap = true})
+vim.api.nvim_set_keymap('i', '<C-i>', "compe#confirm('<C-i>')", {expr = true, noremap = true})
