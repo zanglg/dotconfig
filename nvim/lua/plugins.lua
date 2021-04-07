@@ -28,7 +28,6 @@ packer.startup(
 
         -- colorscheme and semantic highlight
         use {"zanglg/nova.vim"}
-        use {"sheerun/vim-polyglot"}
         use {"glepnir/galaxyline.nvim"}
         use {"kyazdani42/nvim-web-devicons"}
 
