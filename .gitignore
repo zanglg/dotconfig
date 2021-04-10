@@ -1,4 +1,5 @@
 # neovim
 nvim/autoload
 nvim/plugged
+nvim/plugin
 nvim/pack
