@@ -1,50 +1,38 @@
-vim.o.completeopt = "menuone,noselect"
+local completion = {}
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+function completion.lspconfig()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require "lspconfig".clangd.setup {capabilities = capabilities}
-require "lspconfig".pyls.setup {capabilities = capabilities}
-require "lspconfig".rust_analyzer.setup {capabilities = capabilities}
-require "lspkind".init {}
+    require"lspconfig".clangd.setup {capabilities = capabilities}
+    require"lspconfig".pyls.setup {capabilities = capabilities}
+    require"lspconfig".rust_analyzer.setup {capabilities = capabilities}
+end
 
-require "compe".setup {
-    source = {
-        path = true,
-        buffer = true,
-        nvim_lsp = true,
-        nvim_lua = true,
-        vsnip = true,
-        emoji = true
+function completion.compe()
+    vim.o.completeopt = "menuone,noselect"
+
+    local snippet = vim.fn.stdpath("config") .. "/snippet"
+    vim.g.vsnip_snippet_dir = snippet
+
+    require"lspkind".init{}
+
+    require"compe".setup {
+        source = {
+            path = true,
+            buffer = true,
+            nvim_lsp = true,
+            nvim_lua = true,
+            vsnip = true,
+            emoji = true
+        }
     }
-}
 
-local snippet = vim.fn.stdpath("config") .. "/snippet"
-vim.g.vsnip_snippet_dir = snippet
+    vim.api.nvim_set_keymap("i", "<C-j>", "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<C-j>'", {expr = true, noremap = false})
+    vim.api.nvim_set_keymap("s", "<C-j>", "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<C-j>'", {expr = true, noremap = false})
+    vim.api.nvim_set_keymap("i", "<C-k>", "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-prev)' : '<C-k>'", {expr = true, noremap = false})
+    vim.api.nvim_set_keymap("s", "<C-k>", "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-prev)' : '<C-k>'", {expr = true, noremap = false})
+    vim.api.nvim_set_keymap("i", "<C-i>", "compe#confirm('<C-i>')", {expr = true, noremap = true})
+end
 
-vim.api.nvim_set_keymap(
-    "i",
-    "<C-j>",
-    "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<C-j>'",
-    {expr = true, noremap = false}
-)
-vim.api.nvim_set_keymap(
-    "s",
-    "<C-j>",
-    "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<C-j>'",
-    {expr = true, noremap = false}
-)
-vim.api.nvim_set_keymap(
-    "i",
-    "<C-k>",
-    "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-prev)' : '<C-k>'",
-    {expr = true, noremap = false}
-)
-vim.api.nvim_set_keymap(
-    "s",
-    "<C-k>",
-    "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-prev)' : '<C-k>'",
-    {expr = true, noremap = false}
-)
-
-vim.api.nvim_set_keymap("i", "<C-i>", "compe#confirm('<C-i>')", {expr = true, noremap = true})
+return completion
