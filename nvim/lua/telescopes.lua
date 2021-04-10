@@ -4,7 +4,14 @@ function telescope.setup()
     require("telescope").setup {
         defaults = {
             borderchars = {
-                "─", "│", "─", "│", "┌", "┐", "┘", "└"
+                "─",
+                "│",
+                "─",
+                "│",
+                "┌",
+                "┐",
+                "┘",
+                "└"
             }
         }
     }

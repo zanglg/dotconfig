@@ -24,7 +24,9 @@ function statusline.setup()
 
     gls.left[1] = {
         FirstElement = {
-            provider = function() return "" end,
+            provider = function()
+                return ""
+            end,
             highlight = {colors.blue, colors.background}
         }
     }
@@ -101,7 +103,9 @@ function statusline.setup()
     }
     gls.left[10] = {
         LeftEnd = {
-            provider = function() return "" end,
+            provider = function()
+                return ""
+            end,
             highlight = {colors.red, colors.line}
         }
     }
@@ -146,11 +150,12 @@ function statusline.setup()
     }
     gls.right[5] = {
         RightEnd = {
-            provider = function() return "" end,
+            provider = function()
+                return ""
+            end,
             highlight = {colors.blue, colors.background}
         }
     }
-
 end
 
 return statusline
