@@ -73,8 +73,8 @@ function plugins:load_packer()
                     cmd = "Telescope",
                     config = self.telescopes.setup,
                     requires = {
-                        {"nvim-lua/popup.nvim", opt = true},
-                        {"nvim-lua/plenary.nvim", opt = true}
+                        {"nvim-lua/popup.nvim"},
+                        {"nvim-lua/plenary.nvim"}
                     }
                 }
 
