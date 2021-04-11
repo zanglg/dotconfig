@@ -26,6 +26,7 @@ function core:init()
 
     require('options'):init()
     require('plugins'):init()
+    require('mappings'):init()
 
     vim.cmd('colorscheme neocc')
 end
