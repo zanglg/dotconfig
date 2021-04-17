@@ -1,7 +1,8 @@
 core.plugins = {
     completion = require("completion"),
     statusline = require("statusline"),
-    telescopes = require("telescopes")
+    telescopes = require("telescopes"),
+    tsconfig = require("tsconfig"),
 }
 
 local plugins = core.plugins
@@ -31,6 +32,10 @@ function plugins:load_packer()
                     branch = "main",
                     config = self.statusline.setup,
                     requires = {"kyazdani42/nvim-web-devicons"}
+                }
+                use {
+                    "nvim-treesitter/nvim-treesitter",
+                    config = self.tsconfig.setup
                 }
 
                 -- enhanced text edit
