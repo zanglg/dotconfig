@@ -21,8 +21,13 @@ local disable_distribution_plugins = function()
 	vim.g.loaded_netrwFileHandlers = 1
 end
 
+local setup_leader_map = function()
+    vim.g.mapleader = ","
+end
+
 function core:init()
     disable_distribution_plugins()
+    setup_leader_map()
 
     require('options'):init()
     require('plugins'):init()
