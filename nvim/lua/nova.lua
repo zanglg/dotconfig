@@ -140,6 +140,7 @@ function nova.setup()
 
     vim.o.background = 'dark'
     vim.o.termguicolors = true
+    vim.g.colors_name = 'nova'
 
     nova.load_syntax()
 end
