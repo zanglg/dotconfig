@@ -41,6 +41,7 @@ function plugins:load_packer()
                 -- enhanced text edit
                 use {"editorconfig/editorconfig-vim"}
                 use {"fidian/hexmode", ft = {"bin", "img"}}
+                use {"mg979/vim-visual-multi"}
 
                 -- language specific
                 use {"rust-lang/rust.vim", ft = {"rust"}}
