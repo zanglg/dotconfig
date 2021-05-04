@@ -32,7 +32,8 @@ function core:init()
     require('options'):init()
     require('plugins'):init()
     require('mappings'):init()
-    require('nova'):init()
+
+    vim.cmd('colorscheme nova')
 end
 
 core:init()
