@@ -35,6 +35,7 @@ function plugins:load_packer()
                 }
                 use {
                     "nvim-treesitter/nvim-treesitter",
+                    "p00f/nvim-ts-rainbow",
                     config = self.tsconfig.setup
                 }
 
