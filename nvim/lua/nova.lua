@@ -1,27 +1,83 @@
 local nova = {}
 
+function hsl2rgb(h, s, l)
+    local c = (1 - math.abs(2 * l - 1)) * s
+    local x = c * (1 - math.abs((h / 60) % 2 - 1))
+    local m = l - c / 2
+
+    if (0 <= h and h < 60) then
+        r, g, b = c, x, 0
+    elseif (60 <= h and h < 120) then
+        r, g, b = x, c, 0
+    elseif (120 <= h and h < 180) then
+        r, g, b = 0, c, x
+    elseif (180 <= h and h < 240) then
+        r, g, b = 0, x, c
+    elseif (240 <= h and h < 300) then
+        r, g, b = x, 0, c
+    elseif (300 <= h and h < 360) then
+        r, g, b = c, 0, x
+    end
+
+    r, g, b = ((r + m) * 255), ((g + m) * 255), ((b + m) * 255)
+
+    function round(float)
+        return math.floor(float + .5)
+    end
+
+    sr = string.format("%02x", round(r))
+    sg = string.format("%02x", round(g))
+    sb = string.format("%02x", round(b))
+
+    return "#" .. sr .. sg .. sb
+end
+
 nova.palette = {
-    foreground    = "#364349",
-    inconspicuous = "#6c8693",
-    selection     = "#d3dbde",
-    line          = "#f0f3f4",
-    background    = "#fcfdfd",
+    light = {
+        foreground    = "#364349",
+        inconspicuous = "#6c8693",
+        selection     = "#d3dbde",
+        line          = "#f0f3f4",
+        background    = "#fcfdfd",
 
-    blue          = "#2196f3",
-    green         = "#50a14f",
-    purple        = "#6666cc",
-    red           = "#e45649",
-    pink          = "#d81b60",
-    cyan          = "#2aa1ae",
-    violet        = "#a626a4",
-    yellow        = "#C18401",
-    brown         = "#8d6e63",
+        blue          = "#2196f3",
+        green         = "#50a14f",
+        purple        = "#6666cc",
+        red           = "#e45649",
+        pink          = "#d81b60",
+        cyan          = "#2aa1ae",
+        violet        = "#a626a4",
+        yellow        = "#C18401",
+        brown         = "#8d6e63",
 
-    bold          = "bold",
-    none          = "none",
-    reverse       = "reverse",
-    undercurl     = "undercurl",
-    underline     = "underline"
+        bold          = "bold",
+        none          = "none",
+        reverse       = "reverse",
+        undercurl     = "undercurl",
+        underline     = "underline"
+    },
+    dark = {
+        foreground    = hsl2rgb(220, 0.13, 0.80),
+        inconspicuous = hsl2rgb(220, 0.13, 0.70),
+        selection     = hsl2rgb(220, 0.13, 0.30),
+        line          = hsl2rgb(220, 0.13, 0.22),
+        background    = hsl2rgb(220, 0.13, 0.18),
+
+        red           = hsl2rgb(355, 0.65, 0.65),
+        brown         = hsl2rgb(16, 0.18, 0.47),
+        yellow        = hsl2rgb(39, 0.67, 0.69),
+        green         = hsl2rgb(95, 0.38, 0.62),
+        cyan          = hsl2rgb(187, 0.47, 0.55),
+        blue          = hsl2rgb(207, 0.82, 0.66),
+        violet        = hsl2rgb(240, 0.40, 0.67),
+        purple        = hsl2rgb(286, 0.60, 0.67),
+
+        bold          = "bold",
+        none          = "none",
+        reverse       = "reverse",
+        undercurl     = "undercurl",
+        underline     = "underline"
+    }
 }
 
 function nova.highlight(group, color)
@@ -35,7 +91,7 @@ function nova.highlight(group, color)
 end
 
 function nova.load_syntax()
-    local p = nova.palette
+    local p = nova.palette.dark
 
     local classes = {
         general = {
@@ -123,7 +179,7 @@ function nova.load_syntax()
             TSBoolean = {fg = p.yellow},
             TSCharacter = {fg = p.yellow},
             TSComment = {fg = p.inconspicuous},
-            TSConditional = {fg = p.pink},
+            TSConditional = {fg = p.red},
             TSConstant = {fg = p.yellow},
             TSConstBuiltin = {fg = p.yellow},
             TSConstMacro = {fg = p.yellow},
@@ -143,12 +199,12 @@ function nova.load_syntax()
             TSNumber = {fg = p.yellow},
             TSOperator = {fg = p.cyan},
             TSParameter = {fg = p.brown},
-            TSParameterReference = {fg = p.cyan},
+            TSParameterReference = {fg = p.brown},
             TSProperty = {fg = p.purple},
             TSPunctDelimiter = {fg = p.cyan},
             TSPunctBracket = {fg = p.cyan},
             TSPunctSpecial = {fg = p.cyan},
-            TSRepeat = {fg = p.pink},
+            TSRepeat = {fg = p.red},
             TSString = {fg = p.green},
             TSStringRegex = {fg = p.green},
             TSStringEscape = {fg = p.green},
@@ -195,4 +251,3 @@ function nova.init()
 end
 
 return nova
- 
