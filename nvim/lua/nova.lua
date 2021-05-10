@@ -222,6 +222,15 @@ function nova.load_syntax()
             TSVariable = {fg = p.foreground},
             TSVariableBuiltin = {fg = p.foreground},
         },
+        treesitter_rainbow = {
+            rainbowcol1 = {fg = p.red},
+            rainbowcol2 = {fg = p.yellow},
+            rainbowcol3 = {fg = p.green},
+            rainbowcol4 = {fg = p.cyan},
+            rainbowcol5 = {fg = p.blue},
+            rainbowcol6 = {fg = p.violet},
+            rainbowcol7 = {fg = p.purple},
+        },
         lsp = {
             LspDiagnosticsDefaultHint = {fg = p.inconspicuous},
             LspDiagnosticsDefaultError = {fg = p.inconspicuous},
