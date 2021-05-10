@@ -40,7 +40,7 @@ function options:init()
     w.number        = true                                 -- show line numbers
     o.showcmd       = true                                 -- display command writing
     o.showmode      = true                                 -- display vim mode
-    o.showtabline   = 2                                    -- always show tabline
+    o.showtabline   = 0                                    -- always show tabline
     o.title         = true                                 -- set terminal title
     w.wrap          = true                                 -- turn on line wrapping
     w.signcolumn    = 'yes'                                -- sign column always on
