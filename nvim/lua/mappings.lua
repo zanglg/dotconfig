@@ -16,6 +16,7 @@ function mappings.init()
     map("v", "<leader>c", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", {expr = false, noremap = true})
 
     map("n", "<leader>q", "<cmd>q!<cr>",                                 {expr = false, noremap = true})
+    map("n", "<leader>x", "<cmd>bd<cr>",                                 {expr = false, noremap = true})
 
     map("n", "<leader>N", "<cmd>NvimTreeToggle<cr>",                     {expr = false, noremap = true})
 end
