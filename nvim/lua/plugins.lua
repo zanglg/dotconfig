@@ -41,6 +41,7 @@ function plugins:load_packer()
 
                 -- enhanced text edit
                 use {"editorconfig/editorconfig-vim"}
+                use {"sheerun/vim-polyglot"}
                 use {"fidian/hexmode", ft = {"bin", "img"}}
                 use {"mg979/vim-visual-multi"}
 
