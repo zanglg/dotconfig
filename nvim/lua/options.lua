@@ -8,7 +8,7 @@ function options:init()
 
     -- file editing
     o.backup        = false                                -- no backup file
-    b.swapfile      = false                                -- no swap file
+    o.swapfile      = false                                -- no swap file
     b.undofile      = false                                -- no undo file
     o.encoding      = 'utf-8'                              -- default utf-8
     o.fileformats   = 'unix,mac,dos'                       -- file format
