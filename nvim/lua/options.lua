@@ -19,6 +19,7 @@ function options:init()
     o.backspace     = 'eol,start,indent'                   -- endofline, old char, cross indent
     o.whichwrap     = '<,>,h,l,[,]'                        -- keys can move across line
     o.hidden        = true                                 -- buffer switch without saving
+    b.formatoptions = b.formatoptions .. 'mM'              -- for multibyte character
 
     -- search related
     o.hlsearch      = true                                 -- highlight search results
