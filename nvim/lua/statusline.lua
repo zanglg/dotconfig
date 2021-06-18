@@ -12,7 +12,6 @@ function statusline.setup()
             provider = function()
                 return " "
             end,
-            separator = " ",
             highlight = {colors.blue, colors.background}
         }
     }
