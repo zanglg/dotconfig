@@ -10,8 +10,9 @@ function statusline.setup()
     gls.left[1] = {
         FirstElement = {
             provider = function()
-                return ""
+                return " "
             end,
+            separator = " ",
             highlight = {colors.blue, colors.background}
         }
     }
@@ -40,8 +41,8 @@ function statusline.setup()
                 local vmode = vim.fn.mode()
                 return mode[vmode][1]
             end,
-            icon = "  ",
-            separator = "",
+            icon = " ",
+            separator = "  ",
             separator_highlight = {colors.blue, colors.red},
             highlight = {colors.line, colors.blue, "bold"}
         }
@@ -51,8 +52,8 @@ function statusline.setup()
         GitBranch = {
             provider = "GitBranch",
             condition = condition.check_git_workspace,
-            icon = "  ",
-            separator = "",
+            icon = " ",
+            separator = "  ",
             separator_highlight = {colors.line, colors.red},
             highlight = {colors.line, colors.red, "bold"}
         }
@@ -62,8 +63,8 @@ function statusline.setup()
         DiffAdd = {
             provider = "DiffAdd",
             condition = condition.hide_in_width,
-            icon = "  ",
-            separator = "",
+            icon = ' ',
+            separator = "  ",
             separator_highlight = {colors.line, colors.red},
             highlight = {colors.line, colors.red}
         }
@@ -72,8 +73,8 @@ function statusline.setup()
         DiffModified = {
             provider = "DiffModified",
             condition = condition.hide_in_width,
-            icon = " 柳",
-            separator = "",
+            icon = ' ',
+            separator = "  ",
             separator_highlight = {colors.line, colors.red},
             highlight = {colors.line, colors.red}
         }
@@ -82,14 +83,14 @@ function statusline.setup()
         DiffRemove = {
             provider = "DiffRemove",
             condition = condition.hide_in_width,
-            icon = "  ",
+            icon = ' ',
             highlight = {colors.line, colors.red}
         }
     }
     gls.left[10] = {
         LeftEnd = {
             provider = function()
-                return ""
+                return "  "
             end,
             highlight = {colors.red, colors.line}
         }
@@ -104,7 +105,7 @@ function statusline.setup()
     gls.right[1] = {
         FileFormat = {
             provider = "FileFormat",
-            separator = "",
+            separator = "  ",
             separator_highlight = {colors.red, colors.line},
             highlight = {colors.line, colors.red}
         }
@@ -112,7 +113,7 @@ function statusline.setup()
     gls.right[2] = {
         FileEncode = {
             provider = "FileEncode",
-            separator = "",
+            separator = "  ",
             separator_highlight = {colors.line, colors.red},
             highlight = {colors.line, colors.red}
         }
@@ -120,7 +121,7 @@ function statusline.setup()
     gls.right[3] = {
         LineInfo = {
             provider = "LineColumn",
-            separator = "",
+            separator = "  ",
             separator_highlight = {colors.blue, colors.red},
             highlight = {colors.line, colors.blue}
         }
@@ -128,7 +129,7 @@ function statusline.setup()
     gls.right[4] = {
         PerCent = {
             provider = "LinePercent",
-            separator = "",
+            separator = "  ",
             separator_highlight = {colors.line, colors.blue},
             highlight = {colors.line, colors.blue}
         }
@@ -136,7 +137,7 @@ function statusline.setup()
     gls.right[5] = {
         RightEnd = {
             provider = function()
-                return ""
+                return "  "
             end,
             highlight = {colors.blue, colors.background}
         }
