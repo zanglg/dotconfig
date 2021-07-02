@@ -96,7 +96,12 @@ function statusline.setup()
     }
     gls.mid[1] = {
         FileIcon = {
-            provider = {"FileIcon", "FileName"},
+            provider = {
+                "FileIcon",
+                function()
+                    return vim.fn.expand("%:F")
+                end
+            },
             condition = condition.buffer_not_empty,
             highlight = {colors.foreground, colors.line}
         }
