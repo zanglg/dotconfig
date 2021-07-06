@@ -46,6 +46,7 @@ function options:init()
     o.foldenable    = false                                -- disable session fold
     o.foldmethod    = 'marker'                             -- use markers as to specify folds.
     o.termguicolors = true                                 -- enable 24 bit color support if supported
+    o.guifont       = 'CaskaydiaCove NF:h16'               -- font for gui
 
     -- tab Control
     o.shiftround    = true                                 -- round indent to a multiple of 'shiftwidth'
