@@ -240,6 +240,9 @@ function nova.load_syntax()
             LspDiagnosticsUnderlineWarning = {fg = p.yellow},
             LspDiagnosticsUnderlineInformation = {fg = p.green},
             LspDiagnosticsUnderlineHint = {fg = p.inconspicuous},
+        },
+        telescope = {
+            TelescopeBorder = {fg = p.selection},
         }
     }
 
