@@ -96,6 +96,7 @@ function nova.load_syntax()
     local classes = {
         general = {
             Normal = {fg = p.foreground, bg = p.background},
+            NormalFloat = {fg = p.foreground, bg = p.background},
             ColorColumn = {bg = p.line},
             CursorColumn = {bg = p.line},
             CursorLine = {bg = p.line},
