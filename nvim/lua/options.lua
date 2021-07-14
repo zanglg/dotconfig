@@ -33,8 +33,8 @@ function options:init()
     o.errorbells    = false                                -- disable errors bells
 
     -- appearance
-    o.cursorcolumn  = true                                 -- highlight current column
-    o.cursorline    = true                                 -- highligh current line
+    o.cursorcolumn  = false                                -- highlight current column
+    o.cursorline    = false                                -- highligh current line
     o.laststatus    = 2                                    -- always show the status line - use 2 lines for the status bar
     o.number        = true                                 -- show line numbers
     o.showcmd       = true                                 -- display command writing
