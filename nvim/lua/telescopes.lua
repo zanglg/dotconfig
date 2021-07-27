@@ -26,7 +26,7 @@ function telescope.setup()
                 }
             }
         }
-    },
+    }
 end
 
 return telescope
