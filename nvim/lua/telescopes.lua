@@ -12,6 +12,15 @@ function telescope.setup()
                 "┐",
                 "┘",
                 "└"
+            },
+            vimgrep_arguments = {
+                'rg',
+                '--follow',
+                '--no-heading',
+                '--with-filename',
+                '--line-number',
+                '--column',
+                '--smart-case'
             }
         },
         pickers = {
