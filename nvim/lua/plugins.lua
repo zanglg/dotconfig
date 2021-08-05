@@ -66,7 +66,7 @@ function plugins:load_packer()
                     requires = {
                         {
                             "hrsh7th/vim-vsnip",
-                            config function()
+                            config = function()
                                 vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
                             end
                         },
