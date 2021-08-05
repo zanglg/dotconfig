@@ -64,7 +64,12 @@ function plugins:load_packer()
                     "hrsh7th/nvim-compe",
                     config = self.completion.compe,
                     requires = {
-                        {"hrsh7th/vim-vsnip"},
+                        {
+                            "hrsh7th/vim-vsnip",
+                            config function()
+                                vim.g.vsnip_snippet_dir = vim.fn.stdpath("config") .. "/snippets"
+                            end
+                        },
                         {
                             "onsails/lspkind-nvim",
                             config = function()
