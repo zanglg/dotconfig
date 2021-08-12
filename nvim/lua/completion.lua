@@ -5,7 +5,7 @@ function completion.lspconfig()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
     require "lspconfig".clangd.setup {capabilities = capabilities}
-    require "lspconfig".pyls.setup {capabilities = capabilities}
+    require "lspconfig".pylsp.setup {capabilities = capabilities}
     require "lspconfig".rust_analyzer.setup {capabilities = capabilities}
 end
 
