@@ -6,7 +6,10 @@ function completion.lspconfig()
 
     require "lspconfig".clangd.setup {capabilities = capabilities}
     require "lspconfig".pylsp.setup {capabilities = capabilities}
-    require "lspconfig".rust_analyzer.setup {capabilities = capabilities}
+    require "lspconfig".rust_analyzer.setup {
+        capabilities = capabilities,
+        cmd = {"rustup", "run", "nightly", "rust-analyzer"},
+    }
 end
 
 function completion.compe()
