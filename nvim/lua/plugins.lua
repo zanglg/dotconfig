@@ -90,7 +90,11 @@ function plugins:load_packer()
                         {"nvim-lua/plenary.nvim"}
                     }
                 }
-                use {"kyazdani42/nvim-tree.lua"}
+                use {
+                    "kyazdani42/nvim-tree.lua",
+                    requires = 'kyazdani42/nvim-web-devicons',
+                    config = function() require'nvim-tree'.setup {} end
+                }
 
                 -- utility
                 use {"voldikss/vim-floaterm", cmd = "FloatermNew"}
