@@ -57,4 +57,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("editorconfig/editorconfig-vim")
+
+    -- lsp and completion
+    use ("neovim/nvim-lspconfig")
+    use ("hrsh7th/cmp-nvim-lsp")
+    use ({
+        "hrsh7th/nvim-cmp",
+        config = require("completion")
+    })
+
 end)
