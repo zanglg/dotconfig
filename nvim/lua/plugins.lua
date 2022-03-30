@@ -65,6 +65,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- window manager
+	use({ "mrjones2014/smart-splits.nvim" })
+
 	-- lsp and completion
 	use({ "neovim/nvim-lspconfig" })
 	use({ "L3MON4D3/LuaSnip" })
