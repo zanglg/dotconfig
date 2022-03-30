@@ -14,6 +14,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require("packer").startup(function(use)
+	-- package manager itself
+	use("wbthomason/packer.nvim")
+
 	-- Appearence
 	use({
 		"navarasu/onedark.nvim",
@@ -23,18 +26,20 @@ return require("packer").startup(function(use)
 	})
 	use({
 		"nvim-lualine/lualine.nvim",
+		setup = function()
+			vim.cmd([[packadd nvim-web-devicons]])
+		end,
 		config = function()
 			require("lualine").setup()
 		end,
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 
 	-- Navigation
 	use({
 		"kyazdani42/nvim-tree.lua",
-		requires = {
-			"kyazdani42/nvim-web-devicons",
-		},
+		setup = function()
+			vim.cmd([[packadd nvim-web-devicons]])
+		end,
 		config = function()
 			require("nvim-tree").setup({})
 		end,
@@ -47,7 +52,10 @@ return require("packer").startup(function(use)
 	-- File type specificed
 	use({ "rust-lang/rust.vim", ft = { "rust" } })
 
-	-- Advanced
+	-- Enhanced text edit
+	use({ "editorconfig/editorconfig-vim", event = "BufRead" })
+	use({ "fidian/hexmode", ft = { "bin", "img" } })
+	use({ "nathom/filetype.nvim" })
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
@@ -56,16 +64,20 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
-	use("editorconfig/editorconfig-vim")
 
 	-- lsp and completion
-	use("neovim/nvim-lspconfig")
-	use("L3MON4D3/LuaSnip")
-	use("saadparwaiz1/cmp_luasnip")
-	use("rafamadriz/friendly-snippets")
-	use("hrsh7th/cmp-nvim-lsp")
+	use({ "neovim/nvim-lspconfig" })
+	use({ "L3MON4D3/LuaSnip" })
+	use({ "saadparwaiz1/cmp_luasnip" })
+	use({ "rafamadriz/friendly-snippets" })
+	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({
 		"hrsh7th/nvim-cmp",
 		config = require("completion"),
 	})
+
+	-- dependencies
+	use({ "nvim-lua/plenary.nvim", opt = true })
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", opt = true })
+	use({ "kyazdani42/nvim-web-devicons", opt = true })
 end)
