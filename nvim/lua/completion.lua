@@ -1,14 +1,31 @@
 return function()
-	-- Setup nvim-cmp.
 	local cmp = require("cmp")
+	local nvim_lsp = require("lspconfig")
+	local cmp_nvim_lsp = require("cmp_nvim_lsp")
+	local luasnip = require("luasnip")
 
 	cmp.setup({
-		mapping = {
-            -- Enable config completion by <c-i>
-			["<C-i>"] = cmp.mapping.confirm({ select = true }),
+		snippet = {
+			expand = function(args)
+				luasnip.lsp_expand(args.body)
+			end,
 		},
+
+		mapping = {
+			["<C-i>"] = cmp.mapping.confirm({ select = true }),
+			["<C-j>"] = function(callback)
+				if luasnip.expand_or_jumpable() then
+					luasnip.expand_or_jump()
+				end
+			end,
+			["<C-k>"] = function(callback)
+				luasnip.jump(-1)
+			end,
+		},
+
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },
+			{ name = "luasnip" },
 		}),
 	})
 
@@ -35,4 +52,5 @@ return function()
 	for _, lsp in pairs({ "rust_analyzer" }) do
 		require("lspconfig")[lsp].setup({ on_attach = on_attach, capabilities = capabilities })
 	end
+	require("luasnip/loaders/from_vscode").lazy_load()
 end
