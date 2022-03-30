@@ -46,7 +46,12 @@ return require("packer").startup(function(use)
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		setup = function()
+			vim.cmd([[packadd plenary.nvim]])
+		end,
+		config = function()
+			require("telescope").setup({})
+		end,
 	})
 
 	-- File type specificed

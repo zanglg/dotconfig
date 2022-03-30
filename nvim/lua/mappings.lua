@@ -16,3 +16,13 @@ map("n", "<C-l>", "<cmd>lua require'smart-splits'.move_cursor_right()<cr>", opts
 -- map("n", "<C-Down>", "<cmd>lua require'smart-splits'.resize_down()<cr>", opts)
 -- map("n", "<C-Left>", "<cmd>lua require'smart-splits'.resize_left()<cr>", opts)
 -- map("n", "<C-Right>", "<cmd>lua require'smart-splits'.resize_right()<cr>", opts)
+
+-- Navigate buffers
+map("n", "<S-l>", "<cmd>bnext<CR>", opts)
+map("n", "<S-h>", "<cmd>bprevious<CR>", opts)
+
+-- Telescope
+map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
+map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
+map("n", "<leader>fm", "<cmd>Telescope keymaps<CR>", opts)
