@@ -26,3 +26,6 @@ map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
 map("n", "<leader>fm", "<cmd>Telescope keymaps<CR>", opts)
+
+-- nvim-tree
+map("n", "<leader>N", "<cmd>NvimTreeToggle<CR>", opts)
