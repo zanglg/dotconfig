@@ -156,7 +156,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -210,9 +210,9 @@ colors:
   #
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  # cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
+  cursor:
+    # text: CellBackground
+    cursor: '#FF5C8A'
 
   # Vi mode cursor colors
   #
