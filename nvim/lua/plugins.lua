@@ -34,6 +34,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- UI enhanced
+	use({
+		"stevearc/dressing.nvim",
+		config = function()
+			require("dressing").setup({})
+		end,
+	})
+
 	-- Navigation
 	use({
 		"kyazdani42/nvim-tree.lua",
