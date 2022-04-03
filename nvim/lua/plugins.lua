@@ -72,7 +72,10 @@ return require("packer").startup(function(use)
 	use({ "nathom/filetype.nvim" })
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		requires = { "andymass/vim-matchup" },
+		requires = {
+			"andymass/vim-matchup",
+			"p00f/nvim-ts-rainbow",
+		},
 		config = require("configs.treesitter"),
 	})
 
