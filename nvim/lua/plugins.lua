@@ -70,9 +70,9 @@ return require("packer").startup(function(use)
 	use({ "editorconfig/editorconfig-vim", event = "BufRead" })
 	use({ "fidian/hexmode", ft = { "bin", "img" } })
 	use({ "nathom/filetype.nvim" })
-	use({ "andymass/vim-matchup" })
 	use({
 		"nvim-treesitter/nvim-treesitter",
+		requires = { "andymass/vim-matchup" },
 		config = require("configs.treesitter"),
 	})
 
