@@ -43,6 +43,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Navigation
+	use({ "simrat39/symbols-outline.nvim", cmd = "SymbolsOutline" })
 	use({
 		"kyazdani42/nvim-tree.lua",
 		setup = function()

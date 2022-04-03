@@ -29,3 +29,6 @@ map("n", "<leader>fm", "<cmd>Telescope keymaps<CR>", opts)
 
 -- nvim-tree
 map("n", "<leader>N", "<cmd>NvimTreeToggle<CR>", opts)
+
+-- symbols-outline.nvim
+map("n", "<leader>S", "<cmd>SymbolsOutline<CR>", opts)
