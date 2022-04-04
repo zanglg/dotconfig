@@ -75,6 +75,7 @@ return require("packer").startup(function(use)
 		requires = {
 			"andymass/vim-matchup",
 			"p00f/nvim-ts-rainbow",
+			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		config = require("configs.treesitter"),
 	})
