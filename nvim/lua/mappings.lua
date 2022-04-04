@@ -1,34 +1,25 @@
-local opts = { noremap = true, silent = true }
-local map = vim.api.nvim_set_keymap
+return function()
+	-- Remap "," as map leader
+	vim.g.mapleader = ","
+	vim.g.maplocalleader = ","
 
--- Remap "," as map leader
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+	local wk = require("which-key")
 
--- Better window navigation
-map("n", "<C-h>", "<cmd>lua require'smart-splits'.move_cursor_left()<cr>", opts)
-map("n", "<C-j>", "<cmd>lua require'smart-splits'.move_cursor_down()<cr>", opts)
-map("n", "<C-k>", "<cmd>lua require'smart-splits'.move_cursor_up()<cr>", opts)
-map("n", "<C-l>", "<cmd>lua require'smart-splits'.move_cursor_right()<cr>", opts)
+	wk.register({
+		-- nvim-tree
+		["<leader>N"] = { "<cmd>NvimTreeToggle<CR>", "NvimTree" },
 
--- Resize with arrows -- not work with hhkb
--- map("n", "<C-Up>", "<cmd>lua require'smart-splits'.resize_up()<cr>", opts)
--- map("n", "<C-Down>", "<cmd>lua require'smart-splits'.resize_down()<cr>", opts)
--- map("n", "<C-Left>", "<cmd>lua require'smart-splits'.resize_left()<cr>", opts)
--- map("n", "<C-Right>", "<cmd>lua require'smart-splits'.resize_right()<cr>", opts)
+		-- symbols-outline.nvim
+		["<leader>S"] = { "<cmd>SymbolsOutline<CR>", "SymbolsOutline" },
 
--- Navigate buffers
-map("n", "<S-l>", "<cmd>bnext<CR>", opts)
-map("n", "<S-h>", "<cmd>bprevious<CR>", opts)
+		-- Navigate buffers
+		["<S-l>"] = { "<cmd>bnext<CR>", "Next Buffer" },
+		["<S-h>"] = { "<cmd>bprevious<CR>", "Prev Buffer" },
 
--- Telescope
-map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
-map("n", "<leader>fm", "<cmd>Telescope keymaps<CR>", opts)
-
--- nvim-tree
-map("n", "<leader>N", "<cmd>NvimTreeToggle<CR>", opts)
-
--- symbols-outline.nvim
-map("n", "<leader>S", "<cmd>SymbolsOutline<CR>", opts)
+		-- Better window navigation
+		["<C-h>"] = { "<cmd>lua require'smart-splits'.move_cursor_left()<CR>", "Window Left" },
+		["<C-j>"] = { "<cmd>lua require'smart-splits'.move_cursor_down()<CR>", "Window Down" },
+		["<C-k>"] = { "<cmd>lua require'smart-splits'.move_cursor_up()<CR>", "Window Up" },
+		["<C-l>"] = { "<cmd>lua require'smart-splits'.move_cursor_right()<CR>", "Window Right" },
+	})
+end

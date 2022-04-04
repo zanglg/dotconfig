@@ -79,6 +79,12 @@ return require("packer").startup(function(use)
 		config = require("configs.treesitter"),
 	})
 
+	-- key mapping
+	use({
+		"folke/which-key.nvim",
+		config = require("mappings"),
+	})
+
 	-- window manager
 	use({ "mrjones2014/smart-splits.nvim" })
 
