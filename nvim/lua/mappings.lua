@@ -3,23 +3,19 @@ return function()
 	vim.g.mapleader = ","
 	vim.g.maplocalleader = ","
 
-	local wk = require("which-key")
+	require("which-key").register({
+		---------- Shift Based Mapping keys ----------
+		["<S-l>"] = { "<cmd>bnext<cr>", "next buffer" },
+		["<S-h>"] = { "<cmd>bprevious<cr>", "prev buffer" },
 
-	wk.register({
-		-- nvim-tree
-		["<leader>N"] = { "<cmd>NvimTreeToggle<CR>", "NvimTree" },
+		---------- Ctrl Based Mapping keys ----------
+		["<C-h>"] = { "<cmd>lua require'smart-splits'.move_cursor_left()<cr>", "window left" },
+		["<C-j>"] = { "<cmd>lua require'smart-splits'.move_cursor_down()<cr>", "window down" },
+		["<C-k>"] = { "<cmd>lua require'smart-splits'.move_cursor_up()<cr>", "window up" },
+		["<C-l>"] = { "<cmd>lua require'smart-splits'.move_cursor_right()<cr>", "window right" },
 
-		-- symbols-outline.nvim
-		["<leader>S"] = { "<cmd>SymbolsOutline<CR>", "SymbolsOutline" },
-
-		-- Navigate buffers
-		["<S-l>"] = { "<cmd>bnext<CR>", "Next Buffer" },
-		["<S-h>"] = { "<cmd>bprevious<CR>", "Prev Buffer" },
-
-		-- Better window navigation
-		["<C-h>"] = { "<cmd>lua require'smart-splits'.move_cursor_left()<CR>", "Window Left" },
-		["<C-j>"] = { "<cmd>lua require'smart-splits'.move_cursor_down()<CR>", "Window Down" },
-		["<C-k>"] = { "<cmd>lua require'smart-splits'.move_cursor_up()<CR>", "Window Up" },
-		["<C-l>"] = { "<cmd>lua require'smart-splits'.move_cursor_right()<CR>", "Window Right" },
+		---------- Leader key Mapping keys ----------
+		["<leader>N"] = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
+		["<leader>S"] = { "<cmd>SymbolsOutline<cr>", "SymbolsOutline" },
 	})
 end
