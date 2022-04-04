@@ -89,6 +89,12 @@ return require("packer").startup(function(use)
 	use({ "rafamadriz/friendly-snippets" })
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
+	use({
 		"hrsh7th/nvim-cmp",
 		config = require("configs.completion"),
 	})

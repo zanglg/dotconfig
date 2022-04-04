@@ -4,6 +4,12 @@ return function()
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 	local luasnip = require("luasnip")
 
+	cmp.event:on(
+		"confirm_done",
+		require("nvim-autopairs.completion.cmp").on_confirm_done({
+			map_char = { tex = "" },
+		})
+	)
 	cmp.setup({
 		snippet = {
 			expand = function(args)
