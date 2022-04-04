@@ -79,6 +79,13 @@ return require("packer").startup(function(use)
 		},
 		config = require("configs.treesitter"),
 	})
+	use({
+		"abecodes/tabout.nvim",
+		after = "nvim-cmp",
+		config = function()
+			require("tabout").setup({})
+		end,
+	})
 
 	-- key mapping
 	use({
