@@ -3,6 +3,7 @@ return function()
 		ensure_installed = "maintained",
 		rainbow = { enable = true },
 		matchup = { enable = true },
+		highlight = { enable = true },
 		incremental_selection = {
 			enable = true,
 			keymaps = {
