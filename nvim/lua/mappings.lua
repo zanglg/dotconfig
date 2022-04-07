@@ -29,8 +29,15 @@ return function()
 		["K"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "hover" },
 		["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implemention" },
 		["gr"] = { "<cmd>lua vim.lsp.buf.references()<cr>", "reference" },
+
 		["<leader>f"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "format" },
 		["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
 		["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "code action" },
+
+		-- diagnostic
+		["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "prev diagnostic" },
+		["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
+		["<leader>e"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "float diagnostic" },
+		["<leader>q"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "local diagnostic" },
 	})
 end
