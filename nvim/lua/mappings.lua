@@ -3,13 +3,6 @@ return function()
 	vim.g.mapleader = ","
 	vim.g.maplocalleader = ","
 
-	-- TODO:
-	--     how set insert mode mapping in which-key.nvim ?
-	--     1. skip out the next pairs
-	--     2. remove previous word
-	vim.api.nvim_set_keymap("i", "<C-l>", "<Plug>(TaboutMulti)", { silent = true })
-	vim.api.nvim_set_keymap("i", "<C-h>", "<Esc>caw", { silent = true })
-
 	require("which-key").register({
 		---------- Shift Based Mapping keys ----------
 		["<S-l>"] = { "<cmd>bnext<cr>", "next buffer" },
