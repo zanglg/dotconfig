@@ -25,5 +25,6 @@ return function()
 		["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implemention" },
 		["gr"] = { "<cmd>lua vim.lsp.buf.references()<cr>", "reference" },
 		["<leader>f"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "format" },
+		["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
 	})
 end
