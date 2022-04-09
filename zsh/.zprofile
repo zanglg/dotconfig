@@ -1,5 +1,5 @@
 # homebrew
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles
+export 'HOMEBREW_BOTTLE_DOMAIN=https://mirrors.cloud.tencent.com/homebrew-bottles'
 if [[ `uname` == "Darwin" ]]; then
     if [ ! -f /usr/local/Homebrew/bin/brew ]; then
         eval $(/usr/local/Homebrew/bin/brew shellenv)
@@ -7,8 +7,9 @@ if [[ `uname` == "Darwin" ]]; then
 fi
 
 # rust toolchain
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
+

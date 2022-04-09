@@ -1,5 +1,8 @@
 # neovim
 nvim/plugin
 
+# zsh
+zsh/.zsh_history
+
 # clashx
 clash
