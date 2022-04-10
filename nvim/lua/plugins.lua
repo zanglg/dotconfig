@@ -71,6 +71,12 @@ return require("packer").startup(function(use)
 	use({ "fidian/hexmode", ft = { "bin", "img" } })
 	use({ "nathom/filetype.nvim" })
 	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+	use({
 		"nvim-treesitter/nvim-treesitter",
 		requires = {
 			"andymass/vim-matchup",
