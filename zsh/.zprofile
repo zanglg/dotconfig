@@ -1,5 +1,5 @@
 # homebrew
-export 'HOMEBREW_BOTTLE_DOMAIN=https://mirrors.cloud.tencent.com/homebrew-bottles'
+export 'HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles'
 if [[ `uname` == "Darwin" ]]; then
     if [ ! -f /usr/local/Homebrew/bin/brew ]; then
         eval $(/usr/local/Homebrew/bin/brew shellenv)
