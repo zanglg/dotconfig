@@ -35,6 +35,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- UI enhanced
+	use({ "yamatsum/nvim-cursorline" })
 	use({
 		"stevearc/dressing.nvim",
 		config = function()
