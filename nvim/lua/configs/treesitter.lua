@@ -1,6 +1,6 @@
 return function()
 	require("nvim-treesitter.configs").setup({
-		ensure_installed = { "rust", "c", "cpp", "python", "lua", "md" },
+		ensure_installed = { "rust", "c", "cpp", "python", "lua", "markdown" },
 		rainbow = { enable = true },
 		matchup = { enable = true },
 		highlight = { enable = true },
