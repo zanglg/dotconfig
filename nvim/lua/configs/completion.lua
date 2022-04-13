@@ -38,7 +38,7 @@ return function()
 
 	-- Setup lspconfig.
 	local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-	for _, lsp in pairs({ "rust_analyzer" }) do
+	for _, lsp in pairs({ "rust_analyzer", "clangd" }) do
 		require("lspconfig")[lsp].setup({ capabilities = capabilities })
 	end
 	require("luasnip/loaders/from_vscode").lazy_load()
