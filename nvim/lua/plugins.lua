@@ -63,6 +63,13 @@ return require("packer").startup(function(use)
 			require("telescope").setup({})
 		end,
 	})
+	use({
+		"phaazon/hop.nvim",
+		branch = "v1",
+		config = function()
+			require("hop").setup()
+		end,
+	})
 
 	-- File type specificed
 	use({ "rust-lang/rust.vim", ft = { "rust" } })

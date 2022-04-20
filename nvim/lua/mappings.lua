@@ -37,7 +37,10 @@ return function()
 		-- diagnostic
 		["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "prev diagnostic" },
 		["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
-		["<leader>e"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "float diagnostic" },
+		["<leader>e"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "float diagnostic" },
 		["<leader>q"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "local diagnostic" },
+
+		-- hop/motion
+		["f"] = { "<cmd>HopWord<cr>", "hop word" },
 	})
 end
