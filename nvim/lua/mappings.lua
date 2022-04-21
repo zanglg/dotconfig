@@ -3,7 +3,10 @@ return function()
 	vim.g.mapleader = ","
 	vim.g.maplocalleader = ","
 
-	require("which-key").register({
+	local wk = require("which-key")
+
+	---------- Normal mode key mapping ------------
+	wk.register({
 		---------- buffer switch ----------
 		["<S-l>"] = { "<cmd>bnext<cr>", "next buffer" },
 		["<S-h>"] = { "<cmd>bprevious<cr>", "prev buffer" },
@@ -44,4 +47,10 @@ return function()
 		-- hop/motion
 		["f"] = { "<cmd>HopWord<cr>", "hop word" },
 	})
+
+	---------- Visual mode key mapping ------------
+	wk.register({
+		---------- buffer switch ----------
+		["<leader>cf"] = { "<cmd>lua vim.lsp.buf.range_formatting()<cr>", "format" },
+	}, { mode = "v" })
 end
