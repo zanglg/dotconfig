@@ -23,22 +23,23 @@ return function()
 		["<leader>fg"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "live grep" },
 		["<leader>fb"] = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "find buffers" },
 
-		---------- lsp ----------
+		---------- lsp goto ----------
 		["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
 		["gd"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "definition" },
-		["K"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "hover" },
 		["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implemention" },
 		["gr"] = { "<cmd>lua vim.lsp.buf.references()<cr>", "reference" },
+		["K"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "hover" },
 
-		["<leader>f"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "format" },
-		["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
+		-- code operation
+		["<leader>cf"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "format" },
 		["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "code action" },
+		["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
 
 		-- diagnostic
-		["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "prev diagnostic" },
-		["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
-		["<leader>e"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "float diagnostic" },
-		["<leader>q"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "local diagnostic" },
+		["<leader>dn"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "prev diagnostic" },
+		["<leader>dp"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
+		["<leader>de"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "float diagnostic" },
+		["<leader>dq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "local diagnostic" },
 
 		-- hop/motion
 		["f"] = { "<cmd>HopWord<cr>", "hop word" },

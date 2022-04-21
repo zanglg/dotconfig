@@ -4,6 +4,12 @@ return function()
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 	local luasnip = require("luasnip")
 
+	-- set border for hover signature and diagnostic preview
+	local lsp = vim.lsp
+	lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, { border = "rounded" })
+	lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, { border = "rounded" })
+	vim.diagnostic.config({ float = { border = "rounded" } })
+
 	cmp.event:on(
 		"confirm_done",
 		require("nvim-autopairs.completion.cmp").on_confirm_done({
