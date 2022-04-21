@@ -117,6 +117,10 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		config = require("configs.nullls"),
+	})
+	use({
 		"hrsh7th/nvim-cmp",
 		config = require("configs.completion"),
 	})
