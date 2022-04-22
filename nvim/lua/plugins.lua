@@ -30,7 +30,7 @@ return require("packer").startup(function(use)
 			vim.cmd([[packadd nvim-web-devicons]])
 		end,
 		config = function()
-			require("lualine").setup()
+			require("lualine").setup({ options = { globalstatus = true } })
 		end,
 	})
 

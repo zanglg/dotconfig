@@ -33,7 +33,7 @@ o.errorbells    = false                                -- disable errors bells
 -- appearance
 o.cursorcolumn  = false                                -- highlight current column
 o.cursorline    = false                                -- highligh current line
-o.laststatus    = 2                                    -- always show the status line - use 2 lines for the status bar
+o.laststatus    = 3                                    -- always and ONLY the last window
 o.number        = true                                 -- show line numbers
 o.showcmd       = true                                 -- display command writing
 o.showmode      = true                                 -- display vim mode
