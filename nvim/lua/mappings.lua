@@ -46,6 +46,10 @@ return function()
 
 		-- hop/motion
 		["f"] = { "<cmd>HopWord<cr>", "hop word" },
+
+		-- utilties
+		["mq"] = { "<cmd>q!<cr>", "quit without save" },
+		["mw"] = { "<cmd>wq<cr>", "quit with save" },
 	})
 
 	---------- Visual mode key mapping ------------
