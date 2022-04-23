@@ -50,6 +50,7 @@ return function()
 		-- utilties
 		["mq"] = { "<cmd>q!<cr>", "quit without save" },
 		["mw"] = { "<cmd>wq<cr>", "quit with save" },
+		["md"] = { "<cmd>bdelete<cr>", "delete current buffer" },
 	})
 
 	---------- Visual mode key mapping ------------
