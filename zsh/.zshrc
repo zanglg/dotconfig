@@ -1,6 +1,7 @@
-
+# set nvim as default editor
 if which nvim >/dev/null; then
     export EDITOR='nvim'
+
     alias v='nvim'
     alias vim='nvim'
 fi
@@ -15,3 +16,6 @@ fi
 if which cat >/dev/null; then
     alias cat='bat'
 fi
+
+alias c='clear'
+alias g='git'
