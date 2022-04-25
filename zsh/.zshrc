@@ -2,6 +2,7 @@
 if which nvim >/dev/null; then
     export EDITOR='nvim'
     alias v='nvim'
+    alias vim='nvim'
 fi
 
 if which exa >/dev/null; then

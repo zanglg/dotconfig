@@ -3,6 +3,7 @@ nvim/plugin
 
 # zsh
 zsh/.zsh_history
+zsh/.zsh_sessions
 
 # clashx
 clash

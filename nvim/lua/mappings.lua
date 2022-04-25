@@ -17,15 +17,6 @@ return function()
 		["<C-k>"] = { "<cmd>lua require'smart-splits'.move_cursor_up()<cr>", "window up" },
 		["<C-l>"] = { "<cmd>lua require'smart-splits'.move_cursor_right()<cr>", "window right" },
 
-		---------- sidebar toggle ----------
-		["<leader>N"] = { "<cmd>NvimTreeToggle<cr>", "nvim-tree toggle" },
-		["<leader>S"] = { "<cmd>SymbolsOutline<cr>", "symbols-outline toggle" },
-
-		---------- telescope ----------
-		["<leader>ff"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find files" },
-		["<leader>fg"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "live grep" },
-		["<leader>fb"] = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "find buffers" },
-
 		---------- lsp goto ----------
 		["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
 		["gd"] = { "<cmd>lua vim.lsp.buf.definition()<cr>", "definition" },
@@ -46,6 +37,16 @@ return function()
 
 		-- hop/motion
 		["f"] = { "<cmd>HopWord<cr>", "hop word" },
+
+		---------- telescope ----------
+		["mf"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find files" },
+		["mg"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "live grep" },
+		["mb"] = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "find buffers" },
+		["ms"] = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "find buffers" },
+
+		---------- sidebar toggle ----------
+		["mn"] = { "<cmd>NvimTreeToggle<cr>", "nvim-tree toggle" },
+		["mt"] = { "<cmd>SymbolsOutline<cr>", "symbols-outline toggle" },
 
 		-- utilties
 		["mq"] = { "<cmd>q!<cr>", "quit without save" },
