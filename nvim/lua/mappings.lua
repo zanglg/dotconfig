@@ -30,13 +30,13 @@ return function()
 		["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
 
 		-- diagnostic
-		["<leader>dn"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "prev diagnostic" },
-		["<leader>dp"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
-		["<leader>de"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "float diagnostic" },
-		["<leader>dq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "local diagnostic" },
+		["dn"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "prev diagnostic" },
+		["dp"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
+		["de"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "float diagnostic" },
+		["dq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "local diagnostic" },
 
 		-- hop/motion
-		["f"] = { "<cmd>HopWord<cr>", "hop word" },
+		["s"] = { "<cmd>HopWord<cr>", "hop word" },
 
 		---------- telescope ----------
 		["mf"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find files" },
