@@ -49,7 +49,7 @@ return function()
 		["mf"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find files" },
 		["mg"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "live grep" },
 		["mb"] = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "find buffers" },
-		["ms"] = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "find buffers" },
+		["ms"] = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "find current word" },
 
 		---------- sidebar toggle ----------
 		["mn"] = { "<cmd>NvimTreeToggle<cr>", "nvim-tree" },
