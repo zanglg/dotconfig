@@ -29,6 +29,12 @@ return function()
 		["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "code action" },
 		["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
 
+		-- helper
+		["<leader>q"] = { "<cmd>q!<cr>", "quit without save" },
+		["<leader>W"] = { "<cmd>w<cr>", "quit with save" },
+		["<leader>w"] = { "<cmd>w<cr>", "save" },
+		["<leader>d"] = { "<cmd>bdelete<cr>", "delete current buffer" },
+
 		-- diagnostic
 		["dn"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "prev diagnostic" },
 		["dp"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
@@ -37,6 +43,7 @@ return function()
 
 		-- hop/motion
 		["s"] = { "<cmd>HopWord<cr>", "hop word" },
+		["f"] = { "<cmd>HopChar1<cr>", "hop char" },
 
 		---------- telescope ----------
 		["mf"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find files" },
@@ -45,13 +52,8 @@ return function()
 		["ms"] = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "find buffers" },
 
 		---------- sidebar toggle ----------
-		["mn"] = { "<cmd>NvimTreeToggle<cr>", "nvim-tree toggle" },
-		["mt"] = { "<cmd>SymbolsOutline<cr>", "symbols-outline toggle" },
-
-		-- utilties
-		["mq"] = { "<cmd>q!<cr>", "quit without save" },
-		["mw"] = { "<cmd>wq<cr>", "quit with save" },
-		["md"] = { "<cmd>bdelete<cr>", "delete current buffer" },
+		["mn"] = { "<cmd>NvimTreeToggle<cr>", "nvim-tree" },
+		["mt"] = { "<cmd>SymbolsOutline<cr>", "symbols-outline" },
 	})
 
 	---------- Visual mode key mapping ------------
