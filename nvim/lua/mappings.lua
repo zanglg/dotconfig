@@ -29,12 +29,6 @@ return function()
 		["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "code action" },
 		["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "rename" },
 
-		-- helper
-		["<leader>q"] = { "<cmd>q!<cr>", "quit without save" },
-		["<leader>W"] = { "<cmd>w<cr>", "quit with save" },
-		["<leader>w"] = { "<cmd>w<cr>", "save" },
-		["<leader>d"] = { "<cmd>bdelete<cr>", "delete current buffer" },
-
 		-- diagnostic
 		["dn"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "prev diagnostic" },
 		["dp"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "next diagnostic" },
@@ -54,6 +48,12 @@ return function()
 		---------- sidebar toggle ----------
 		["mn"] = { "<cmd>NvimTreeToggle<cr>", "nvim-tree" },
 		["mt"] = { "<cmd>SymbolsOutline<cr>", "symbols-outline" },
+
+		-- helper
+		["mq"] = { "<cmd>q!<cr>", "quit without save" },
+		["mW"] = { "<cmd>w<cr>", "quit with save" },
+		["mw"] = { "<cmd>w<cr>", "save" },
+		["md"] = { "<cmd>bdelete<cr>", "delete current buffer" },
 	})
 
 	---------- Visual mode key mapping ------------
