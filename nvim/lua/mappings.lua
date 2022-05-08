@@ -61,4 +61,13 @@ return function()
 		---------- buffer switch ----------
 		["<leader>cf"] = { "<cmd>lua vim.lsp.buf.range_formatting()<cr>", "format" },
 	}, { mode = "v" })
+
+	---------- Insert mode key mapping ------------
+	wk.register({
+		---------- easy move in insert mode ----------
+		["<C-h>"] = { "<Left>", "left in insert" },
+		["<C-j>"] = { "<Down>", "down in insert" },
+		["<C-l>"] = { "<Right>", "right in insert" },
+		["<C-k>"] = { "<Up>", "up in insert" },
+	}, { mode = "i" })
 end
