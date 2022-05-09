@@ -62,6 +62,7 @@ return require("packer").startup({
 			config = function()
 				require("nvim-tree").setup({})
 			end,
+			cmd = "NvimTreeToggle",
 		})
 		use({
 			"nvim-telescope/telescope.nvim",
