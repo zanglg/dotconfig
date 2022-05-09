@@ -57,6 +57,11 @@ return function()
 		["mW"] = { "<cmd>wq<cr>", "quit with save" },
 		["mw"] = { "<cmd>w<cr>", "save" },
 		["md"] = { "<cmd>bdelete<cr>", "delete current buffer" },
+
+		-- rust
+		["mrr"] = { "<cmd>RustRun<cr>", "cargo run" },
+		["mrt"] = { "<cmd>RustTest<cr>", "cargo test current" },
+		["mrT"] = { "<cmd>RustTest!<cr>", "cargo test all" },
 	})
 
 	---------- visual mode key mapping ------------
