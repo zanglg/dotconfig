@@ -34,7 +34,7 @@ return require("packer").startup({
 				vim.cmd([[packadd nvim-web-devicons]])
 			end,
 			config = function()
-				require("lualine").setup({ options = { globalstatus = true, theme = "onedark" } })
+				require("lualine").setup({ options = { globalstatus = true } })
 			end,
 		})
 
@@ -132,6 +132,15 @@ return require("packer").startup({
 		use({
 			"hrsh7th/nvim-cmp",
 			config = require("configs.completion"),
+		})
+
+		-- terminal manager
+		use({
+			"akinsho/toggleterm.nvim",
+			config = function()
+				require("toggleterm").setup({})
+			end,
+			cmd = "ToggleTerm",
 		})
 
 		-- dependencies
