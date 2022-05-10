@@ -47,7 +47,7 @@ return function()
 
 		---------- sidebar toggle ----------
 		["mn"] = { "<cmd>NvimTreeToggle<cr>", "nvim-tree" },
-		["mt"] = { "<cmd>SymbolsOutline<cr>", "symbols-outline" },
+		["ms"] = { "<cmd>SymbolsOutline<cr>", "symbols-outline" },
 
 		---------- terminal manager ----------
 		["mt"] = { '<cmd>exe v:count1 . "ToggleTerm"<cr>', "terminal" },
