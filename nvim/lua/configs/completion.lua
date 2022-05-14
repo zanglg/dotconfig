@@ -101,9 +101,25 @@ return function()
 	})
 
 	-- Setup lspconfig.
+	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 	local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 	for _, lsp in pairs({ "rust_analyzer", "clangd" }) do
-		require("lspconfig")[lsp].setup({ capabilities = capabilities })
+		require("lspconfig")[lsp].setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				-- auto format on save for lsp based client buffer
+				if client.supports_method("textDocument/formatting") then
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.formatting_sync()
+						end,
+					})
+				end
+			end,
+		})
 	end
 	require("luasnip/loaders/from_vscode").lazy_load()
 end
