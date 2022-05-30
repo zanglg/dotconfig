@@ -135,6 +135,15 @@ return require("packer").startup({
 			config = require("configs.completion"),
 		})
 
+		-- git operations
+		use({
+			"sindrets/diffview.nvim",
+			setup = function()
+				vim.cmd([[packadd plenary.nvim]])
+			end,
+			cmd = "DiffviewOpen",
+		})
+
 		-- terminal manager
 		use({
 			"akinsho/toggleterm.nvim",
