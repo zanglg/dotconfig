@@ -121,5 +121,12 @@ return function()
 			end,
 		})
 	end
-	require("luasnip/loaders/from_vscode").lazy_load()
+
+	-- Load own custom vscode style snippets
+	require("luasnip.loaders.from_vscode").lazy_load({
+		paths = vim.fn.stdpath("config") .. "/snippets",
+	})
+
+	-- To use existing vs-code style snippets like rafamadriz/friendly-snippets
+	require("luasnip.loaders.from_vscode").lazy_load()
 end

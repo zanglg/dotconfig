@@ -1,0 +1,15 @@
+{
+  "name": "snippets",
+  "author": "zanglg",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "all",
+        "path": "./all.json"
+      }
+    ]
+  }
+}
