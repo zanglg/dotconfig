@@ -23,9 +23,15 @@ return require("packer").startup({
 
 		-- Appearence
 		use({
-			"navarasu/onedark.nvim",
+			"catppuccin/nvim",
+			as = "catppuccin",
 			config = function()
-				require("onedark").load()
+				-- latte, frappe, macchiato, mocha
+				vim.g.catppuccin_flavour = "macchiato"
+				require("catppuccin").setup()
+
+				-- load colorscheme
+				vim.cmd([[colorscheme catppuccin]])
 			end,
 		})
 		use({
