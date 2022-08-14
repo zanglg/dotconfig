@@ -68,6 +68,9 @@ return function()
 	wk.register({
 		---------- buffer switch ----------
 		["<leader>cf"] = { "<cmd>lua vim.lsp.buf.range_formatting()<cr>", "format" },
+		["aa"] = { "<cmd>lua require'align'.align_to_char(1, true)<cr>", "align to char" },
+		["aw"] = { "<cmd>lua require'align'.align_to_string(false, true, true)<cr>", "align to string" },
+		["ar"] = { "<cmd>lua require'align'.align_to_string(true, true, true)<cr>", "align to string(pattern)" },
 	}, { mode = "v" })
 
 	---------- insert mode key mapping ------------

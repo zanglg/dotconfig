@@ -109,6 +109,7 @@ return require("packer").startup({
 			},
 			config = require("configs.treesitter"),
 		})
+		use({ "Vonr/align.nvim" })
 
 		-- key mapping
 		use({
