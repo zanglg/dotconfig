@@ -23,6 +23,12 @@ return require("packer").startup({
 
 		-- Appearence
 		use({
+			"zanglg/nova.nvim",
+			config = function()
+				require("nova").setup()
+			end,
+		})
+		use({
 			"catppuccin/nvim",
 			as = "catppuccin",
 			config = function()
