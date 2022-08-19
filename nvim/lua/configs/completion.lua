@@ -103,7 +103,7 @@ return function()
 	-- Setup lspconfig.
 	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 	local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-	for _, lsp in pairs({ "rust_analyzer", "clangd" }) do
+	for _, lsp in pairs({ "rust_analyzer", "clangd", "marksman" }) do
 		require("lspconfig")[lsp].setup({
 			capabilities = capabilities,
 			on_attach = function(client, bufnr)
