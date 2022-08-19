@@ -112,6 +112,7 @@ return require("packer").startup({
 				"p00f/nvim-ts-rainbow",
 				"nvim-treesitter/nvim-treesitter-textobjects",
 			},
+			run = ":TSUpdate",
 			config = require("configs.treesitter"),
 		})
 		use({ "Vonr/align.nvim" })
