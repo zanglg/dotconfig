@@ -53,7 +53,7 @@ return function()
 		["mt"] = { '<cmd>exe v:count1 . "ToggleTerm"<cr>', "terminal" },
 
 		-- helper
-		["mq"] = { "<cmd>q!<cr>", "quit without save" },
+		["mq"] = { "<cmd>quitall!<cr>", "quit all without save" },
 		["mW"] = { "<cmd>wq<cr>", "quit with save" },
 		["mw"] = { "<cmd>w<cr>", "save" },
 		["md"] = { "<cmd>bdelete<cr>", "delete current buffer" },
