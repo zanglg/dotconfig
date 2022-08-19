@@ -116,6 +116,12 @@ return require("packer").startup({
 			config = require("configs.treesitter"),
 		})
 		use({ "Vonr/align.nvim" })
+		use({
+			"keaising/im-select.nvim",
+			config = function()
+				require("im_select").setup({})
+			end,
+		})
 
 		-- key mapping
 		use({
