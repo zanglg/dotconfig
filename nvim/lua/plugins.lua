@@ -99,7 +99,6 @@ return require("packer").startup({
 		-- Enhanced text edit
 		use({ "editorconfig/editorconfig-vim", event = "BufRead" })
 		use({ "fidian/hexmode", ft = { "bin", "img" } })
-		use({ "nathom/filetype.nvim" })
 		use({
 			"numToStr/Comment.nvim",
 			config = function()
