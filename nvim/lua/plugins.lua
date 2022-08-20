@@ -26,7 +26,11 @@ return require("packer").startup({
 			"zanglg/nova.nvim",
 			config = function()
 				require("nova").setup()
+
+				-- load colorscheme
+				vim.cmd([[colorscheme nova]])
 			end,
+			branch = "dev",
 		})
 		use({
 			"catppuccin/nvim",
@@ -35,9 +39,6 @@ return require("packer").startup({
 				-- latte, frappe, macchiato, mocha
 				vim.g.catppuccin_flavour = "macchiato"
 				require("catppuccin").setup()
-
-				-- load colorscheme
-				vim.cmd([[colorscheme catppuccin]])
 			end,
 		})
 		use({
@@ -132,12 +133,22 @@ return require("packer").startup({
 		-- window manager
 		use({ "mrjones2014/smart-splits.nvim" })
 
-		-- lsp and completion
-		use({ "neovim/nvim-lspconfig" })
+		-- Language Server Protocol
+		use({
+			"neovim/nvim-lspconfig",
+			config = require("configs.lsp").lsp,
+		})
+		use({
+			"jose-elias-alvarez/null-ls.nvim",
+			config = require("configs.lsp").nulllsp,
+		})
+
+		-- auto completion
 		use({ "L3MON4D3/LuaSnip" })
 		use({ "saadparwaiz1/cmp_luasnip" })
 		use({ "rafamadriz/friendly-snippets" })
 		use({ "hrsh7th/cmp-path" })
+		use({ "hrsh7th/cmp-buffer" })
 		use({ "hrsh7th/cmp-nvim-lsp" })
 		use({
 			"windwp/nvim-autopairs",
@@ -146,12 +157,8 @@ return require("packer").startup({
 			end,
 		})
 		use({
-			"jose-elias-alvarez/null-ls.nvim",
-			config = require("configs.nullls"),
-		})
-		use({
 			"hrsh7th/nvim-cmp",
-			config = require("configs.completion"),
+			config = require("configs.nvim-cmp"),
 		})
 
 		-- git operations

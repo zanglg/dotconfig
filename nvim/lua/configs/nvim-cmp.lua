@@ -1,14 +1,6 @@
 return function()
 	local cmp = require("cmp")
-	local nvim_lsp = require("lspconfig")
-	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 	local luasnip = require("luasnip")
-
-	-- set border for hover signature and diagnostic preview
-	local lsp = vim.lsp
-	lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, { border = "rounded" })
-	lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, { border = "rounded" })
-	vim.diagnostic.config({ float = { border = "rounded" } })
 
 	cmp.event:on(
 		"confirm_done",
@@ -85,6 +77,7 @@ return function()
 			{ name = "nvim_lsp" },
 			{ name = "luasnip" },
 			{ name = "path" },
+			{ name = "buffer" },
 		}),
 
 		formatting = {
@@ -99,28 +92,6 @@ return function()
 			end,
 		},
 	})
-
-	-- Setup lspconfig.
-	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-	local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-	for _, lsp in pairs({ "rust_analyzer", "clangd", "marksman" }) do
-		require("lspconfig")[lsp].setup({
-			capabilities = capabilities,
-			on_attach = function(client, bufnr)
-				-- auto format on save for lsp based client buffer
-				if client.supports_method("textDocument/formatting") then
-					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = augroup,
-						buffer = bufnr,
-						callback = function()
-							vim.lsp.buf.formatting_sync()
-						end,
-					})
-				end
-			end,
-		})
-	end
 
 	-- Load own custom vscode style snippets
 	require("luasnip.loaders.from_vscode").lazy_load({
