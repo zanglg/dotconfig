@@ -25,12 +25,12 @@ return require("packer").startup({
 		use({
 			"zanglg/nova.nvim",
 			config = function()
+				vim.g.background = "light"
 				require("nova").setup()
 
 				-- load colorscheme
 				vim.cmd([[colorscheme nova]])
 			end,
-			branch = "dev",
 		})
 		use({
 			"catppuccin/nvim",
