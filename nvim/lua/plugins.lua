@@ -25,8 +25,7 @@ return require("packer").startup({
 		use({
 			"zanglg/nova.nvim",
 			config = function()
-				vim.g.background = "light"
-				require("nova").setup()
+				require("nova").setup({ background = "light" })
 
 				-- load colorscheme
 				vim.cmd([[colorscheme nova]])
