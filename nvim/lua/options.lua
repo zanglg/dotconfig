@@ -46,8 +46,7 @@ o.signcolumn    = 'yes'                                -- sign column always on
 o.foldenable    = false                                -- disable session fold
 o.foldmethod    = 'marker'                             -- use markers as to specify folds.
 o.termguicolors = true                                 -- enable 24 bit color support if supported
-o.guifont       = 'CaskaydiaCove NF:h16'               -- font for gui
-o.guicursor     = ''
+o.guicursor     = ''                                   -- never override terminal's cursor shape
 
 -- tab Control
 o.shiftround    = true                                 -- round indent to a multiple of 'shiftwidth'
