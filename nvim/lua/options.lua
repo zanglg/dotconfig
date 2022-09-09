@@ -1,3 +1,5 @@
+-- stylua: ignore start
+
 -- short command and function
 local g         = vim.g
 local o         = vim.opt
@@ -74,3 +76,5 @@ g.loaded_netrw             = 1
 g.loaded_netrwPlugin       = 1
 g.loaded_netrwSettings     = 1
 g.loaded_netrwFileHandlers = 1
+
+-- stylua: ignore end
