@@ -19,7 +19,7 @@ selection:
 
 cursor:
   style:
-    shape: Underline
+    shape: Block
 
 mouse_bindings:
   - { mouse: Right, action: Paste }
