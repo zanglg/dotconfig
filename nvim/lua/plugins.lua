@@ -29,7 +29,7 @@ return require("packer").startup({
             "zanglg/nova.nvim",
             config = function()
                 require("nova").setup({
-                    background = "light",
+                    background = "dark",
                 })
 
                 -- load colorscheme
