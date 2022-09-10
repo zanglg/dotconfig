@@ -7,7 +7,7 @@ return function()
 
     wk.setup({
         window = {
-            border = "double",
+            border = require("options").border,
         },
     })
 

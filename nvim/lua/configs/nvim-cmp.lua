@@ -39,7 +39,12 @@ return function()
         TypeParameter = "",
     }
 
-    local winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual"
+    local config = {
+        border = require("options").border,
+        scrollbar = "",
+        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual",
+    }
+
     cmp.setup({
         snippet = {
             expand = function(args)
@@ -48,12 +53,8 @@ return function()
         },
 
         window = {
-            completion = cmp.config.window.bordered({
-                winhighlight = winhighlight,
-            }),
-            documentation = cmp.config.window.bordered({
-                winhighlight = winhighlight,
-            }),
+            completion = cmp.config.window.bordered(config),
+            documentation = cmp.config.window.bordered(config),
         },
 
         mapping = cmp.mapping.preset.insert({

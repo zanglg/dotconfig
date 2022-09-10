@@ -2,18 +2,13 @@ local M = {}
 
 M.lsp = function()
     -- set border for hover signature and diagnostic preview
-    local lsp = vim.lsp
-    lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, {
-        border = "rounded",
-    })
-    lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, {
-        border = "rounded",
-    })
-    vim.diagnostic.config({
-        float = {
-            border = "rounded",
-        },
-    })
+    vim.lsp.handlers["textDocument/hover"] =
+        vim.lsp.with(vim.lsp.handlers.hover, { border = require("options").border })
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = require("options").border })
+
+    -- set border for vim diagnostic float window
+    vim.diagnostic.config({ float = { border = require("options").border } })
 
     -- Setup lspconfig.
     local capabilities =

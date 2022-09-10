@@ -1,4 +1,5 @@
 require("impatient")
 require("options")
+require("settings")
 require("plugins")
 require("mappings")

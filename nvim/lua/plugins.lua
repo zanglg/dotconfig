@@ -51,9 +51,7 @@ return require("packer").startup({
         -- UI enhanced
         use({
             "stevearc/dressing.nvim",
-            config = function()
-                require("dressing").setup({})
-            end,
+            config = require("configs.dressing"),
         })
 
         -- Navigation
@@ -76,9 +74,7 @@ return require("packer").startup({
             setup = function()
                 vim.cmd([[packadd plenary.nvim]])
             end,
-            config = function()
-                require("telescope").setup({})
-            end,
+            config = require("configs.telescope"),
         })
         use({
             "phaazon/hop.nvim",
