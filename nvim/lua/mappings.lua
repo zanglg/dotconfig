@@ -5,6 +5,12 @@ return function()
 
     local wk = require("which-key")
 
+    wk.setup({
+        window = {
+            border = "double",
+        },
+    })
+
     ---------- normal mode key mapping ------------
     wk.register({
         ---------- buffer switch ----------
