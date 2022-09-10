@@ -50,12 +50,6 @@ return require("packer").startup({
 
         -- UI enhanced
         use({
-            "yamatsum/nvim-cursorline",
-            config = function()
-                require("nvim-cursorline").setup({})
-            end,
-        })
-        use({
             "stevearc/dressing.nvim",
             config = function()
                 require("dressing").setup({})
