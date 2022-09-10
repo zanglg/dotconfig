@@ -22,6 +22,7 @@ return require("packer").startup({
     function(use)
         -- package manager itself
         use("wbthomason/packer.nvim")
+        use("lewis6991/impatient.nvim")
 
         -- Appearence
         use({
