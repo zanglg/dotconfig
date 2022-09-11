@@ -84,12 +84,6 @@ return require("packer").startup({
             end,
         })
 
-        -- File type specificed
-        use({
-            "rust-lang/rust.vim",
-            ft = { "rust" },
-        })
-
         -- Enhanced text edit
         use({
             "editorconfig/editorconfig-vim",
