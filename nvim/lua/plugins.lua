@@ -111,6 +111,10 @@ return require("packer").startup({
                 "andymass/vim-matchup",
                 "p00f/nvim-ts-rainbow",
                 "nvim-treesitter/nvim-treesitter-textobjects",
+                {
+                    "nvim-treesitter/playground",
+                    cmd = "TSHighlightCapturesUnderCursor",
+                },
             },
             run = ":TSUpdate",
             config = require("configs.treesitter"),
