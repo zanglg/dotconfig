@@ -53,6 +53,15 @@ return require("packer").startup({
             "stevearc/dressing.nvim",
             config = require("configs.dressing"),
         })
+        use({
+            "folke/todo-comments.nvim",
+            setup = function()
+                vim.cmd([[packadd plenary.nvim]])
+            end,
+            config = function()
+                require("todo-comments").setup()
+            end,
+        })
 
         -- Navigation
         use({
