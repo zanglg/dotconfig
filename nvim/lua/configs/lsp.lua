@@ -18,6 +18,23 @@ M.lsp = function()
             capabilities = capabilities,
         })
     end
+    require("lspconfig").sumneko_lua.setup({
+        capabilities = capabilities,
+        settings = {
+            Lua = {
+                runtime = { version = "LuaJIT" },
+                diagnostics = { globals = { "vim" } },
+                workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+                telemetry = { enable = false },
+                format = { enable = false },
+            },
+        },
+        on_attach = function(client, _)
+            -- Disable formatting capability so that null-ls handles it.
+            client.resolved_capabilities.document_formatting = false
+            client.resolved_capabilities.document_range_formatting = false
+        end,
+    })
 end
 
 M.nulllsp = function()
