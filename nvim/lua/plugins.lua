@@ -26,7 +26,12 @@ return require("packer").startup({
     function(use)
         -- package manager itself
         use("wbthomason/packer.nvim")
-        use("lewis6991/impatient.nvim")
+        use({
+            "lewis6991/impatient.nvim",
+            config = function()
+                require("impatient").enable_profile()
+            end,
+        })
 
         -- Appearence
         use({
