@@ -1,13 +1,13 @@
 return function()
     require("dressing").setup({
         input = {
-            border = require("options").border,
+            border = "single",
             winblend = 0,
         },
         select = {
             backend = { "builtin" },
             builtin = {
-                border = require("options").border,
+                border = "single",
                 winblend = 10,
             },
         },

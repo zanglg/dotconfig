@@ -1,4 +1,6 @@
-return function()
+local M = {}
+
+M.setup = function()
     -- remap "," as map leader
     vim.g.mapleader = ","
     vim.g.maplocalleader = ","
@@ -7,7 +9,7 @@ return function()
 
     wk.setup({
         window = {
-            border = require("options").border,
+            border = "single",
         },
     })
 
@@ -103,3 +105,5 @@ return function()
         ["<esc>"] = { t("<c-\\><c-n>"), "escape (terminal)" },
     }, { mode = "t" })
 end
+
+return M
