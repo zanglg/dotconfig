@@ -16,7 +16,11 @@ end
 return require("packer").startup({
     config = {
         display = {
-            open_fn = require("packer.util").float,
+            open_fn = function()
+                return require("packer.util").float({
+                    border = "single",
+                })
+            end,
         },
     },
     function(use)
@@ -29,11 +33,12 @@ return require("packer").startup({
             "zanglg/nova.nvim",
             config = function()
                 require("nova").setup({
+                    theme = "nova",
                     background = "dark",
                 })
 
                 -- load colorscheme
-                vim.cmd([[colorscheme nova]])
+                require("nova").load()
             end,
         })
         use({
