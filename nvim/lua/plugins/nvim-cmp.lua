@@ -109,6 +109,9 @@ return function()
                     nvim_lsp = "[LSP]",
                     luasnip = "[LuaSnip]",
                     path = "[Path]",
+                    buffer = "[Buffer]",
+                    nvim_lsp_signature_help = "[LSPSig]",
+                    dictionary = "[Dict]",
                 })[entry.source.name]
                 return vim_item
             end,
