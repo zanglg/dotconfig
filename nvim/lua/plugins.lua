@@ -145,6 +145,16 @@ local packages = function(use)
     use({ "hrsh7th/cmp-nvim-lsp" })
     use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
     use({
+        "uga-rosa/cmp-dictionary",
+        config = function()
+            require("cmp_dictionary").setup({
+                dic = {
+                    ["*"] = { "/usr/share/dict/words" },
+                },
+            })
+        end,
+    })
+    use({
         "windwp/nvim-autopairs",
         config = function()
             require("nvim-autopairs").setup({})
