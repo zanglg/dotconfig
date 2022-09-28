@@ -172,6 +172,12 @@ local packages = function(use)
         end,
         cmd = "DiffviewOpen",
     })
+    use({
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns").setup()
+        end,
+    })
 
     -- terminal manager
     use({

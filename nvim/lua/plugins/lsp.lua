@@ -43,6 +43,7 @@ M.nulllsp = function()
             require("null-ls").builtins.formatting.taplo,
             require("null-ls").builtins.formatting.shfmt,
             require("null-ls").builtins.formatting.asmfmt,
+            require("null-ls").builtins.code_actions.gitsigns,
         },
         on_attach = function(client, bufnr)
             if client.supports_method("textDocument/formatting") then
