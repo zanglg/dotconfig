@@ -49,6 +49,9 @@ local packages = function(use)
     -- Navigation
     use({
         "simrat39/symbols-outline.nvim",
+        config = function()
+            require("symbols-outline").setup()
+        end,
         cmd = "SymbolsOutline",
     })
     use({
