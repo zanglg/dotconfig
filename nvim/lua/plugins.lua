@@ -28,11 +28,7 @@ local packages = function(use)
         setup = function()
             vim.cmd([[packadd nvim-web-devicons]])
         end,
-        config = function()
-            require("lualine").setup({
-                options = { globalstatus = true },
-            })
-        end,
+        config = require("plugins.lualine"),
     })
 
     -- UI enhanced
