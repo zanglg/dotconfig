@@ -207,6 +207,10 @@ local packages = function(use)
     })
 end
 
+local config = {
+    display = { open_fn = require("packer.util").float },
+}
+
 M.setup = function()
     local fn = vim.fn
     local bootstrap = false
@@ -223,7 +227,7 @@ M.setup = function()
         vim.cmd([[packadd packer.nvim]])
     end
 
-    require("packer").startup(packages)
+    require("packer").startup(packages, config)
 
     if bootstrap then
         require("packer").sync()
