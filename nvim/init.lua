@@ -6,3 +6,6 @@ require("plugins").setup()
 
 -- configs of builtin feature of neovim
 require("configs").setup()
+
+-- load custom autocmds
+require("autocmds").setup()
