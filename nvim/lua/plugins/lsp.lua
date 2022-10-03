@@ -28,8 +28,8 @@ M.lsp = function()
         },
         on_attach = function(client, _)
             -- Disable formatting capability so that null-ls handles it.
-            client.resolved_capabilities.document_formatting = false
-            client.resolved_capabilities.document_range_formatting = false
+            client.server_capabilities.document_formatting = false
+            client.server_capabilities.document_range_formatting = false
         end,
     })
 end
