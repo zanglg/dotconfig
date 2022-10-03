@@ -17,6 +17,7 @@ M.setup = function()
         whichwrap = "<,>,h,l,[,]", -- keys can move across line
         hidden = true, -- buffer switch without saving
         formatoptions = "tcqmMj", -- wrap for multiple byte characters
+        mouse = "", -- disable mouse
 
         -- search related
         hlsearch = true, -- highlight search results
