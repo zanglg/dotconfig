@@ -25,10 +25,10 @@ local packages = function(use)
     })
     use({
         "nvim-lualine/lualine.nvim",
-        setup = function()
-            vim.cmd([[packadd nvim-web-devicons]])
-        end,
         config = require("plugins.lualine"),
+        requires = {
+            { "kyazdani42/nvim-web-devicons" },
+        },
     })
 
     -- UI enhanced
@@ -38,9 +38,9 @@ local packages = function(use)
     })
     use({
         "folke/todo-comments.nvim",
-        setup = function()
-            vim.cmd([[packadd plenary.nvim]])
-        end,
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+        },
         config = function()
             require("todo-comments").setup()
         end,
@@ -56,9 +56,9 @@ local packages = function(use)
     })
     use({
         "kyazdani42/nvim-tree.lua",
-        setup = function()
-            vim.cmd([[packadd nvim-web-devicons]])
-        end,
+        requires = {
+            { "kyazdani42/nvim-web-devicons" },
+        },
         config = function()
             require("nvim-tree").setup({})
         end,
@@ -66,10 +66,11 @@ local packages = function(use)
     })
     use({
         "nvim-telescope/telescope.nvim",
-        setup = function()
-            vim.cmd([[packadd plenary.nvim]])
-        end,
         config = require("plugins.telescope"),
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+        },
     })
     use({
         "phaazon/hop.nvim",
@@ -166,9 +167,9 @@ local packages = function(use)
     -- git operations
     use({
         "sindrets/diffview.nvim",
-        setup = function()
-            vim.cmd([[packadd plenary.nvim]])
-        end,
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+        },
         cmd = "DiffviewOpen",
     })
     use({
@@ -179,21 +180,6 @@ local packages = function(use)
                 current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>, <abbrev_sha> - <summary>",
             })
         end,
-    })
-
-    -- dependencies
-    use({
-        "nvim-lua/plenary.nvim",
-        opt = true,
-    })
-    use({
-        "nvim-telescope/telescope-fzf-native.nvim",
-        run = "make",
-        opt = true,
-    })
-    use({
-        "kyazdani42/nvim-web-devicons",
-        opt = true,
     })
 end
 
