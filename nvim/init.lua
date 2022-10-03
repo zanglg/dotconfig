@@ -6,6 +6,3 @@ require("plugins").setup()
 
 -- configs of builtin feature of neovim
 require("configs").setup()
-
--- custom key mappings
-require("mappings").setup()

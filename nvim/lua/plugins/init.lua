@@ -108,7 +108,6 @@ local packages = function(use)
         run = ":TSUpdate",
         config = require("plugins.treesitter"),
     })
-    use({ "Vonr/align.nvim" })
     use({
         "keaising/im-select.nvim",
         config = function()
@@ -119,7 +118,7 @@ local packages = function(use)
     -- key mapping
     use({
         "folke/which-key.nvim",
-        config = require("mappings").setup,
+        config = require("plugins.which-key").setup,
     })
 
     -- window manager
@@ -180,15 +179,6 @@ local packages = function(use)
                 current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d>, <abbrev_sha> - <summary>",
             })
         end,
-    })
-
-    -- terminal manager
-    use({
-        "akinsho/toggleterm.nvim",
-        config = function()
-            require("toggleterm").setup({})
-        end,
-        cmd = "ToggleTerm",
     })
 
     -- dependencies
