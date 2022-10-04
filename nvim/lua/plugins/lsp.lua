@@ -29,8 +29,6 @@ M.lsp = function()
 end
 
 M.nulllsp = function()
-    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
     require("null-ls").setup({
         sources = {
             require("null-ls").builtins.formatting.stylua,
