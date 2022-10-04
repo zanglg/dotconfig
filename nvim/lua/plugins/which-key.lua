@@ -92,7 +92,9 @@ M.setup = function()
             ---------- hunk ----------
             n = { require("gitsigns").next_hunk, "next hunk" },
             p = { require("gitsigns").prev_hunk, "prev hunk" },
-            s = { require("gitsigns").preview_hunk, "show hunk" },
+
+            K = { require("gitsigns").preview_hunk, "preview hunk" },
+            s = { require("gitsigns").select_hunk, "select hunk" },
         },
 
         ---------- toggle ----------
