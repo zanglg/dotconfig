@@ -61,7 +61,8 @@ M.setup = function()
         c = {
             name = "code",
 
-            f = { vim.lsp.buf.formatting, "document format" },
+            f = { require("customs").document_format, "document format" },
+            c = { require("customs").hunk_format, "hunk format" },
             a = { vim.lsp.buf.code_action, "code action" },
             r = { vim.lsp.buf.rename, "rename" },
         },
@@ -102,6 +103,15 @@ M.setup = function()
             s = { "<cmd>SymbolsOutline<cr>", "symbols-outline" },
         },
     }, { mode = "n", prefix = "<leader>" })
+
+    wk.register({
+        ---------- code ----------
+        c = {
+            name = "code",
+
+            f = { require("customs").document_format, "range format" },
+        },
+    }, { mode = "v", prefix = "<leader>" })
 end
 
 return M
