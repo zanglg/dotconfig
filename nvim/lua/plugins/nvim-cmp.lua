@@ -90,6 +90,7 @@ return function()
             ["<C-f>"] = cmp.mapping.scroll_docs(4),
             ["<C-Space>"] = cmp.mapping.complete(),
             ["<C-e>"] = cmp.mapping.abort(),
+            ["<C-i>"] = cmp.mapping.confirm({ select = false }),
             ["<CR>"] = cmp.mapping.confirm({ select = false }),
         },
 
