@@ -46,6 +46,7 @@ M.setup = function()
         foldmethod = "marker", -- use markers as to specify folds.
         termguicolors = true, -- enable 24 bit color support if supported
         guicursor = "", -- never override terminal's cursor shape
+        scrolloff = 5, -- minimal number of screen lines to keep
 
         -- tab Control
         shiftround = true, -- round indent to a multiple of 'shiftwidth'
