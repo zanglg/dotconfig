@@ -87,6 +87,14 @@ local packages = function(use)
             })
         end,
     })
+    use({
+        "gen740/SmoothCursor.nvim",
+        config = function()
+            require("smoothcursor").setup({
+                fancy = { enable = true },
+            })
+        end,
+    })
 
     -- Enhanced text edit
     use({
