@@ -3,7 +3,7 @@ local M = {}
 M.lsp = function()
     -- Setup lspconfig.
     local capabilities =
-        require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+        require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
     for _, lsp in pairs({ "rust_analyzer", "clangd", "pylsp", "marksman" }) do
         require("lspconfig")[lsp].setup({
             capabilities = capabilities,
