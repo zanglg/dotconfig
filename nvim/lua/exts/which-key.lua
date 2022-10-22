@@ -5,10 +5,13 @@ M.setup = function()
     vim.g.mapleader = ","
     vim.g.maplocalleader = ","
 
-    local wk = require("which-key")
-    local ss = require("smart-splits")
     local dia = vim.diagnostic
     local lsp = vim.lsp.buf
+
+    local wk = require("which-key")
+    local ss = require("smart-splits")
+
+    local qf = require("cust.quickfix")
 
     wk.setup({ window = { border = "single" } })
 
@@ -53,6 +56,9 @@ M.setup = function()
         ---------- motion ----------
         s = { "<cmd>HopWord<cr>", "hop word" },
         f = { "<cmd>HopChar1<cr>", "hop char" },
+
+        ---------- quickfix ----------
+        q = { qf.toggle, "quickfix toggle" },
     }, { mode = "n" })
 end
 
