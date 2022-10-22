@@ -61,8 +61,20 @@ M.setup = function()
         c = {
             name = "code",
 
-            f = { require("customs").document_format, "document format" },
-            c = { require("customs").hunk_format, "hunk format" },
+            f = {
+                function()
+                    vim.lsp.buf.format({ async = true })
+                end,
+                "document format",
+            },
+            c = {
+                function()
+                    require("gitsigns").select_hunk()
+
+                    vim.lsp.buf.format({ async = true })
+                end,
+                "hunk format",
+            },
             a = { vim.lsp.buf.code_action, "code action" },
             r = { vim.lsp.buf.rename, "rename" },
         },
@@ -111,7 +123,12 @@ M.setup = function()
         c = {
             name = "code",
 
-            f = { require("customs").document_format, "range format" },
+            f = {
+                function()
+                    vim.lsp.buf.format({ async = true })
+                end,
+                "range format",
+            },
         },
     }, { mode = "v", prefix = "<leader>" })
 end
