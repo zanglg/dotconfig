@@ -1,5 +1,5 @@
--- configs of neovim core
+-- configs of nvim-core
 require("core").setup()
 
--- configs of managered plugins
-require("plugins").setup()
+-- configs of externals
+require("exts").setup()

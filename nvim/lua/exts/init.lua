@@ -25,7 +25,7 @@ local packages = function(use)
     })
     use({
         "nvim-lualine/lualine.nvim",
-        config = require("plugins.lualine"),
+        config = require("exts.lualine"),
         requires = {
             { "kyazdani42/nvim-web-devicons" },
         },
@@ -34,7 +34,7 @@ local packages = function(use)
     -- UI enhanced
     use({
         "stevearc/dressing.nvim",
-        config = require("plugins.dressing"),
+        config = require("exts.dressing"),
     })
     use({
         "folke/todo-comments.nvim",
@@ -66,7 +66,7 @@ local packages = function(use)
     })
     use({
         "nvim-telescope/telescope.nvim",
-        config = require("plugins.telescope"),
+        config = require("exts.telescope"),
         requires = {
             { "nvim-lua/plenary.nvim" },
             { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
@@ -121,7 +121,7 @@ local packages = function(use)
             },
         },
         run = ":TSUpdate",
-        config = require("plugins.treesitter"),
+        config = require("exts.treesitter"),
     })
     use({
         "keaising/im-select.nvim",
@@ -133,7 +133,7 @@ local packages = function(use)
     -- key mapping
     use({
         "folke/which-key.nvim",
-        config = require("plugins.which-key").setup,
+        config = require("exts.which-key").setup,
     })
 
     -- window manager
@@ -142,11 +142,11 @@ local packages = function(use)
     -- Language Server Protocol
     use({
         "neovim/nvim-lspconfig",
-        config = require("plugins.lsp").lsp,
+        config = require("exts.lsp").lsp,
     })
     use({
         "jose-elias-alvarez/null-ls.nvim",
-        config = require("plugins.lsp").nulllsp,
+        config = require("exts.lsp").nulllsp,
     })
 
     -- auto completion
@@ -175,7 +175,7 @@ local packages = function(use)
     })
     use({
         "hrsh7th/nvim-cmp",
-        config = require("plugins.nvim-cmp"),
+        config = require("exts.nvim-cmp"),
     })
 
     -- git operations
