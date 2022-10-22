@@ -22,7 +22,7 @@ M.setup = function()
 
             ---------- lsp ----------
             d = { require("telescope.builtin").lsp_definitions, "definition" },
-            i = { require("telescope.builtin").lsp_implementations, "references" },
+            i = { require("telescope.builtin").lsp_implementations, "implementation" },
             r = { require("telescope.builtin").lsp_references, "reference" },
         },
 
