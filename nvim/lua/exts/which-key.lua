@@ -6,39 +6,49 @@ M.setup = function()
     vim.g.maplocalleader = ","
 
     local wk = require("which-key")
+    local ss = require("smart-splits")
+    local dia = vim.diagnostic
+    local lsp = vim.lsp.buf
 
     wk.setup({ window = { border = "single" } })
 
     wk.register({
         ---------- window switch ----------
-        ["<c-h>"] = { require("smart-splits").move_cursor_left, "window left" },
-        ["<c-j>"] = { require("smart-splits").move_cursor_down, "window down" },
-        ["<c-k>"] = { require("smart-splits").move_cursor_up, "window up" },
-        ["<c-l>"] = { require("smart-splits").move_cursor_right, "window right" },
+        ["<c-h>"] = { ss.move_cursor_left, "window left" },
+        ["<c-j>"] = { ss.move_cursor_down, "window down" },
+        ["<c-k>"] = { ss.move_cursor_up, "window up" },
+        ["<c-l>"] = { ss.move_cursor_right, "window right" },
 
         ---------- goto ----------
         g = {
             name = "goto",
 
             ---------- lsp ----------
-            d = { require("telescope.builtin").lsp_definitions, "definition" },
-            i = { require("telescope.builtin").lsp_implementations, "implementation" },
-            r = { require("telescope.builtin").lsp_references, "reference" },
+            d = { lsp.definition, "definition" },
+            D = { lsp.declaration, "declaration" },
+            k = { lsp.hover, "hover" },
+            K = { lsp.signature_help, "signature help" },
+            f = { lsp.format, "format" },
+            F = { lsp.format, "format" },
+            r = { lsp.references, "reference" },
+            R = { lsp.rename, "rename" },
+            a = { lsp.code_action, "action" },
+            A = { lsp.range_code_action, "range action" },
+            I = { lsp.implementation, "implementation" },
+            s = { lsp.document_symbol, "document symbol" },
+            S = { lsp.workspace_symbol, "workspace symbol" },
         },
 
         ---------- diagnostic ----------
         d = {
             name = "diagnostic",
 
-            n = { vim.diagnostic.goto_prev, "prev diagnostic" },
-            p = { vim.diagnostic.goto_next, "next diagnostic" },
-            e = { vim.diagnostic.open_float, "float diagnostic" },
-            q = { vim.diagnostic.setqflist, "quickfix diagnostic" },
-            l = { vim.diagnostic.setloclist, "local diagnostic" },
+            n = { dia.goto_prev, "prev diagnostic" },
+            p = { dia.goto_next, "next diagnostic" },
+            e = { dia.open_float, "float diagnostic" },
+            q = { dia.setqflist, "quickfix diagnostic" },
+            l = { dia.setloclist, "local diagnostic" },
         },
-
-        ---------- hover ----------
-        K = { vim.lsp.buf.hover, "lsp hover" },
 
         ---------- motion ----------
         s = { "<cmd>HopWord<cr>", "hop word" },
