@@ -5,13 +5,14 @@ M.setup = function()
     vim.g.mapleader = ","
     vim.g.maplocalleader = ","
 
-    local dia = vim.diagnostic
-    local lsp = vim.lsp.buf
+    local diagnostic = vim.diagnostic
+    local lsp = vim.lsp
 
     local wk = require("which-key")
     local ss = require("smart-splits")
+    local builtin = require("telescope.builtin")
 
-    local qf = require("cust.quickfix")
+    local quickfix = require("cust.quickfix")
 
     wk.setup({ window = { border = "single" } })
 
@@ -27,30 +28,45 @@ M.setup = function()
             name = "goto",
 
             ---------- lsp ----------
-            d = { lsp.definition, "definition" },
-            D = { lsp.declaration, "declaration" },
-            k = { lsp.hover, "hover" },
-            K = { lsp.signature_help, "signature help" },
-            f = { lsp.format, "format" },
-            F = { lsp.format, "format" },
-            r = { lsp.references, "reference" },
-            R = { lsp.rename, "rename" },
-            a = { lsp.code_action, "action" },
-            A = { lsp.range_code_action, "range action" },
-            I = { lsp.implementation, "implementation" },
-            s = { lsp.document_symbol, "document symbol" },
-            S = { lsp.workspace_symbol, "workspace symbol" },
+            d = { lsp.buf.definition, "definition" },
+            D = { lsp.buf.declaration, "declaration" },
+            k = { lsp.buf.hover, "hover" },
+            K = { lsp.buf.signature_help, "signature help" },
+            f = { lsp.buf.format, "format" },
+            F = { lsp.buf.format, "format" },
+            r = { lsp.buf.references, "reference" },
+            R = { lsp.buf.rename, "rename" },
+            a = { lsp.buf.code_action, "action" },
+            A = { lsp.buf.range_code_action, "range action" },
+            I = { lsp.buf.implementation, "implementation" },
+            s = { lsp.buf.document_symbol, "document symbol" },
+            S = { lsp.buf.workspace_symbol, "workspace symbol" },
+        },
+
+        ---------- telescope pickers ----------
+        m = {
+            name = "pickers",
+
+            ---------- File Pickers ----------
+            f = { builtin.find_files, "find files" },
+            s = { builtin.grep_string, "search current cursor" },
+            g = { builtin.live_grep, "live grep" },
+
+            ---------- Vim Pickers ----------
+            b = { builtin.buffers, "buffers" },
+            q = { builtin.quickfix, "quickfix" },
+            j = { builtin.jumplist, "jump list" },
         },
 
         ---------- diagnostic ----------
         d = {
             name = "diagnostic",
 
-            n = { dia.goto_prev, "prev diagnostic" },
-            p = { dia.goto_next, "next diagnostic" },
-            e = { dia.open_float, "float diagnostic" },
-            q = { dia.setqflist, "quickfix diagnostic" },
-            l = { dia.setloclist, "local diagnostic" },
+            n = { diagnostic.goto_prev, "prev diagnostic" },
+            p = { diagnostic.goto_next, "next diagnostic" },
+            e = { diagnostic.open_float, "float diagnostic" },
+            q = { diagnostic.setqflist, "quickfix diagnostic" },
+            l = { diagnostic.setloclist, "local diagnostic" },
         },
 
         ---------- motion ----------
@@ -58,7 +74,7 @@ M.setup = function()
         f = { "<cmd>HopChar1<cr>", "hop char" },
 
         ---------- quickfix ----------
-        q = { qf.toggle, "quickfix toggle" },
+        q = { quickfix.toggle, "quickfix toggle" },
     }, { mode = "n" })
 end
 
