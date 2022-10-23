@@ -14,10 +14,7 @@ local packages = function(use)
     use({
         "zanglg/nova.nvim",
         config = function()
-            require("nova").setup({
-                theme = "nova",
-                background = "dark",
-            })
+            require("nova").setup()
 
             -- load colorscheme
             require("nova").load()
