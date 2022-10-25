@@ -22,6 +22,7 @@ M.setup = function()
         ["<c-j>"] = { ss.move_cursor_down, "window down" },
         ["<c-k>"] = { ss.move_cursor_up, "window up" },
         ["<c-l>"] = { ss.move_cursor_right, "window right" },
+        ["<c-w>"] = { ss.start_resize_mode, "window resize" },
 
         ---------- goto ----------
         g = {
