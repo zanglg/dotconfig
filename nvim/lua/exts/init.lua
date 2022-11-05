@@ -152,6 +152,17 @@ M.setup = function()
             config = require("exts.which-key").setup,
         })
 
+        -- utils
+        use({
+            "narutoxy/silicon.lua",
+            requires = {
+                { "nvim-lua/plenary.nvim" },
+            },
+            config = function()
+                require("silicon").setup({})
+            end,
+        })
+
         -- window manager
         use({ "mrjones2014/smart-splits.nvim" })
 
