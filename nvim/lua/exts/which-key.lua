@@ -77,6 +77,11 @@ M.setup = function()
         ---------- quickfix ----------
         q = { quickfix.toggle, "quickfix toggle" },
     }, { mode = "n" })
+
+    wk.register({
+        [","] = { "<cmd>noh<cr>", "clear hlsearch" },
+        N = { "<cmd>NvimTreeToggle<cr>", "nvim tree toggle" },
+    }, { mode = "n", prefix = "<leader>" })
 end
 
 return M
