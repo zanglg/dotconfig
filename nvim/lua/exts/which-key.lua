@@ -12,7 +12,7 @@ M.setup = function()
     local ss = require("smart-splits")
     local builtin = require("telescope.builtin")
 
-    local quickfix = require("cust.quickfix")
+    local quickfix = require("cust").quickfix
 
     wk.setup({ window = { border = "single" } })
 

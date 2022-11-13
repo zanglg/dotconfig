@@ -1,18 +1,12 @@
-local M = {}
+-- how diagnostic are displayed
+vim.diagnostic.config({
+    virtual_text = false,
+    float = { border = "single" },
+})
 
-M.setup = function()
-    -- how diagnostic are displayed
-    vim.diagnostic.config({
-        virtual_text = false,
-        float = { border = "single" },
-    })
-
-    -- change diagnostic symbols
-    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-    for type, icon in pairs(signs) do
-        local hl = "DiagnosticSign" .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
+-- change diagnostic symbols
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
-
-return M

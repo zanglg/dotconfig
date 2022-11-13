@@ -1,5 +1,8 @@
 -- configs of nvim-core
-require("core").setup()
+require("core")
 
 -- configs of externals
-require("exts").setup()
+require("exts")
+
+-- configs of custom plugins
+require("cust")
