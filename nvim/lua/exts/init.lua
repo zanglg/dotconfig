@@ -83,7 +83,6 @@ M.setup = function()
             config = require("exts.telescope"),
             requires = {
                 { "nvim-lua/plenary.nvim" },
-                { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
             },
         })
         use({

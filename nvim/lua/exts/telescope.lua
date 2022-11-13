@@ -1,14 +1,16 @@
 return function()
     require("telescope").setup({
-        extensions = {
-            fzf = {
-                fuzzy = true,
-                override_generic_sorter = true,
-                override_file_sorter = true,
-                case_mode = "smart_case",
+        defaults = {
+            vimgrep_arguments = {
+                "rg",
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+                "--smart-case",
+                "--follow",
             },
         },
     })
-
-    require("telescope").load_extension("fzf")
 end
