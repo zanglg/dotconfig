@@ -27,7 +27,6 @@ local packages = function(use)
     use({
         "zanglg/nova.nvim",
         config = function()
-            vim.o.background = "light"
             require("nova").setup()
 
             -- load colorscheme

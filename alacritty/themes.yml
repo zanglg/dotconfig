@@ -78,4 +78,4 @@ schemes:
       cyan:    '#00838f'
       white:   '#fcfdfd'
 
-colors: *nova-light
+colors: *nova-dark
