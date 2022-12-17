@@ -55,6 +55,18 @@ local packages = function(use)
             require("todo-comments").setup()
         end,
     })
+    use({
+        "yamatsum/nvim-cursorline",
+        config = function()
+            require("nvim-cursorline").setup({
+                cursorline = { enable = false },
+                cursorword = {
+                    enable = true,
+                    hl = { underline = true },
+                },
+            })
+        end,
+    })
 
     -- Navigation
     use({
