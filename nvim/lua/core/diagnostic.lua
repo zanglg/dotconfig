@@ -1,5 +1,6 @@
 -- how diagnostic are displayed
 vim.diagnostic.config({
+    underline = false,
     virtual_text = false,
     float = { border = "single" },
 })
