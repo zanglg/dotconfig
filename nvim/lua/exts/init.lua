@@ -40,8 +40,6 @@ local packages = function(use)
             { "kyazdani42/nvim-web-devicons" },
         },
     })
-
-    -- UI enhanced
     use({
         "stevearc/dressing.nvim",
         config = require("exts.dressing"),
@@ -65,6 +63,14 @@ local packages = function(use)
                     hl = { underline = true },
                 },
             })
+        end,
+    })
+    use({
+        "m-demare/hlargs.nvim",
+        requires = { "nvim-treesitter/nvim-treesitter" },
+        config = function()
+            require("hlargs").setup({})
+            require("hlargs").enable()
         end,
     })
 
