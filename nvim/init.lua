@@ -1,8 +1,12 @@
--- configs of nvim-core
-require("core")
+require("configs.opts")
+require("configs.lazy")
 
--- configs of externals
-require("exts")
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    callback = function()
+        -- require("config.cmds")
+        -- require("config.maps")
+    end,
+})
 
--- configs of custom plugins
-require("cust")
+vim.cmd([[colorscheme nova]])

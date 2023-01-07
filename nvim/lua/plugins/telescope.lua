@@ -1,4 +1,10 @@
-return function()
+local M = {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "Telescope" },
+}
+
+function M.config()
     require("telescope").setup({
         defaults = {
             vimgrep_arguments = {
@@ -14,3 +20,5 @@ return function()
         },
     })
 end
+
+return M
