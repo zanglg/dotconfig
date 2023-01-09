@@ -11,11 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {
-    defaults = { lazy = true },
-    dev = {
-        path = "~/Workspace",
-        patterns = { "zanglg" },
+local configs = {
+    defaults = {
+        lazy = true,
     },
     install = {
         colorscheme = { "nova" },
@@ -26,4 +24,13 @@ require("lazy").setup("plugins", {
         },
         disabled_plugins = {},
     },
-})
+}
+
+if vim.loop.os_uname().sysname == "Darwin" then
+    configs.dev = {
+        path = "~/Workspace",
+        patterns = { "zanglg" },
+    }
+end
+
+require("lazy").setup("plugins", configs)
