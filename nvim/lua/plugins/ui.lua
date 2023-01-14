@@ -1,5 +1,4 @@
 local M = {
-    "zanglg/nova.nvim",
     {
         "stevearc/dressing.nvim",
         init = function()
