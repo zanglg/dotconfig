@@ -15,7 +15,7 @@ local colors = {
     yellow     = "#e5c07b",
     lime       = "#bac653",
     green      = "#98c379",
-    teal       = "#0d7367",
+    teal       = "#14b8a5",
     cyan       = "#56b6c2",
     blue       = "#61afef",
     violet     = "#8c8cd9",
@@ -106,7 +106,7 @@ local default = {
 	Repeat = { fg = colors.purple },
 	Label = { fg = colors.purple },
 	Operator = { fg = colors.cyan },
-	Keyword = { fg = colors.cyan },
+	Keyword = { fg = colors.purple },
 	Exception = { fg = colors.purple },
 
 	PreProc = { fg = colors.violet },
@@ -131,6 +131,10 @@ local default = {
 	Ignore = { fg = colors.comment },
 	Error = { fg = colors.red },
 	Todo = { fg = colors.red },
+
+	["@parameter"] = { fg = colors.teal },
+	["@field"] = { fg = colors.violet },
+	["@property"] = { fg = colors.violet },
 }
 
 for hl, col in pairs(default) do
