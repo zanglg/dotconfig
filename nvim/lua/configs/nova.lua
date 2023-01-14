@@ -15,8 +15,8 @@ local colors = {
     yellow     = "#e5c07b",
     lime       = "#bac653",
     green      = "#98c379",
-    teal       = "#14b8a5",
-    cyan       = "#56b6c2",
+    teal       = "#1dc9ac",
+    cyan       = "#5edced",
     blue       = "#61afef",
     violet     = "#8c8cd9",
     purple     = "#c678dd",
@@ -135,6 +135,9 @@ local default = {
     ["@parameter"] = { fg = colors.teal },
     ["@field"] = { fg = colors.violet },
     ["@property"] = { fg = colors.violet },
+    ["@namespace"] = { fg = colors.violet },
+    ["@text.title"] = { fg = colors.red },
+    ["@text.literal"] = { fg = colors.violet },
 }
 
 for hl, col in pairs(default) do
