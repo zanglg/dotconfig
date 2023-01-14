@@ -1,9 +1,7 @@
-# neovim
-nvim/plugin
-
 # zsh
 zsh/.zsh_history
 zsh/.zsh_sessions
 
-# clashx
+# untracked
 clash
+gh

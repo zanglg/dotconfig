@@ -1,5 +1,6 @@
 require("configs.opts")
 require("configs.lazy")
+require("configs.nova")
 
 vim.api.nvim_create_autocmd("User", {
     pattern = "VeryLazy",
@@ -8,5 +9,3 @@ vim.api.nvim_create_autocmd("User", {
         -- require("config.maps")
     end,
 })
-
-vim.cmd([[colorscheme nova]])

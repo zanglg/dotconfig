@@ -4,7 +4,7 @@ return {
     config = function()
         require("lualine").setup({
             options = {
-                theme = "nova",
+                theme = "auto",
                 globalstatus = true,
             },
             sections = {
