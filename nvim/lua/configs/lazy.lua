@@ -18,6 +18,9 @@ local configs = {
     install = {
         colorscheme = { "nova" },
     },
+    ui = {
+        border = "single",
+    },
     performance = {
         cache = {
             enabled = true,
