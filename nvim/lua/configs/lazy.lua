@@ -25,7 +25,10 @@ local configs = {
         cache = {
             enabled = true,
         },
-        disabled_plugins = {},
+        disabled_plugins = {
+            "netrw",
+            "netrwPlugin",
+        },
     },
 }
 
