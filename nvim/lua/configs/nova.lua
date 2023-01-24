@@ -131,17 +131,25 @@ local default = {
     Ignore = { fg = colors.comment },
     Error = { fg = colors.red },
     Todo = { fg = colors.red },
+}
 
+local plugins = {
+    -- treesitter
     ["@parameter"] = { fg = colors.teal },
     ["@field"] = { fg = colors.violet },
     ["@property"] = { fg = colors.violet },
     ["@namespace"] = { fg = colors.violet },
     ["@text.title"] = { fg = colors.red },
     ["@text.literal"] = { fg = colors.violet },
+
+    -- telescope
+    TelescopeBorder = { link = "FloatBorder" },
 }
 
-for hl, col in pairs(default) do
-    vim.api.nvim_set_hl(0, hl, col)
+for _, groups in ipairs({ default, plugins }) do
+    for hl, col in pairs(groups) do
+        vim.api.nvim_set_hl(0, hl, col)
+    end
 end
 
 return M
