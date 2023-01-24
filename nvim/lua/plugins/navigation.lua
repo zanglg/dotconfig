@@ -39,4 +39,15 @@ return {
             require("nvim-tree").setup()
         end,
     },
+    {
+        "phaazon/hop.nvim",
+        branch = "v2",
+        cmd = { "HopWord" },
+        keys = {
+            { "s", "<cmd>HopWord<cr>", desc = "Hop Word" },
+        },
+        config = function()
+            require("hop").setup({})
+        end,
+    },
 }

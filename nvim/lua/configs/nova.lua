@@ -134,6 +134,12 @@ local default = {
 }
 
 local plugins = {
+    -- diagnostics
+    DiagnosticError = { link = "ErrorMsg" },
+    DiagnosticWarn  = { link = "WarningMsg" },
+    DiagnosticInfo  = { link = "MoreMsg" },
+    DiagnosticHint  = { link = "MoreMsg" },
+
     -- treesitter
     ["@parameter"] = { fg = colors.teal },
     ["@field"] = { fg = colors.violet },
@@ -141,6 +147,18 @@ local plugins = {
     ["@namespace"] = { fg = colors.violet },
     ["@text.title"] = { fg = colors.red },
     ["@text.literal"] = { fg = colors.violet },
+
+    -- GitSigns
+    GitSignsAdd = { fg = colors.green },
+    GitSignsChange = { fg = colors.blue },
+    GitSignsDelete = { fg = colors.red },
+
+    -- Hop
+    HopNextKey   = { fg = colors.red, bold = true },
+    HopNextKey1  = { fg = colors.blue, bold = true },
+    HopNextKey2  = { fg = colors.purple, bold = true },
+    HopUnmatched = { fg = colors.comment },
+    HopCursor    = { fg = colors.yellow },
 
     -- telescope
     TelescopeBorder = { link = "FloatBorder" },
