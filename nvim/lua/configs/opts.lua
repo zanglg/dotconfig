@@ -51,3 +51,6 @@ vim.opt.smarttab = true -- tab respects 'tabstop', 'shiftwidth', and 'softtabsto
 vim.opt.softtabstop = 4 -- edit as if the tabs are 4 characters wide
 vim.opt.tabstop = 4 -- the visible width of tabs
 vim.opt.expandtab = true -- expand tab to space
+
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
