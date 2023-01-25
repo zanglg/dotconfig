@@ -30,6 +30,7 @@ return {
             underline = false,
             virtual_text = false,
             update_in_insert = false,
+            float = { border = "single" },
         })
 
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
@@ -44,16 +45,36 @@ return {
         end
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
+        local on_attach = function(client, buf)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = vim.api.nvim_create_augroup("LspFormat." .. buf, {}),
+                buffer = buf,
+                callback = function()
+                    vim.lsp.buf.format({ async = false })
+                end,
+            })
+        end
 
         local servers = {
-            rust_analyzer = {},
-            clangd = {},
-            pylsp = {},
-            marksman = {},
+            rust_analyzer = {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            },
+            clangd = {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            },
+            pylsp = {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            },
+            marksman = {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            },
         }
 
         for server, opts in pairs(servers) do
-            opts.capabilities = capabilities
             require("lspconfig")[server].setup(opts)
         end
     end,
