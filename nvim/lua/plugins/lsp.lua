@@ -44,7 +44,6 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
         end
 
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
         local on_attach = function(client, buf)
             vim.api.nvim_create_autocmd("BufWritePre", {
                 group = vim.api.nvim_create_augroup("LspFormat." .. buf, {}),
@@ -56,22 +55,10 @@ return {
         end
 
         local servers = {
-            rust_analyzer = {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            },
-            clangd = {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            },
-            pylsp = {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            },
-            marksman = {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            },
+            clangd = { on_attach = on_attach },
+            rust_analyzer = { on_attach = on_attach },
+            pylsp = { on_attach = on_attach },
+            marksman = {},
         }
 
         for server, opts in pairs(servers) do
