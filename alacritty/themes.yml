@@ -78,4 +78,43 @@ schemes:
       cyan:    '#00838f'
       white:   '#527a7a'
 
-colors: *nova-dark
+  # Colors (Nova Black)
+  nova-black: &nova-black
+    # Default colors
+    primary:
+      background: '#1b2027'
+      foreground: '#c2cad6'
+
+    # Cursor colors
+    #
+    # Colors which should be used to draw the terminal cursor.
+    #
+    # Allowed values are CellForeground/CellBackground, which reference the
+    # affected cell, or hexadecimal colors like #ff00ff.
+    cursor:
+      # text: CellBackground
+      cursor: '#e06c75'
+
+    # Normal colors
+    normal:
+      black:   '#15191e'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#e5c07b'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#5edced'
+      white:   '#737d8c'
+
+    # Bright colors
+    bright:
+      black:   '#282f39'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#e5c07b'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#5edced'
+      white:   '#737d8c'
+
+colors: *nova-black
