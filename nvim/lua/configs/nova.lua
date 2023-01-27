@@ -136,9 +136,9 @@ local default = {
 local plugins = {
     -- diagnostics
     DiagnosticError = { link = "ErrorMsg" },
-    DiagnosticWarn  = { link = "WarningMsg" },
-    DiagnosticInfo  = { link = "MoreMsg" },
-    DiagnosticHint  = { link = "MoreMsg" },
+    DiagnosticWarn = { link = "WarningMsg" },
+    DiagnosticInfo = { link = "MoreMsg" },
+    DiagnosticHint = { link = "MoreMsg" },
 
     -- treesitter
     ["@parameter"] = { fg = colors.teal },
@@ -154,11 +154,15 @@ local plugins = {
     GitSignsDelete = { fg = colors.red },
 
     -- Hop
-    HopNextKey   = { fg = colors.red, bold = true },
-    HopNextKey1  = { fg = colors.blue, bold = true },
-    HopNextKey2  = { fg = colors.purple, bold = true },
+    HopNextKey = { fg = colors.red, bold = true },
+    HopNextKey1 = { fg = colors.blue, bold = true },
+    HopNextKey2 = { fg = colors.purple, bold = true },
     HopUnmatched = { fg = colors.comment },
-    HopCursor    = { fg = colors.yellow },
+    HopCursor = { fg = colors.yellow },
+
+    -- nvim-treehopper
+    TSNodeKey = { fg = colors.red, bold = true },
+    TSNodeUnmatched = { fg = colors.comment },
 
     -- telescope
     TelescopeBorder = { link = "FloatBorder" },
