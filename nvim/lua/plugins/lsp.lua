@@ -49,7 +49,20 @@ return {
                 group = vim.api.nvim_create_augroup("LspFormat." .. buf, {}),
                 buffer = buf,
                 callback = function()
-                    vim.lsp.buf.format({ async = false })
+                    if client and client.supports_method("textDocument/rangeFormatting") then
+                        -- TODO move to configs.format.lua and check if gitsigns requirable
+                        for _, hunk in ipairs(require("gitsigns").get_hunks()) do
+                            vim.lsp.buf.format({
+                                async = true,
+                                range = {
+                                    start = { hunk.added.start, 0 },
+                                    ["end"] = { hunk.added.start + hunk.added.count - 1, -1 },
+                                },
+                            })
+                        end
+                    else
+                        vim.lsp.buf.format({ async = true })
+                    end
                 end,
             })
         end
