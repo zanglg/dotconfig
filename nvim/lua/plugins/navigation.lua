@@ -50,4 +50,25 @@ return {
             require("hop").setup({})
         end,
     },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        config = function()
+            local wk = require("which-key")
+            wk.setup({ window = { border = "single" } })
+            wk.register({
+                mode = { "n" },
+                ["g"] = { name = "Goto" },
+                ["]"] = { name = "Next" },
+                ["["] = { name = "Prev" },
+
+                ["<leader>c"] = { name = "Code" },
+                ["<leader>d"] = { name = "Diagnostics" },
+                ["<leader>f"] = { name = "Find" },
+                ["<leader>g"] = { name = "Git" },
+                ["<leader>gh"] = { name = "Hunks" },
+                ["<leader>t"] = { name = "Toggle" },
+            })
+        end,
+    },
 }
