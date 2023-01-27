@@ -34,6 +34,7 @@ vim.opt.laststatus = 3 -- always and ONLY the last window
 vim.opt.number = true -- show line numbers
 vim.opt.showcmd = true -- display command writing
 vim.opt.showmode = true -- display vim mode
+vim.opt.cmdheight = 0 -- disable cmdline
 vim.opt.showtabline = 0 -- always show tabline
 vim.opt.title = true -- set terminal title
 vim.opt.wrap = true -- turn on line wrapping
