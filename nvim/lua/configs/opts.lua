@@ -53,5 +53,12 @@ vim.opt.softtabstop = 4 -- edit as if the tabs are 4 characters wide
 vim.opt.tabstop = 4 -- the visible width of tabs
 vim.opt.expandtab = true -- expand tab to space
 
+-- global and local mapleader
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
+
+-- global grep prg and format
+if vim.fn.executable("rg") == 1 then
+    vim.opt.grepprg = "rg --vimgrep --smart-case --follow --no-messages"
+    vim.opt.grepformat = "%f:%l:%c:%m"
+end
