@@ -12,9 +12,13 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         event = "BufReadPre",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter-textobjects",
+        },
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
+                highlight = { enable = true },
                 ensure_installed = {
                     -- programming language
                     "c",
@@ -38,7 +42,32 @@ return {
                     "vim",
                     "help",
                 },
-                highlight = { enable = true },
+                textobjects = {
+                    select = {
+                        enable = true,
+                        lookahead = false,
+                        keymaps = {
+                            ["af"] = "@function.outer",
+                            ["if"] = "@function.inner",
+                        },
+                    },
+                    move = {
+                        enable = true,
+                        set_jumps = true,
+                        goto_next_start = {
+                            ["]f"] = "@function.outer",
+                        },
+                        goto_next_end = {
+                            ["]F"] = "@function.outer",
+                        },
+                        goto_previous_start = {
+                            ["[f"] = "@function.outer",
+                        },
+                        goto_previous_end = {
+                            ["[F"] = "@function.outer",
+                        },
+                    },
+                },
                 incremental_selection = {
                     enable = true,
                     keymaps = {
