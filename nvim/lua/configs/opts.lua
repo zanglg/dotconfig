@@ -28,8 +28,6 @@ vim.opt.visualbell = false -- disable flash screen
 vim.opt.errorbells = false -- disable errors bells
 
 -- appearance
-vim.opt.cursorcolumn = true -- highlight current column
-vim.opt.cursorline = true -- highligh current line
 vim.opt.laststatus = 3 -- always and ONLY the last window
 vim.opt.number = true -- show line numbers
 vim.opt.showcmd = true -- display command writing
