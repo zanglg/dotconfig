@@ -166,6 +166,14 @@ local plugins = {
 
     -- telescope
     TelescopeBorder = { link = "FloatBorder" },
+
+    -- nvim-bqf
+    BqfPreviewFloat = { link = "NormalFloat" },
+    BqfPreviewBorder = { link = "FloatBorder" },
+    BqfPreviewCursor = { link = "Cursor" },
+    BqfPreviewCursorLine = { link = "CursorLine" },
+    BqfPreviewRange = { link = "IncSearch" },
+    BqfPreviewBufLabel = { link = "Label" },
 }
 
 for _, groups in ipairs({ default, plugins }) do
