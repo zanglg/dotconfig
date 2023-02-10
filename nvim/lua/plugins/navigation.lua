@@ -71,4 +71,22 @@ return {
             })
         end,
     },
+    {
+        "mrjones2014/smart-splits.nvim",
+        config = function()
+            require("smart-splits").setup({})
+        end,
+        keys = {
+            -- resizing splits
+            { "<a-h>", "<cmd>lua require('smart-splits').resize_left()<cr>", desc = "ResizeLeft" },
+            { "<a-j>", "<cmd>lua require('smart-splits').resize_down()<cr>", desc = "ResizeDown" },
+            { "<a-k>", "<cmd>lua require('smart-splits').resize_up()<cr>", desc = "ResizeUp" },
+            { "<a-l>", "<cmd>lua require('smart-splits').resize_right()<cr>", desc = "ResizeRight" },
+            -- moving between splits
+            { "<c-h>", "<cmd>lua require('smart-splits').move_cursor_left()<cr>", desc = "MoveWinLeft" },
+            { "<c-j>", "<cmd>lua require('smart-splits').move_cursor_down()<cr>", desc = "MoveWinDown" },
+            { "<c-k>", "<cmd>lua require('smart-splits').move_cursor_up()<cr>", desc = "MoveWinUp" },
+            { "<c-l>", "<cmd>lua require('smart-splits').move_cursor_right()<cr>", desc = "MoveWinRight" },
+        },
+    },
 }
