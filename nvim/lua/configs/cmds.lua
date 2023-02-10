@@ -15,3 +15,14 @@ vim.api.nvim_create_autocmd("WinLeave", {
         vim.wo.cursorline = false -- clear highligh current line
     end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("quickfix", { clear = true }),
+    pattern = "qf",
+    callback = function(event)
+        vim.keymap.set("n", "K", "<cmd>BqfToggle<cr>", {
+            buffer = event.buf,
+            silent = true,
+        })
+    end,
+})

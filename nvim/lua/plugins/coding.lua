@@ -9,9 +9,10 @@ return {
     {
         "kevinhwang91/nvim-bqf",
         ft = "qf",
+        cmd = "BqfToggle",
         config = function()
             require("bqf").setup({
-                auto_enable = true,
+                auto_enable = false,
             })
         end,
     },
