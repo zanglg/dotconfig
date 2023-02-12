@@ -148,6 +148,15 @@ local plugins = {
     ["@text.title"] = { fg = colors.red },
     ["@text.literal"] = { fg = colors.violet },
 
+    -- rainbow
+    rainbowcol1 = { fg = colors.red },
+    rainbowcol2 = { fg = colors.lime },
+    rainbowcol3 = { fg = colors.blue },
+    rainbowcol4 = { fg = colors.brown },
+    rainbowcol5 = { fg = colors.yellow },
+    rainbowcol6 = { fg = colors.violet },
+    rainbowcol7 = { fg = colors.purple },
+
     -- GitSigns
     GitSignsAdd = { fg = colors.green },
     GitSignsChange = { fg = colors.blue },

@@ -14,11 +14,13 @@ return {
         event = "BufReadPre",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
+            "mrjones2014/nvim-ts-rainbow",
         },
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
                 highlight = { enable = true },
+                rainbow = { enable = true },
                 ensure_installed = {
                     -- programming language
                     "c",
