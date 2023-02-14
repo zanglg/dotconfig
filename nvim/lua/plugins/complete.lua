@@ -64,8 +64,8 @@ return {
                 ["<c-b>"] = cmp.mapping.scroll_docs(-4),
                 ["<c-f>"] = cmp.mapping.scroll_docs(4),
                 ["<c-e>"] = cmp.mapping.abort(),
-                ["<c-i>"] = cmp.mapping.confirm({ select = false }),
-                ["<cr>"] = cmp.mapping.confirm({ select = false }),
+                ["<c-i>"] = cmp.mapping.confirm({ select = true }),
+                ["<cr>"] = cmp.mapping.confirm({ select = true }),
             },
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
