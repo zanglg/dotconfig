@@ -1,7 +1,30 @@
 local M = {}
 
 -- stylua: ignore
-local colors = {
+local light = {
+    foreground = "#415058",
+    comment    = "#7b929d",
+    separator  = "#d0d0d0",
+    selection  = "#dcdcdc",
+    stripline  = "#e7e7e7",
+    background = "#f4f3f0",
+    popupmenu  = "#fdfdfd",
+
+    red        = "#c72943",
+    brown      = "#93766c",
+    yellow     = "#b38c19",
+    lime       = "#bac653",
+    green      = "#2f7f33",
+    teal       = "#008071",
+    cyan       = "#14a5b8",
+    blue       = "#1565c1",
+    violet     = "#6666cc",
+    purple     = "#a626a4",
+}
+
+
+-- stylua: ignore
+local dark = {
     foreground = "#c2cad6",
     comment    = "#737d8c",
     separator  = "#282f39",
@@ -21,8 +44,8 @@ local colors = {
     violet     = "#8c8cd9",
     purple     = "#c678dd",
 }
-M.colors = colors
 
+local colors = dark
 local default = {
     ColorColumn = { fg = colors.stripline },
     Conceal = { fg = colors.comment },
