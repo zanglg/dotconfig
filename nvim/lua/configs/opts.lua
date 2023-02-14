@@ -43,14 +43,6 @@ vim.opt.termguicolors = true -- enable 24 bit color support if supported
 vim.opt.guicursor = "" -- never override terminal's cursor shape
 vim.opt.scrolloff = 5 -- minimal number of screen lines to keep
 
--- tab Control
-vim.opt.shiftround = true -- round indent to a multiple of 'shiftwidth'
-vim.opt.shiftwidth = 4 -- number of spaces to use for indent and unindent
-vim.opt.smarttab = true -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-vim.opt.softtabstop = 4 -- edit as if the tabs are 4 characters wide
-vim.opt.tabstop = 4 -- the visible width of tabs
-vim.opt.expandtab = true -- expand tab to space
-
 -- global and local mapleader
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
