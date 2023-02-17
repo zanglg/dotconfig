@@ -57,13 +57,13 @@ color attachment red           default
 color signature  red           default
 
 # quote level
-color quoted     brightcyan    default
-color quoted1    brightred     default
-color quoted2    brightblue    default
-color quoted3    brightgreen   default
-color quoted4    brightmagenta default
-color quoted5    brightcyan    default
-color quoted6    brightred     default
-color quoted7    brightblue    default
-color quoted8    brightgreen   default
-color quoted9    brightmagenta default
+color quoted     cyan          default
+color quoted1    red           default
+color quoted2    blue          default
+color quoted3    green         default
+color quoted4    magenta       default
+color quoted5    cyan          default
+color quoted6    red           default
+color quoted7    blue          default
+color quoted8    green         default
+color quoted9    magenta       default
