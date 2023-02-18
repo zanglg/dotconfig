@@ -10,7 +10,7 @@ M.toggle = function()
         return false
     end
 
-if has_quickfix() == true then
+    if has_quickfix() == true then
         vim.cmd("cclose")
     else
         vim.cmd("copen")
