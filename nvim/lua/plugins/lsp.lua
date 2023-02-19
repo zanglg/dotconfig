@@ -45,7 +45,7 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
-            local on_attach = require("configs.format").format
+            local on_attach = require("configs.custom").format
             local servers = {
                 clangd = { on_attach = on_attach },
                 rust_analyzer = { on_attach = on_attach },
@@ -70,7 +70,7 @@ return {
                     require("null-ls").builtins.formatting.shfmt,
                     require("null-ls").builtins.formatting.asmfmt,
                 },
-                on_attach = require("configs.format").format,
+                on_attach = require("configs.custom").format,
             })
         end,
     },
