@@ -4,14 +4,14 @@
 [core]
 	editor = nvim
 [alias]
-    ad = add
-    br = branch
-    cm = commit
-    co = checkout
-    df = diff
-    lo = log --pretty=format:'%Cred%h%Creset %Cgreen(%as) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset'
-    pl = pull
-    ps = push
-    rb = rebase
-    rs = reset
-    st = status
+	ad = add
+	br = branch
+	cm = commit
+	co = checkout
+	df = diff
+	lo = log --pretty=format:'%Cred%h%Creset %Cgreen(%as) -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset'
+	pl = pull
+	ps = push
+	rb = rebase
+	rs = reset
+	st = status
