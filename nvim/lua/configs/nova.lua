@@ -4,11 +4,11 @@ local M = {}
 local light = {
     foreground = "#415058",
     comment    = "#7b929d",
-    separator  = "#d0d0d0",
-    selection  = "#dcdcdc",
-    stripline  = "#e7e7e7",
-    background = "#f4f3f0",
-    popupmenu  = "#fdfdfd",
+    separator  = "#d6dde1",
+    selection  = "#dfe4e7",
+    popupmenu  = "#e8ebed",
+    stripline  = "#f0f3f4",
+    background = "#fafafa",
 
     red        = "#c72943",
     brown      = "#93766c",
