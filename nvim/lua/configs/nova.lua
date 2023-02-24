@@ -195,7 +195,7 @@ local plugins = {
 
     -- rainbow
     rainbowcol1 = { fg = colors.red },
-    rainbowcol2 = { fg = colors.lime },
+    rainbowcol2 = { fg = colors.green },
     rainbowcol3 = { fg = colors.blue },
     rainbowcol4 = { fg = colors.brown },
     rainbowcol5 = { fg = colors.yellow },
