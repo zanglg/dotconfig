@@ -8,6 +8,9 @@ return {
 
             { "q", require("configs/custom").quickfix_toggle, desc = "Quickfix Toggle" },
             { "<c-l>", require("configs/custom").escape_pair, desc = "Jump Out Pair", mode = "i" },
+
+            { "[b", "<cmd>bnext<cr>", desc = "Next Buffer" },
+            { "]b", "<cmd>bprevious<cr>", desc = "Prev Buffer" },
         },
     },
 }
