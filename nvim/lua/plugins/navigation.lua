@@ -10,6 +10,7 @@ return {
             { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Find Current" },
         },
         config = function()
+            local actions = require("telescope.actions")
             require("telescope").setup({
                 defaults = {
                     vimgrep_arguments = {
@@ -21,6 +22,15 @@ return {
                         "--column",
                         "--smart-case",
                         "--follow",
+                    },
+                },
+                pickers = {
+                    buffers = {
+                        mappings = {
+                            i = {
+                                ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+                            },
+                        },
                     },
                 },
             })
