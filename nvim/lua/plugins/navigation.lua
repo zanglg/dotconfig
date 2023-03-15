@@ -8,6 +8,7 @@ return {
             { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find String" },
             { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
             { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Find Current" },
+            { "<leader>fj", "<cmd>Telescope jumplist<cr>", desc = "Find Jumps" },
         },
         config = function()
             local actions = require("telescope.actions")
