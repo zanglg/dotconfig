@@ -82,7 +82,7 @@ schemes:
   nova-black: &nova-black
     # Default colors
     primary:
-      background: '#1b2027'
+      background: '#25292e'
       foreground: '#c2cad6'
 
     # Cursor colors
@@ -104,11 +104,11 @@ schemes:
       blue:    '#61afef'
       magenta: '#c678dd'
       cyan:    '#5edced'
-      white:   '#737d8c'
+      white:   '#c2cad6'
 
     # Bright colors
     bright:
-      black:   '#282f39'
+      black:   '#393f47'
       red:     '#e06c75'
       green:   '#98c379'
       yellow:  '#e5c07b'

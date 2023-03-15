@@ -27,28 +27,6 @@ local light = {
 local dark = {
     foreground = "#c2cad6",
     comment    = "#737d8c",
-    separator  = "#282f39",
-    selection  = "#2c343f",
-    stripline  = "#212830",
-    background = "#1b2027",
-    popupmenu  = "#15191e",
-
-    red        = "#e06c75",
-    brown      = "#93766c",
-    yellow     = "#e5c07b",
-    lime       = "#bac653",
-    green      = "#98c379",
-    teal       = "#1dc9ac",
-    cyan       = "#5edced",
-    blue       = "#61afef",
-    violet     = "#8c8cd9",
-    purple     = "#c678dd",
-}
-
--- stylua: ignore
-local dimmed = {
-    foreground = "#9ca5b0",
-    comment    = "#5b6571",
     separator  = "#393f47",
     selection  = "#32373e",
     stripline  = "#2b3036",
