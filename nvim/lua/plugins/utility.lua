@@ -25,4 +25,11 @@ return {
             })
         end,
     },
+    {
+        "lewis6991/spaceless.nvim",
+        event = "InsertEnter",
+        config = function()
+            require("spaceless").setup()
+        end,
+    },
 }
