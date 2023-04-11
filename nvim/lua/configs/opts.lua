@@ -42,6 +42,7 @@ vim.opt.foldmethod = "manual" -- folds are created manually
 vim.opt.termguicolors = true -- enable 24 bit color support if supported
 vim.opt.guicursor = "" -- never override terminal's cursor shape
 vim.opt.scrolloff = 5 -- minimal number of screen lines to keep
+vim.opt.splitkeep = "screen" -- keep the text on the same screen line
 
 -- global and local mapleader
 vim.g.mapleader = ","
