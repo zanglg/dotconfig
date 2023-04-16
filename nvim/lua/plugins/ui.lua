@@ -1,5 +1,12 @@
 local M = {
     {
+        "zanglg/nova.nvim",
+        opts = {
+            theme = "dark",
+        },
+        branch = "dev",
+    },
+    {
         "stevearc/dressing.nvim",
         init = function()
             ---@diagnostic disable-next-line: duplicate-set-field

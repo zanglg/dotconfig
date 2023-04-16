@@ -1,5 +1,4 @@
 require("configs.opts")
-require("configs.nova")
 require("configs.lazy")
 
 vim.api.nvim_create_autocmd("User", {
@@ -8,3 +7,5 @@ vim.api.nvim_create_autocmd("User", {
         require("configs.cmds")
     end,
 })
+
+vim.cmd([[colorscheme nova]])
