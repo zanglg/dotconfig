@@ -9,8 +9,7 @@ window:
 
 font:
   normal:
-    # family: "SauceCodePro NF"
-    family: "SF Mono Powerline"
+    family: "SauceCodePro Nerd Font Mono"
     style: Regular
   size: 18.0
 
