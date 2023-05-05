@@ -1,0 +1,15 @@
+themes {
+    nova-dark {
+        fg "#b6bfc9"
+        bg "#162637"
+        black "#274462"
+        red "#e06c7f"
+        green "#98c379"
+        yellow "#d6a75c"
+        blue "#5eb2ed"
+        magenta "#c56ce0"
+        cyan "#25c5da"
+        white "#E5E9F0"
+        orange "#6c7f93"
+    }
+}

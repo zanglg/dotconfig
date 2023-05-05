@@ -217,22 +217,6 @@ pane_frames false
 // Define color themes for Zellij
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
-//
-themes {
-    nova-dark {
-        fg "#b6bfc9"
-        bg "#162637"
-        black "#274462"
-        red "#e06c7f"
-        green "#98c379"
-        yellow "#d6a75c"
-        blue "#5eb2ed"
-        magenta "#c56ce0"
-        cyan "#25c5da"
-        white "#E5E9F0"
-        orange "#6c7f93"
-    }
-}
 
 // Choose the theme that is specified in the themes section.
 // Default: default
@@ -242,7 +226,7 @@ theme "nova-dark"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+default_layout "simple"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -304,8 +288,8 @@ copy_on_select true
 
 // The folder in which Zellij will look for layouts
 //
-// layout_dir "/path/to/my/layout_dir"
+layout_dir "."
 
 // The folder in which Zellij will look for themes
 //
-// theme_dir "/path/to/my/theme_dir"
+theme_dir "."
