@@ -15,7 +15,7 @@ if which exa >/dev/null; then
 fi
 
 # A cat(1) clone with wings
-if which cat >/dev/null; then
+if which bat >/dev/null; then
     alias cat='bat'
 fi
 
