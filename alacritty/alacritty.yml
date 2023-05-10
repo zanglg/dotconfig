@@ -9,9 +9,9 @@ window:
 
 font:
   normal:
-    family: "SauceCodePro Nerd Font Mono"
+    family: "SF Mono Powerline"
     style: Regular
-  size: 18.0
+  size: 22.0
 
 selection:
   save_to_clipboard: true
