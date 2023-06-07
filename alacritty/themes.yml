@@ -4,8 +4,8 @@ schemes:
   nova-dark: &nova-dark
     # Default colors
     primary:
-      background: '#162637'
-      foreground: '#a4bedb'
+      background: '#1c2131'
+      foreground: '#b6bac9'
 
     # Cursor colors
     #
@@ -19,25 +19,25 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#1d3249'
+      black:   '#272e44'
       red:     '#e06c7f'
       green:   '#9ccc66'
       yellow:  '#ccb166'
       blue:    '#5eb2ed'
       magenta: '#c56ce0'
       cyan:    '#5edced'
-      white:   '#7fa3cc'
+      white:   '#6c7693'
 
     # Bright colors
     bright:
-      black:   '#243f5b'
+      black:   '#323c57'
       red:     '#e06c7f'
       green:   '#9ccc66'
       yellow:  '#ccb166'
       blue:    '#5eb2ed'
       magenta: '#c56ce0'
       cyan:    '#5edced'
-      white:   '#92b0d3'
+      white:   '#596178'
 
   # Colors (Nova Light)
   nova-light: &nova-light
@@ -77,44 +77,5 @@ schemes:
       magenta: '#a626a4'
       cyan:    '#00838f'
       white:   '#527a7a'
-
-  # Colors (Nova Black)
-  nova-black: &nova-black
-    # Default colors
-    primary:
-      background: '#25292e'
-      foreground: '#c2cad6'
-
-    # Cursor colors
-    #
-    # Colors which should be used to draw the terminal cursor.
-    #
-    # Allowed values are CellForeground/CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    cursor:
-      # text: CellBackground
-      cursor: '#e06c75'
-
-    # Normal colors
-    normal:
-      black:   '#15191e'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#e5c07b'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#5edced'
-      white:   '#c2cad6'
-
-    # Bright colors
-    bright:
-      black:   '#393f47'
-      red:     '#e06c75'
-      green:   '#98c379'
-      yellow:  '#e5c07b'
-      blue:    '#61afef'
-      magenta: '#c678dd'
-      cyan:    '#5edced'
-      white:   '#737d8c'
 
 colors: *nova-dark
