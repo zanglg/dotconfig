@@ -51,6 +51,15 @@ return {
         end,
     },
     {
+        "simrat39/symbols-outline.nvim",
+        keys = {
+            { "<leader>ts", "<cmd>SymbolsOutline<cr>", desc = "Toggle SymbolsOutline" },
+        },
+        config = function()
+            require("symbols-outline").setup({})
+        end,
+    },
+    {
         "phaazon/hop.nvim",
         branch = "v2",
         cmd = { "HopWord" },
