@@ -95,15 +95,20 @@ return {
     {
         "mrjones2014/smart-splits.nvim",
         config = function()
-            require("smart-splits").setup({})
+            require("smart-splits").setup({
+                resize_mode = {
+                    silent = true,
+                },
+            })
         end,
         keys = {
-            -- resizing splits
-            { "<a-h>", "<cmd>lua require('smart-splits').resize_left()<cr>", desc = "ResizeLeft" },
-            { "<a-j>", "<cmd>lua require('smart-splits').resize_down()<cr>", desc = "ResizeDown" },
-            { "<a-k>", "<cmd>lua require('smart-splits').resize_up()<cr>", desc = "ResizeUp" },
-            { "<a-l>", "<cmd>lua require('smart-splits').resize_right()<cr>", desc = "ResizeRight" },
+            -- resize mode
+            { "<leader>wr", "<cmd>lua require('smart-splits').start_resize_mode()<cr>", desc = "ResizeMode" },
             -- moving between splits
+            { "<leader>wh", "<cmd>lua require('smart-splits').move_cursor_left()<cr>", desc = "MoveWinLeft" },
+            { "<leader>wj", "<cmd>lua require('smart-splits').move_cursor_down()<cr>", desc = "MoveWinDown" },
+            { "<leader>wk", "<cmd>lua require('smart-splits').move_cursor_up()<cr>", desc = "MoveWinUp" },
+            { "<leader>wl", "<cmd>lua require('smart-splits').move_cursor_right()<cr>", desc = "MoveWinRight" },
             { "<c-h>", "<cmd>lua require('smart-splits').move_cursor_left()<cr>", desc = "MoveWinLeft" },
             { "<c-j>", "<cmd>lua require('smart-splits').move_cursor_down()<cr>", desc = "MoveWinDown" },
             { "<c-k>", "<cmd>lua require('smart-splits').move_cursor_up()<cr>", desc = "MoveWinUp" },
