@@ -9,8 +9,12 @@ return {
             { "q", require("configs/custom").quickfix_toggle, desc = "Quickfix Toggle" },
             { "<c-l>", require("configs/custom").escape_pair, desc = "Jump Out Pair", mode = "i" },
 
-            { "[b", "<cmd>bnext<cr>", desc = "Next Buffer" },
-            { "]b", "<cmd>bprevious<cr>", desc = "Prev Buffer" },
+            { "[b", "<cmd>bnext     <cr>", desc = "Next Buffer" },
+            { "]b", "<cmd>bprevious <cr>", desc = "Prev Buffer" },
+
+            { "<leader>q", "<cmd>qall<cr>", desc = "Quit All" },
+            { "<leader>s", "<cmd>w   <cr>", desc = "Save" },
+            { "<leader>,", "<cmd>noh <cr>", desc = "No Highlight" },
         },
     },
 }
