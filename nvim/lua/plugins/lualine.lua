@@ -16,6 +16,7 @@ return {
                     },
                 },
             },
+            extensions = { "quickfix", "nvim-tree", "symbols-outline" },
         })
     end,
 }
