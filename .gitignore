@@ -2,6 +2,7 @@
 zsh/.zsh_history
 zsh/.zsh_sessions
 
-# untracked
+# untracked sensitive info
 clash
+exercism
 gh
