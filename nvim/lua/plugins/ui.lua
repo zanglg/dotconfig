@@ -36,6 +36,13 @@ local M = {
             })
         end,
     },
+    {
+        "levouh/tint.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("tint").setup()
+        end,
+    },
 }
 
 return M
