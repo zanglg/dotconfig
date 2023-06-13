@@ -5,6 +5,9 @@ M.format = function(client, buf)
         group = vim.api.nvim_create_augroup("LspFormat." .. buf, {}),
         buffer = buf,
         callback = function()
+            if client.name == "clangd" then
+                require("gitsigns").select_hunk()
+            end
             vim.lsp.buf.format({ async = false })
         end,
     })
