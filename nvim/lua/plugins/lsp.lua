@@ -4,22 +4,20 @@ return {
         event = "BufReadPre",
         dependencies = {},
         keys = {
-            { "gd", vim.lsp.buf.definition, desc = "Goto Definition" },
-            { "gr", vim.lsp.buf.references, desc = "References" },
-            { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
-            { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
-            { "gt", vim.lsp.buf.type_definition, desc = "Goto Type Definition" },
+            { "gd", "<cmd>TroubleToggle lsp_definitions<cr>", desc = "Goto Definition" },
+            { "gr", "<cmd>TroubleToggle lsp_references<cr>", desc = "References" },
+            { "gI", "<cmd>TroubleToggle lsp_implementations<cr>", desc = "Goto Implementation" },
+            { "gt", "<cmd>TroubleToggle lsp_type_definitions<cr>", desc = "Goto Type Definition" },
 
             { "K", vim.lsp.buf.hover, desc = "Hover" },
             { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help" },
 
-            { "[d", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
-            { "]d", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
             { "<leader>dn", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
             { "<leader>dp", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
-            { "<leader>df", vim.diagnostic.open_float, desc = "Float Diagnostic" },
-            { "<leader>dq", vim.diagnostic.setqflist, desc = "Diagnostic to Quickfix" },
-            { "<leader>dl", vim.diagnostic.setloclist, desc = "Diagnostic to LocList" },
+            { "<leader>dk", vim.diagnostic.open_float, desc = "Preview Diagnostic" },
+
+            { "<leader>dd", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
+            { "<leader>dw", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics" },
 
             { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
             { "<leader>cf", vim.lsp.buf.format, desc = "Format Document", mode = { "n", "v" } },
