@@ -13,7 +13,7 @@ return {
             { "]b", "<cmd>bprevious <cr>", desc = "Prev Buffer" },
 
             { "<leader>q", "<cmd>qall<cr>", desc = "Quit All" },
-            { "<leader>s", "<cmd>w   <cr>", desc = "Save" },
+            { "<leader>w", "<cmd>w   <cr>", desc = "Save" },
             { "<leader>,", "<cmd>noh <cr>", desc = "No Highlight" },
         },
     },

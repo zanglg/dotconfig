@@ -9,7 +9,16 @@ return {
             { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
             { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Find Current" },
             { "<leader>fj", "<cmd>Telescope jumplist<cr>", desc = "Find Jumps" },
-            { "<leader>fd", "<cmd>Telescope git_status<cr>", desc = "Find GitStatus Files" },
+
+            { "<leader>fgb", "<cmd>Telescope git_bcommits<cr>", desc = "Find Current Commits" },
+            { "<leader>fgc", "<cmd>Telescope git_commits<cr>", desc = "Find Commits" },
+            { "<leader>fgs", "<cmd>Telescope git_status<cr>", desc = "Find Git Status" },
+
+            { "<leader>ft", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find Document Symbols" },
+            { "<leader>fs", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Find Workspace Symbols" },
+            { "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Find All Worksapce Symbols" },
+
+            { "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Open Previous Picker" },
         },
         config = function()
             local actions = require("telescope.actions")
@@ -103,12 +112,8 @@ return {
         end,
         keys = {
             -- resize mode
-            { "<leader>wr", "<cmd>lua require('smart-splits').start_resize_mode()<cr>", desc = "ResizeMode" },
+            { "<leader>W", "<cmd>lua require('smart-splits').start_resize_mode()<cr>", desc = "ResizeMode" },
             -- moving between splits
-            { "<leader>wh", "<cmd>lua require('smart-splits').move_cursor_left()<cr>", desc = "MoveWinLeft" },
-            { "<leader>wj", "<cmd>lua require('smart-splits').move_cursor_down()<cr>", desc = "MoveWinDown" },
-            { "<leader>wk", "<cmd>lua require('smart-splits').move_cursor_up()<cr>", desc = "MoveWinUp" },
-            { "<leader>wl", "<cmd>lua require('smart-splits').move_cursor_right()<cr>", desc = "MoveWinRight" },
             { "<c-h>", "<cmd>lua require('smart-splits').move_cursor_left()<cr>", desc = "MoveWinLeft" },
             { "<c-j>", "<cmd>lua require('smart-splits').move_cursor_down()<cr>", desc = "MoveWinDown" },
             { "<c-k>", "<cmd>lua require('smart-splits').move_cursor_up()<cr>", desc = "MoveWinUp" },

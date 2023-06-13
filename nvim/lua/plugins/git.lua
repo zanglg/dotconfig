@@ -8,6 +8,7 @@ return {
             { "<leader>gn", "<cmd>Gitsigns next_hunk<cr>", desc = "Hunk Next" },
             { "<leader>gp", "<cmd>Gitsigns prev_hunk<cr>", desc = "Hunk Prev" },
             { "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame Line" },
+            { "<leader>gd", "<cmd>Gitsigns diffthis<cr>", desc = "Diff Buffer" },
         },
         config = function()
             require("gitsigns").setup({
