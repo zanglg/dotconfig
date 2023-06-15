@@ -4,7 +4,7 @@ return {
         event = "BufReadPre",
         dependencies = {},
         keys = {
-            { "gd", "<cmd>TroubleToggle lsp_definitions<cr>", desc = "Goto Definition" },
+            { "gd", vim.lsp.buf.definition, desc = "Goto Definition" },
             { "gr", "<cmd>TroubleToggle lsp_references<cr>", desc = "References" },
             { "gI", "<cmd>TroubleToggle lsp_implementations<cr>", desc = "Goto Implementation" },
             { "gt", "<cmd>TroubleToggle lsp_type_definitions<cr>", desc = "Goto Type Definition" },
