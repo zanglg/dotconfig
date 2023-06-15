@@ -7,16 +7,6 @@ return {
         end,
     },
     {
-        "kevinhwang91/nvim-bqf",
-        ft = "qf",
-        cmd = "BqfToggle",
-        config = function()
-            require("bqf").setup({
-                auto_enable = false,
-            })
-        end,
-    },
-    {
         "ellisonleao/glow.nvim",
         cmd = "Glow",
         config = function()
