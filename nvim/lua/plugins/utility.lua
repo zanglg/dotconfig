@@ -28,4 +28,24 @@ return {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = { mode = "quickfix" },
     },
+    {
+        "folke/todo-comments.nvim",
+        cmd = "TodoTrouble",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            search = {
+                args = {
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--follow",
+                },
+            },
+        },
+        keys = {
+            { "<leader>fT", "<cmd>TodoTrouble<cr>", desc = "Find Todos" },
+        },
+    },
 }
