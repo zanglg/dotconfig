@@ -81,27 +81,6 @@ return {
         end,
     },
     {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        config = function()
-            local wk = require("which-key")
-            wk.setup({ window = { border = "single" } })
-            wk.register({
-                mode = { "n" },
-                ["g"] = { name = "Goto" },
-                ["]"] = { name = "Next" },
-                ["["] = { name = "Prev" },
-
-                ["<leader>c"] = { name = "Code" },
-                ["<leader>d"] = { name = "Diagnostics" },
-                ["<leader>f"] = { name = "Find" },
-                ["<leader>g"] = { name = "Git" },
-                ["<leader>gh"] = { name = "Hunks" },
-                ["<leader>t"] = { name = "Toggle" },
-            })
-        end,
-    },
-    {
         "mrjones2014/smart-splits.nvim",
         config = function()
             require("smart-splits").setup({
@@ -119,5 +98,31 @@ return {
             { "<c-k>", "<cmd>lua require('smart-splits').move_cursor_up()<cr>", desc = "MoveWinUp" },
             { "<c-l>", "<cmd>lua require('smart-splits').move_cursor_right()<cr>", desc = "MoveWinRight" },
         },
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        config = function()
+            local wk = require("which-key")
+            wk.setup({ window = { border = "single" } })
+            wk.register({
+                mode = { "n" },
+                ["g"] = { name = "Goto" },
+                ["]"] = { name = "Next" },
+                ["["] = { name = "Prev" },
+
+                ["<leader>c"] = { name = "Code" },
+                ["<leader>d"] = { name = "Diagnostics" },
+                ["<leader>f"] = { name = "Find" },
+                ["<leader>g"] = { name = "Git" },
+                ["<leader>t"] = { name = "Toggle" },
+
+                ["<leader>q"] = { "<cmd>qall <cr>", "Quit All" },
+                ["<leader>Q"] = { "<cmd>qall!<cr>", "Quit All Without Save" },
+                ["<leader>w"] = { "<cmd>w    <cr>", "Save" },
+                ["<leader>W"] = { "<cmd>wqall<cr>", "Save All and Quit" },
+                ["<leader>,"] = { "<cmd>noh  <cr>", "No Highlight" },
+            })
+        end,
     },
 }

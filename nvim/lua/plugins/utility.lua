@@ -27,6 +27,9 @@ return {
         cmd = "TroubleToggle",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = { mode = "quickfix" },
+        keys = {
+            { "q", "<cmd>TroubleToggle<cr>", desc = "Quickfix Toggle" },
+        },
     },
     {
         "folke/todo-comments.nvim",

@@ -25,9 +25,17 @@ local configs = {
         cache = {
             enabled = true,
         },
-        disabled_plugins = {
-            "netrw",
-            "netrwPlugin",
+        rtp = {
+            disabled_plugins = {
+                "gzip",
+                "matchit",
+                "matchparen",
+                "netrwPlugin",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+            },
         },
     },
 }
