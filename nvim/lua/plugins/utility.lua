@@ -2,6 +2,10 @@ return {
     {
         "ellisonleao/glow.nvim",
         cmd = "Glow",
+        ft = { "md", "markdown" },
+        keys = {
+            { "<leader>tk", "<cmd>Glow<cr>", desc = "Toggle Markdown Preview" },
+        },
         config = function()
             require("glow").setup({
                 border = "single",
