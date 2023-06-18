@@ -30,6 +30,7 @@
   "smart-splits.nvim": { "branch": "master", "commit": "e9a8f08b9db566ebc2b942b4776567f981b2986c" },
   "spaceless.nvim": { "branch": "main", "commit": "d84eb8b05fca9748ef7e118afe94e1a483ca3b81" },
   "symbols-outline.nvim": { "branch": "master", "commit": "512791925d57a61c545bc303356e8a8f7869763c" },
+  "tabout.nvim": { "branch": "master", "commit": "0d275c8d25f32457e67b5c66d6ae43f26a61bce5" },
   "telescope.nvim": { "branch": "master", "commit": "89ca7265726cb07ca316562b13fd0c406588af65" },
   "tint.nvim": { "branch": "master", "commit": "80b15a91087991068d5834419437f652d1d4bc8e" },
   "todo-comments.nvim": { "branch": "main", "commit": "09b0b17d824d2d56f02ff15967e8a2499a89c731" },

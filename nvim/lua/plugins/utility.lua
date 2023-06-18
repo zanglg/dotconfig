@@ -1,12 +1,5 @@
 return {
     {
-        "numToStr/Comment.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("Comment").setup()
-        end,
-    },
-    {
         "ellisonleao/glow.nvim",
         cmd = "Glow",
         config = function()
@@ -20,6 +13,20 @@ return {
         event = "InsertEnter",
         config = function()
             require("spaceless").setup()
+        end,
+    },
+    {
+        "abecodes/tabout.nvim",
+        event = "InsertEnter",
+        config = function()
+            require("tabout").setup()
+        end,
+    },
+    {
+        "numToStr/Comment.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("Comment").setup()
         end,
     },
     {
