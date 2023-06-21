@@ -84,6 +84,9 @@ return {
     },
     {
         "lukas-reineke/lsp-format.nvim",
-        opts = {},
+        opts = {
+            c = { exclude = { "clangd" } },
+            cpp = { exclude = { "clangd" } },
+        },
     },
 }
