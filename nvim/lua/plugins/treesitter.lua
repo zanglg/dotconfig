@@ -24,6 +24,7 @@ return {
                     "c",
                     "rust",
                     "python",
+                    "comment",
                     -- markup lang
                     "rst",
                     "markdown",
@@ -39,7 +40,6 @@ return {
                     "yaml",
                     -- neovim
                     "lua",
-                    "vim",
                     "vimdoc",
                 },
                 textobjects = {
