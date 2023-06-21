@@ -42,24 +42,4 @@ return {
             { "q", "<cmd>TroubleToggle<cr>", desc = "Quickfix Toggle" },
         },
     },
-    {
-        "folke/todo-comments.nvim",
-        cmd = "TodoTrouble",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        opts = {
-            search = {
-                args = {
-                    "--color=never",
-                    "--no-heading",
-                    "--with-filename",
-                    "--line-number",
-                    "--column",
-                    "--follow",
-                },
-            },
-        },
-        keys = {
-            { "<leader>fT", "<cmd>TodoTrouble<cr>", desc = "Find Todos" },
-        },
-    },
 }
