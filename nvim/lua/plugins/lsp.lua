@@ -43,22 +43,6 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
-            local on_attach = function(client, buf)
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                    group = vim.api.nvim_create_augroup("LspFormat." .. buf, {}),
-                    buffer = buf,
-                    callback = function()
-                        vim.lsp.buf.format({ async = false })
-                    end,
-                })
-            end
-
-            local servers = {
-                clangd = { on_attach = on_attach },
-                rust_analyzer = { on_attach = on_attach },
-                pylsp = { on_attach = on_attach },
-            }
-
             for _, server in ipairs({ "clangd", "rust_analyzer", "pylsp" }) do
                 require("lspconfig")[server].setup({
                     on_attach = require("lsp-format").on_attach,
