@@ -19,6 +19,11 @@ if which bat >/dev/null; then
     alias cat='bat'
 fi
 
+# A smarter cd command.
+if which zoxide >/dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+
 # Rust task runner and build tool.
 if which cargo-make >/dev/null; then
     alias cm='cargo make'
