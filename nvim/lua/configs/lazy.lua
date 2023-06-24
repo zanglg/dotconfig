@@ -22,14 +22,10 @@ local configs = {
         border = "single",
     },
     performance = {
-        cache = {
-            enabled = true,
-        },
         rtp = {
             disabled_plugins = {
                 "gzip",
                 "matchit",
-                "matchparen",
                 "netrwPlugin",
                 "tarPlugin",
                 "tohtml",
