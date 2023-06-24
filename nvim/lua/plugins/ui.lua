@@ -2,7 +2,7 @@ local M = {
     {
         "zanglg/nova.nvim",
         opts = {
-            theme = "dark",
+            theme = "nova",
         },
         branch = "dev",
     },
