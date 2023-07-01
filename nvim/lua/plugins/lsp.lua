@@ -59,7 +59,9 @@ return {
                     -- non-lsp formatter
                     require("null-ls").builtins.formatting.stylua,
                     require("null-ls").builtins.formatting.taplo,
-                    require("null-ls").builtins.formatting.shfmt,
+                    require("null-ls").builtins.formatting.shfmt.with({
+                        filetypes = { "sh", "zsh" },
+                    }),
                     require("null-ls").builtins.formatting.asmfmt,
                 },
                 on_attach = require("lsp-format").on_attach,
