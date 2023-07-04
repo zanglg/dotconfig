@@ -2,8 +2,10 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
+            "nvim-lua/popup.nvim",
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-symbols.nvim",
+            "jvgrootveld/telescope-zoxide",
         },
         cmd = { "Telescope" },
         keys = {
@@ -22,10 +24,13 @@ return {
             { "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Find All Worksapce Symbols" },
 
             { "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Open Previous Picker" },
+            { "<leader>fz", "<cmd>Telescope zoxide list<cr>", desc = "Smater Cd" },
         },
         config = function()
+            local telescope = require("telescope")
             local actions = require("telescope.actions")
-            require("telescope").setup({
+
+            telescope.setup({
                 defaults = {
                     vimgrep_arguments = {
                         "rg",
@@ -42,12 +47,14 @@ return {
                     buffers = {
                         mappings = {
                             i = {
-                                ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+                                ["<c-d>"] = actions.delete_buffer,
                             },
                         },
                     },
                 },
+                extensions = { zoxide = {} },
             })
+            telescope.load_extension("zoxide")
         end,
     },
     {
