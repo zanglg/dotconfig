@@ -1,7 +1,10 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-symbols.nvim",
+        },
         cmd = { "Telescope" },
         keys = {
             { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
