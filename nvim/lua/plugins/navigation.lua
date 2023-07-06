@@ -58,6 +58,45 @@ return {
         end,
     },
     {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {},
+        keys = {
+            {
+                "s",
+                mode = { "n", "x", "o" },
+                function()
+                    require("flash").jump()
+                end,
+                desc = "Flash",
+            },
+            {
+                "m",
+                mode = { "n", "o", "x" },
+                function()
+                    require("flash").treesitter()
+                end,
+                desc = "Flash Treesitter",
+            },
+            {
+                "r",
+                mode = "o",
+                function()
+                    require("flash").remote()
+                end,
+                desc = "Remote Flash",
+            },
+            {
+                "R",
+                mode = { "o", "x" },
+                function()
+                    require("flash").treesitter_search()
+                end,
+                desc = "Flash Treesitter Search",
+            },
+        },
+    },
+    {
         "nvim-tree/nvim-tree.lua",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
@@ -77,17 +116,6 @@ return {
         },
         config = function()
             require("symbols-outline").setup({})
-        end,
-    },
-    {
-        "phaazon/hop.nvim",
-        branch = "v2",
-        cmd = { "HopWord" },
-        keys = {
-            { "s", "<cmd>HopWord<cr>", desc = "Hop Word" },
-        },
-        config = function()
-            require("hop").setup({})
         end,
     },
     {
