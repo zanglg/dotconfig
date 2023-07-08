@@ -4,7 +4,6 @@ local M = {
         opts = {
             theme = "dark",
         },
-        branch = "dev",
     },
     {
         "stevearc/dressing.nvim",
@@ -38,7 +37,7 @@ local M = {
     },
     {
         "levouh/tint.nvim",
-        event = "VeryLazy",
+        -- event = "VeryLazy",
         config = function()
             require("tint").setup({
                 highlight_ignore_patterns = { "WinSeparator" },
