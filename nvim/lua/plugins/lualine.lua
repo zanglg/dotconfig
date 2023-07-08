@@ -23,7 +23,7 @@ local M = {
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = "auto",
+                    theme = "nova",
                     globalstatus = true,
                 },
                 sections = {
