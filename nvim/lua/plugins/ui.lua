@@ -37,7 +37,7 @@ local M = {
     },
     {
         "levouh/tint.nvim",
-        -- event = "VeryLazy",
+        event = "VeryLazy",
         config = function()
             require("tint").setup({
                 highlight_ignore_patterns = { "WinSeparator" },
