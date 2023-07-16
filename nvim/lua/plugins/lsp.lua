@@ -2,7 +2,9 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = "BufReadPre",
-        dependencies = {},
+        dependencies = {
+            "lukas-reineke/lsp-format.nvim",
+        },
         keys = {
             { "gd", vim.lsp.buf.definition, desc = "Goto Definition" },
             { "gr", "<cmd>TroubleToggle lsp_references<cr>", desc = "References" },
@@ -53,6 +55,9 @@ return {
     {
         "jose-elias-alvarez/null-ls.nvim",
         event = "BufReadPre",
+        dependencies = {
+            "lukas-reineke/lsp-format.nvim",
+        },
         config = function()
             require("null-ls").setup({
                 sources = {
