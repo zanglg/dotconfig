@@ -15,11 +15,18 @@ local configs = {
     defaults = {
         lazy = true,
     },
+    dev = {
+        path = "~/Workspace",
+        patterns = { "zanglg" },
+    },
     install = {
         colorscheme = { "nova" },
     },
     ui = {
         border = "single",
+    },
+    change_detection = {
+        enabled = false,
     },
     performance = {
         rtp = {
@@ -35,12 +42,4 @@ local configs = {
         },
     },
 }
-
-if vim.loop.os_uname().sysname == "Darwin" then
-    configs.dev = {
-        path = "~/Workspace",
-        patterns = { "zanglg" },
-    }
-end
-
 require("lazy").setup("plugins", configs)
