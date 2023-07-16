@@ -19,7 +19,18 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#272e44'
+      black:   '#1c2131'
+      red:     '#e06c7f'
+      green:   '#9ccc66'
+      yellow:  '#ccb166'
+      blue:    '#5eb2ed'
+      magenta: '#c56ce0'
+      cyan:    '#5edced'
+      white:   '#b6bac9'
+
+    # Bright colors
+    bright:
+      black:   '#2d354e'
       red:     '#e06c7f'
       green:   '#9ccc66'
       yellow:  '#ccb166'
@@ -27,17 +38,6 @@ schemes:
       magenta: '#c56ce0'
       cyan:    '#5edced'
       white:   '#6c7693'
-
-    # Bright colors
-    bright:
-      black:   '#323c57'
-      red:     '#e06c7f'
-      green:   '#9ccc66'
-      yellow:  '#ccb166'
-      blue:    '#5eb2ed'
-      magenta: '#c56ce0'
-      cyan:    '#5edced'
-      white:   '#596178'
 
   # Colors (Nova Light)
   nova-light: &nova-light
@@ -58,24 +58,24 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '#f0f5f5'
+      black:   '#fcfdfd'
       red:     '#c72943'
       green:   '#2f7f33'
       yellow:  '#b38c19'
       blue:    '#1565c1'
       magenta: '#a626a4'
       cyan:    '#00838f'
-      white:   '#5c8a8a'
+      white:   '#4c5e67'
 
     # Bright colors
     bright:
-      black:   '#e0ebeb'
+      black:   '#d3dbde'
       red:     '#c72943'
       green:   '#2f7f33'
       yellow:  '#b38c19'
       blue:    '#1565c1'
       magenta: '#a626a4'
       cyan:    '#00838f'
-      white:   '#527a7a'
+      white:   '#7b929d'
 
 colors: *nova-dark
