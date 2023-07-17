@@ -18,6 +18,7 @@ local configs = {
     dev = {
         path = "~/Workspace",
         patterns = { "zanglg" },
+        fallback = true,
     },
     install = {
         colorscheme = { "nova" },
