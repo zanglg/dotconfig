@@ -8,4 +8,4 @@ keymap("n", "H", "^", opts)
 keymap("n", "L", "$", opts)
 
 keymap("n", "<leader>cc", "ciw", opts)
-keymap("n", "<leader>bd<cr>", ":bdelete", opts)
+keymap("n", "<leader>bd", ":bdelete<cr>", opts)
