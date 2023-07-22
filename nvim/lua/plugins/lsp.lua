@@ -2,6 +2,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = "BufReadPre",
+        ft = { "c", "cpp", "rust", "python" },
         dependencies = {
             "dgagn/diagflow.nvim",
             "lukas-reineke/lsp-format.nvim",
@@ -56,6 +57,7 @@ return {
     {
         "jose-elias-alvarez/null-ls.nvim",
         event = "BufReadPre",
+        ft = { "lua", "toml", "sh", "zsh", "asm" },
         dependencies = {
             "lukas-reineke/lsp-format.nvim",
         },
