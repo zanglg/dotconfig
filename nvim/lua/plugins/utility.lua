@@ -20,13 +20,6 @@ return {
         end,
     },
     {
-        "abecodes/tabout.nvim",
-        event = "InsertEnter",
-        config = function()
-            require("tabout").setup()
-        end,
-    },
-    {
         "numToStr/Comment.nvim",
         event = "VeryLazy",
         config = function()
