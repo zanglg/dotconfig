@@ -87,6 +87,7 @@ return {
     {
         "dgagn/diagflow.nvim",
         opts = {
+            scope = "line",
             toggle_event = { "InsertEnter" },
         },
     },
