@@ -5,6 +5,7 @@ keymap("i", "<c-l>", "<right>", opts)
 keymap("i", "<c-h>", "<left>", opts)
 keymap("i", "<c-j>", "<down>", opts)
 keymap("i", "<c-k>", "<up>", opts)
+keymap("i", "<c-o>", "<esc>o", opts)
 
 keymap("n", "H", "^", opts)
 keymap("n", "L", "$", opts)
