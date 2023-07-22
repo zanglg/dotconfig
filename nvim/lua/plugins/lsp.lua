@@ -3,6 +3,7 @@ return {
         "neovim/nvim-lspconfig",
         event = "BufReadPre",
         dependencies = {
+            "dgagn/diagflow.nvim",
             "lukas-reineke/lsp-format.nvim",
         },
         keys = {
@@ -78,6 +79,12 @@ return {
         opts = {
             c = { exclude = { "clangd" } },
             cpp = { exclude = { "clangd" } },
+        },
+    },
+    {
+        "dgagn/diagflow.nvim",
+        opts = {
+            toggle_event = { "InsertEnter" },
         },
     },
 }
