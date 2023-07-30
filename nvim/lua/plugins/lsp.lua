@@ -5,7 +5,6 @@ return {
         ft = { "c", "cpp", "rust", "python" },
         dependencies = {
             "dgagn/diagflow.nvim",
-            "j-hui/fidget.nvim",
             "lukas-reineke/lsp-format.nvim",
         },
         keys = {
@@ -90,10 +89,5 @@ return {
             scope = "line",
             toggle_event = { "InsertEnter" },
         },
-    },
-    {
-        "j-hui/fidget.nvim",
-        opts = {},
-        tag = "legacy",
     },
 }
