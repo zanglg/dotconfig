@@ -33,12 +33,12 @@ return {
             },
             window = {
                 completion = {
-                    border = "single",
+                    border = "rounded",
                     scrollbar = false,
                     winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual",
                 },
                 documentation = {
-                    border = "single",
+                    border = "rounded",
                     winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual",
                 },
             },

@@ -147,7 +147,7 @@ return {
         event = "VeryLazy",
         config = function()
             local wk = require("which-key")
-            wk.setup({ window = { border = "single" } })
+            wk.setup({ window = { border = "rounded" } })
             wk.register({
                 mode = { "n" },
                 ["g"] = { name = "Goto" },

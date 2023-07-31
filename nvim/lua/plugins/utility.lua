@@ -8,7 +8,7 @@ return {
         },
         config = function()
             require("glow").setup({
-                border = "single",
+                border = "rounded",
             })
         end,
     },

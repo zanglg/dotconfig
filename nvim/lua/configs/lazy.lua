@@ -24,7 +24,7 @@ local configs = {
         colorscheme = { "nova" },
     },
     ui = {
-        border = "single",
+        border = "rounded",
     },
     change_detection = {
         enabled = false,

@@ -22,13 +22,13 @@ local M = {
         config = function()
             require("dressing").setup({
                 input = {
-                    border = "single",
+                    border = "rounded",
                     win_options = { winblend = 0 },
                 },
                 select = {
                     backend = { "builtin" },
                     builtin = {
-                        border = "single",
+                        border = "rounded",
                         win_options = { winblend = 0 },
                     },
                 },
