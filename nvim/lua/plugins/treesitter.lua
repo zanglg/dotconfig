@@ -12,6 +12,7 @@ return {
                 ensure_installed = {
                     -- programming language
                     "c",
+                    "cpp",
                     "rust",
                     "python",
                     "comment",
