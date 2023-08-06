@@ -2,6 +2,9 @@
 zsh/.zsh_history
 zsh/.zsh_sessions
 
+# nvim
+nvim/.luarc.json
+
 # untracked sensitive info
 clash
 exercism

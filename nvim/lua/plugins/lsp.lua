@@ -2,30 +2,26 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = "BufReadPre",
-        ft = { "c", "cpp", "rust", "python" },
+        ft = { "c", "cpp", "rust", "python", "lua" },
         dependencies = {
+            "folke/neodev.nvim",
             "dgagn/diagflow.nvim",
             "lukas-reineke/lsp-format.nvim",
         },
         keys = {
-            { "gd", vim.lsp.buf.definition, desc = "Goto Definition" },
-            { "gr", "<cmd>TroubleToggle lsp_references<cr>", desc = "References" },
-            { "gI", "<cmd>TroubleToggle lsp_implementations<cr>", desc = "Goto Implementation" },
-            { "gt", "<cmd>TroubleToggle lsp_type_definitions<cr>", desc = "Goto Type Definition" },
-
-            { "K", vim.lsp.buf.hover, desc = "Hover" },
-            { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help" },
-
-            { "<leader>dn", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
-            { "<leader>dp", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
-            { "<leader>dk", vim.diagnostic.open_float, desc = "Preview Diagnostic" },
-
+            { "gd",         vim.lsp.buf.definition,                         desc = "Goto Definition" },
+            { "gr",         "<cmd>TroubleToggle lsp_references<cr>",        desc = "References" },
+            { "gI",         "<cmd>TroubleToggle lsp_implementations<cr>",   desc = "Goto Implementation" },
+            { "gt",         "<cmd>TroubleToggle lsp_type_definitions<cr>",  desc = "Goto Type Definition" },
+            { "K",          vim.lsp.buf.hover,                              desc = "Hover" },
+            { "<leader>dn", vim.diagnostic.goto_next,                       desc = "Next Diagnostic" },
+            { "<leader>dp", vim.diagnostic.goto_prev,                       desc = "Prev Diagnostic" },
+            { "<leader>dk", vim.diagnostic.open_float,                      desc = "Preview Diagnostic" },
             { "<leader>dd", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics" },
-            { "<leader>dw", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics" },
-
-            { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
-            { "<leader>cf", vim.lsp.buf.format, desc = "Format Document", mode = { "n", "v" } },
-            { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
+            { "<leader>dw", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics" },
+            { "<leader>ca", vim.lsp.buf.code_action,                        desc = "Code Action" },
+            { "<leader>cf", vim.lsp.buf.format,                             desc = "Format Document", },
+            { "<leader>cr", vim.lsp.buf.rename,                             desc = "Rename" },
         },
         config = function()
             -- how diagnostic are displayed
@@ -48,6 +44,19 @@ return {
                     on_attach = require("lsp-format").on_attach,
                 })
             end
+            require("lspconfig")["lua_ls"].setup({
+                settings = {
+                    Lua = {
+                        completion = {
+                            callSnippet = "Replace",
+                        },
+                        format = {
+                            enable = true,
+                        },
+                    },
+                },
+                on_attach = require("lsp-format").on_attach,
+            })
         end,
     },
     {
@@ -61,7 +70,6 @@ return {
             require("null-ls").setup({
                 sources = {
                     -- non-lsp formatter
-                    require("null-ls").builtins.formatting.stylua,
                     require("null-ls").builtins.formatting.taplo,
                     require("null-ls").builtins.formatting.shfmt.with({
                         filetypes = { "sh", "zsh" },
@@ -84,6 +92,12 @@ return {
         opts = {
             scope = "line",
             toggle_event = { "InsertEnter" },
+        },
+    },
+    {
+        "folke/neodev.nvim",
+        opts = {
+            setup_jsonls = false,
         },
     },
 }
