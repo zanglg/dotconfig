@@ -1,10 +1,12 @@
 return {
     {
         "lewis6991/gitsigns.nvim",
-        event = "BufReadPre",
+        event = "VeryLazy",
         cmd = { "Gitsigns" },
         keys = {
             { "<leader>gk", "<cmd>Gitsigns preview_hunk<cr>", desc = "Hunk Preview" },
+            { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Hunk Reset" },
+            { "<leader>gs", "<cmd>Gitsigns select_hunk<cr>", desc = "Hunk Select" },
             { "<leader>gn", "<cmd>Gitsigns next_hunk<cr>", desc = "Hunk Next" },
             { "<leader>gp", "<cmd>Gitsigns prev_hunk<cr>", desc = "Hunk Prev" },
             { "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame Line" },
@@ -32,7 +34,6 @@ return {
             "DiffviewToggleFiles",
         },
         keys = {
-            { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "DiffView Open" },
             { "<leader>gq", "<cmd>DiffviewClose<cr>", desc = "DiffView Close" },
         },
     },
