@@ -154,10 +154,12 @@ return {
                 ["]"] = { name = "Next" },
                 ["["] = { name = "Prev" },
 
+                ["<leader>b"] = { name = "Buffer" },
                 ["<leader>c"] = { name = "Code" },
-                ["<leader>d"] = { name = "Diagnostics" },
+                ["<leader>d"] = { name = "Diagnostic" },
                 ["<leader>f"] = { name = "Find" },
                 ["<leader>g"] = { name = "Git" },
+                ["<leader>m"] = { name = "Edit" },
                 ["<leader>t"] = { name = "Toggle" },
 
                 ["<leader>q"] = { "<cmd>qall <cr>", "Quit All" },
