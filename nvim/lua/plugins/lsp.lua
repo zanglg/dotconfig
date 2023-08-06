@@ -60,27 +60,6 @@ return {
         end,
     },
     {
-        "jose-elias-alvarez/null-ls.nvim",
-        event = "BufReadPre",
-        ft = { "lua", "toml", "sh", "zsh", "asm" },
-        dependencies = {
-            "lukas-reineke/lsp-format.nvim",
-        },
-        config = function()
-            require("null-ls").setup({
-                sources = {
-                    -- non-lsp formatter
-                    require("null-ls").builtins.formatting.taplo,
-                    require("null-ls").builtins.formatting.shfmt.with({
-                        filetypes = { "sh", "zsh" },
-                    }),
-                    require("null-ls").builtins.formatting.asmfmt,
-                },
-                on_attach = require("lsp-format").on_attach,
-            })
-        end,
-    },
-    {
         "lukas-reineke/lsp-format.nvim",
         opts = {
             c = { exclude = { "clangd" } },
