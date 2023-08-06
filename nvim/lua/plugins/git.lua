@@ -34,6 +34,7 @@ return {
             "DiffviewToggleFiles",
         },
         keys = {
+            { "<leader>gc", "<cmd>DiffviewFileHistory<cr>", desc = "DiffView FileHistory" },
             { "<leader>gq", "<cmd>DiffviewClose<cr>", desc = "DiffView Close" },
         },
     },

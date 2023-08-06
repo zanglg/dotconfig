@@ -16,9 +16,6 @@ return {
             { "<leader>fj", "<cmd>Telescope jumplist<cr>", desc = "Find Jumps" },
             { "<leader>fd", "<cmd>Telescope git_status<cr>", desc = "Find Diff Files" },
 
-            { "<leader>gc", "<cmd>Telescope git_bcommits<cr>", desc = "Find Current Commits" },
-            { "<leader>gC", "<cmd>Telescope git_commits<cr>", desc = "Find Commits" },
-
             { "<leader>ft", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find Document Symbols" },
             { "<leader>fs", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Find Workspace Symbols" },
             { "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Find All Worksapce Symbols" },
