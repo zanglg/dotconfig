@@ -5,7 +5,6 @@ return {
         ft = { "c", "cpp", "rust", "python", "lua" },
         dependencies = {
             "folke/neodev.nvim",
-            "dgagn/diagflow.nvim",
             "lukas-reineke/lsp-format.nvim",
         },
         keys = {
@@ -39,27 +38,33 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
-            for _, server in ipairs({ "clangd", "rust_analyzer", "pylsp" }) do
-                require("lspconfig")[server].setup({
-                    on_attach = require("lsp-format").on_attach,
+            local on_attach = function(client)
+                vim.api.nvim_create_autocmd("CursorHold", {
+                    callback = vim.diagnostic.open_float,
+                    group = vim.api.nvim_create_augroup("LspDiagnostics", { clear = true }),
                 })
+                require("lsp-format").on_attach(client)
             end
-            require("lspconfig")["lua_ls"].setup({
-                settings = {
-                    Lua = {
-                        workspace = {
-                            checkThirdParty = false,
-                        },
-                        completion = {
-                            callSnippet = "Replace",
-                        },
-                        format = {
-                            enable = true,
+
+            local servers = {
+                clangd = { on_attach = on_attach },
+                rust_analyzer = { on_attach = on_attach },
+                pylsp = { on_attach = on_attach },
+                lua_ls = {
+                    settings = {
+                        Lua = {
+                            workspace = { checkThirdParty = false, },
+                            completion = { callSnippet = "Replace", },
+                            format = { enable = true, },
                         },
                     },
+                    on_attach = on_attach,
                 },
-                on_attach = require("lsp-format").on_attach,
-            })
+            }
+
+            for server, opts in pairs(servers) do
+                require("lspconfig")[server].setup(opts)
+            end
         end,
     },
     {
@@ -67,13 +72,6 @@ return {
         opts = {
             c = { exclude = { "clangd" } },
             cpp = { exclude = { "clangd" } },
-        },
-    },
-    {
-        "dgagn/diagflow.nvim",
-        opts = {
-            scope = "line",
-            toggle_event = { "InsertEnter" },
         },
     },
     {
