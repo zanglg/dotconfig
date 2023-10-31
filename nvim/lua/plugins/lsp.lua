@@ -38,11 +38,24 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
-            local on_attach = function(client)
+            local on_attach = function(client, bufnr)
+                local lsp_attach = vim.api.nvim_create_augroup("LspAttach", { clear = true })
                 vim.api.nvim_create_autocmd("CursorHold", {
                     callback = vim.diagnostic.open_float,
-                    group = vim.api.nvim_create_augroup("LspDiagnostics", { clear = true }),
+                    group = lsp_attach,
                 })
+                if client.server_capability.inlayHintProvider then
+                    vim.api.nvim_create_autocmd("InsertEnter", {
+                        buffer = bufnr,
+                        callback = function() vim.lsp.inlay_hint(bufnr, true) end,
+                        group = lsp_attach,
+                    })
+                    vim.api.nvim_create_autocmd("InsertLeave", {
+                        buffer = bufnr,
+                        callback = function() vim.lsp.inlay_hint(bufnr, false) end,
+                        group = lsp_attach,
+                    })
+                end
                 require("lsp-format").on_attach(client)
             end
 
