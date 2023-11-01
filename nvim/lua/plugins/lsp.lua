@@ -44,7 +44,7 @@ return {
                     callback = vim.diagnostic.open_float,
                     group = lsp_attach,
                 })
-                if client.server_capability.inlayHintProvider then
+                if client.server_capabilities.inlayHintProvider then
                     vim.api.nvim_create_autocmd("InsertEnter", {
                         buffer = bufnr,
                         callback = function() vim.lsp.inlay_hint(bufnr, true) end,
