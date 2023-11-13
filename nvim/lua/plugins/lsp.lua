@@ -44,17 +44,19 @@ return {
                     callback = vim.diagnostic.open_float,
                     group = lsp_attach,
                 })
-                if client.server_capabilities.inlayHintProvider then
-                    vim.api.nvim_create_autocmd("InsertEnter", {
-                        buffer = bufnr,
-                        callback = function() vim.lsp.inlay_hint(bufnr, true) end,
-                        group = lsp_attach,
-                    })
-                    vim.api.nvim_create_autocmd("InsertLeave", {
-                        buffer = bufnr,
-                        callback = function() vim.lsp.inlay_hint(bufnr, false) end,
-                        group = lsp_attach,
-                    })
+                if vim.fn.has("nvim-0.10") == 1 then
+                    if client.server_capabilities.inlayHintProvider then
+                        vim.api.nvim_create_autocmd("InsertEnter", {
+                            buffer = bufnr,
+                            callback = function() vim.lsp.inlay_hint(bufnr, true) end,
+                            group = lsp_attach,
+                        })
+                        vim.api.nvim_create_autocmd("InsertLeave", {
+                            buffer = bufnr,
+                            callback = function() vim.lsp.inlay_hint(bufnr, false) end,
+                            group = lsp_attach,
+                        })
+                    end
                 end
                 require("lsp-format").on_attach(client)
             end
