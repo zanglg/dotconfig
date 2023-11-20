@@ -6,22 +6,21 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-symbols.nvim",
             "jvgrootveld/telescope-zoxide",
+            "nvim-telescope/telescope-live-grep-args.nvim",
         },
         cmd = { "Telescope" },
         keys = {
-            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-            { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find String" },
-            { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
-            { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Find Current" },
-            { "<leader>fj", "<cmd>Telescope jumplist<cr>", desc = "Find Jumps" },
-            { "<leader>fd", "<cmd>Telescope git_status<cr>", desc = "Find Diff Files" },
-
-            { "<leader>ft", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Find Document Symbols" },
-            { "<leader>fs", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "Find Workspace Symbols" },
+            { "<leader>ff", "<cmd>Telescope find_files<cr>",                    desc = "Find Files" },
+            { "<leader>fg", "<cmd>Telescope live_grep_args<cr>",                desc = "Find String" },
+            { "<leader>fb", "<cmd>Telescope buffers<cr>",                       desc = "Find Buffers" },
+            { "<leader>fc", "<cmd>Telescope grep_string<cr>",                   desc = "Find Current" },
+            { "<leader>fj", "<cmd>Telescope jumplist<cr>",                      desc = "Find Jumps" },
+            { "<leader>fd", "<cmd>Telescope git_status<cr>",                    desc = "Find Diff Files" },
+            { "<leader>ft", "<cmd>Telescope lsp_document_symbols<cr>",          desc = "Find Document Symbols" },
+            { "<leader>fs", "<cmd>Telescope lsp_workspace_symbols<cr>",         desc = "Find Workspace Symbols" },
             { "<leader>fw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Find All Worksapce Symbols" },
-
-            { "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Open Previous Picker" },
-            { "<leader>fz", "<cmd>Telescope zoxide list<cr>", desc = "Smater Cd" },
+            { "<leader>fr", "<cmd>Telescope resume<cr>",                        desc = "Open Previous Picker" },
+            { "<leader>fz", "<cmd>Telescope zoxide list<cr>",                   desc = "Smater Cd" },
         },
         config = function()
             local telescope = require("telescope")
@@ -51,6 +50,7 @@ return {
                 },
                 extensions = { zoxide = {} },
             })
+            telescope.load_extension("live_grep_args")
             telescope.load_extension("zoxide")
         end,
     },
@@ -133,10 +133,10 @@ return {
             -- resize mode
             { "<leader>W", "<cmd>lua require('smart-splits').start_resize_mode()<cr>", desc = "ResizeMode" },
             -- moving between splits
-            { "<c-h>", "<cmd>lua require('smart-splits').move_cursor_left()<cr>", desc = "MoveWinLeft" },
-            { "<c-j>", "<cmd>lua require('smart-splits').move_cursor_down()<cr>", desc = "MoveWinDown" },
-            { "<c-k>", "<cmd>lua require('smart-splits').move_cursor_up()<cr>", desc = "MoveWinUp" },
-            { "<c-l>", "<cmd>lua require('smart-splits').move_cursor_right()<cr>", desc = "MoveWinRight" },
+            { "<c-h>",     "<cmd>lua require('smart-splits').move_cursor_left()<cr>",  desc = "MoveWinLeft" },
+            { "<c-j>",     "<cmd>lua require('smart-splits').move_cursor_down()<cr>",  desc = "MoveWinDown" },
+            { "<c-k>",     "<cmd>lua require('smart-splits').move_cursor_up()<cr>",    desc = "MoveWinUp" },
+            { "<c-l>",     "<cmd>lua require('smart-splits').move_cursor_right()<cr>", desc = "MoveWinRight" },
         },
     },
     {
