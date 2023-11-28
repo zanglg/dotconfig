@@ -48,12 +48,12 @@ return {
                     if client.server_capabilities.inlayHintProvider then
                         vim.api.nvim_create_autocmd("InsertEnter", {
                             buffer = bufnr,
-                            callback = function() vim.lsp.inlay_hint(bufnr, true) end,
+                            callback = function() vim.lsp.inlay_hint.enable(bufnr, true) end,
                             group = lsp_attach,
                         })
                         vim.api.nvim_create_autocmd("InsertLeave", {
                             buffer = bufnr,
-                            callback = function() vim.lsp.inlay_hint(bufnr, false) end,
+                            callback = function() vim.lsp.inlay_hint.enable(bufnr, false) end,
                             group = lsp_attach,
                         })
                     end
