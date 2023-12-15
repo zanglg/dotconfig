@@ -24,6 +24,11 @@ if which zoxide >/dev/null; then
 	eval "$(zoxide init zsh)"
 fi
 
+# A customizable prompt for shell
+if which starship >/dev/null; then
+	eval "$(starship init zsh)"
+fi
+
 # Rust task runner and build tool.
 if which cargo-make >/dev/null; then
 	alias cm='cargo make'
