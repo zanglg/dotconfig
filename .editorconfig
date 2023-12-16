@@ -13,3 +13,32 @@ indent_style = tab
 
 [*.yaml]
 indent_size = 2
+
+# see https://github.com/CppCXY/EmmyLuaCodeStyle
+[*.lua]
+
+# indent
+indent_style = space
+indent_size = 4
+continuation_indent = 4
+max_line_length = 120
+
+# call style
+quote_style = double
+call_arg_parentheses = keep
+
+# separator
+table_separator_style = comma
+trailing_table_separator = always
+
+# align
+align_call_args = true
+align_function_params = true
+align_continuous_assign_statement = true
+align_continuous_rect_table_field = true
+align_continuous_line_space = 4
+align_if_branch = false
+align_array_table = true
+align_continuous_similar_call_args = false
+align_continuous_inline_comment = true
+align_chain_expr = none
