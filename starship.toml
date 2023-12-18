@@ -48,6 +48,7 @@ Windows = "  "
 Macos = "  "
 Ubuntu = " 󰕈 "
 Arch = "  "
+Android = "  "
 
 [git_branch]
 symbol = " 󰘬 "
