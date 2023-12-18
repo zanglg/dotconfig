@@ -1,3 +1,6 @@
+# check which shell was using
+export shell="$(echo $SHELL | awk -F / '{print $NF}')"
+
 # set nvim as default editor
 if which nvim >/dev/null; then
 	export EDITOR='nvim'
@@ -21,12 +24,12 @@ fi
 
 # A smarter cd command.
 if which zoxide >/dev/null; then
-	eval "$(zoxide init zsh)"
+	eval "$(zoxide init $shell)"
 fi
 
 # A customizable prompt for shell
 if which starship >/dev/null; then
-	eval "$(starship init zsh)"
+	eval "$(starship init $shell)"
 fi
 
 # Rust task runner and build tool.
