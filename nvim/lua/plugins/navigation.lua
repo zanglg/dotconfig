@@ -112,13 +112,11 @@ return {
         end,
     },
     {
-        "simrat39/symbols-outline.nvim",
+        "hedyhli/outline.nvim",
         keys = {
-            { "<leader>ts", "<cmd>SymbolsOutline<cr>", desc = "Toggle SymbolsOutline" },
+            { "<leader>ts", "<cmd>Outline!<cr>", desc = "Toggle Outline" },
         },
-        config = function()
-            require("symbols-outline").setup({})
-        end,
+        opts = {},
     },
     {
         "mrjones2014/smart-splits.nvim",
