@@ -3,6 +3,7 @@
 	email = zang.lg@outlook.com
 [core]
 	editor = nvim
+	excludesFile = ~/.config/git/ignore
 [alias]
 	ad = add
 	br = branch

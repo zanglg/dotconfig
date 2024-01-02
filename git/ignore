@@ -1,0 +1,5 @@
+# clangd's cache directory
+.cache/
+
+# ompile commands used for lsp
+compile_commands.json
