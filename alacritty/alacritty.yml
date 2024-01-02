@@ -12,7 +12,7 @@ window:
 
 font:
   normal:
-    family: "MonaspiceAr NF"
+    family: "MonaspiceAr Nerd Font"
     style: Regular
   size: 22.0
 
