@@ -36,15 +36,6 @@ local M = {
         end,
     },
     {
-        "levouh/tint.nvim",
-        event = "WinNew",
-        config = function()
-            require("tint").setup({
-                highlight_ignore_patterns = { "WinSeparator" },
-            })
-        end,
-    },
-    {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {
