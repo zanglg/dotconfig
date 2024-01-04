@@ -14,7 +14,8 @@ $git_commit\
 add_newline = true
 
 [username]
-style_user = "blue"
+style_user = "bold red"
+style_root = "bold red"
 format = '[$user]($style)'
 disabled = false
 show_always = true
@@ -52,5 +53,5 @@ Android = "  "
 
 [git_branch]
 symbol = " 󰘬 "
-format = '[[$symbol$branch](fg:#769ff0)]($style)'
+format = '[[$symbol$branch](cyan)]($style)'
 style = "purple"
