@@ -4,12 +4,11 @@ return {
         event = "BufReadPre",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            "HiPhish/nvim-ts-rainbow2",
+            "HiPhish/rainbow-delimiters.nvim",
         },
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                rainbow = { enable = true },
                 highlight = { enable = true },
                 ensure_installed = {
                     -- programming language
@@ -72,5 +71,11 @@ return {
                 },
             })
         end,
+    },
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+        setup = function()
+            require("rainbow-delimiters.setup").setup({})
+        end
     },
 }
