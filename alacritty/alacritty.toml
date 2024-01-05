@@ -1,0 +1,23 @@
+[cursor]
+style = { shape = "Underline" }
+
+[font]
+size = 17.0
+normal = { family = "MonaspiceAr Nerd Font", style = "Regular" }
+
+[terminal]
+osc52 = "CopyPaste"
+
+[mouse]
+bindings = [{ mouse = "Right", action = "Paste" }]
+
+[selection]
+save_to_clipboard = true
+
+[window]
+opacity = 0.80
+blur = true
+
+[window.dimensions]
+columns = 120
+lines = 36
