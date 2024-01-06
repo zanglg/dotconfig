@@ -30,19 +30,19 @@ return {
         "smoka7/multicursors.nvim",
         opts = {},
         keys = {
-            { "<Leader>ms", "<cmd>MCstart<cr>",         desc = "Select Cursor Word" },
-            { "<Leader>mp", "<cmd>MCpattern<cr>",       desc = "Select Patterns" },
+            { "<Leader>ms", "<cmd>MCstart<cr>", desc = "Select Cursor Word" },
+            { "<Leader>mp", "<cmd>MCpattern<cr>", desc = "Select Patterns" },
             { "<Leader>mv", "<cmd>MCvisualPattern<cr>", desc = "Select Visual Patterns" },
-            { "<Leader>mu", "<cmd>MCunderCursor<cr>",   desc = "Select Cursor Char" },
-            { "<Leader>mc", "<cmd>MCclear<cr>",         desc = "Select Clear" },
+            { "<Leader>mu", "<cmd>MCunderCursor<cr>", desc = "Select Cursor Char" },
+            { "<Leader>mc", "<cmd>MCclear<cr>", desc = "Select Clear" },
         },
     },
     {
         "kevinhwang91/nvim-bqf",
         ft = "qf",
         config = function()
-            require('bqf').setup({
-                preview = { winblend = 0 }
+            require("bqf").setup({
+                preview = { winblend = 0 },
             })
         end,
     },

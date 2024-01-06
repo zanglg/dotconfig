@@ -76,6 +76,6 @@ return {
         "HiPhish/rainbow-delimiters.nvim",
         setup = function()
             require("rainbow-delimiters.setup").setup({})
-        end
+        end,
     },
 }
