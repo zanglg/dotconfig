@@ -21,3 +21,31 @@ blur = true
 [window.dimensions]
 columns = 120
 lines = 36
+
+# nova.dark
+[colors.primary]
+background = "#1c2131"
+foreground = "#b6bac9"
+
+[colors.cursor]
+cursor = "#b0bf40"
+
+[colors.normal]
+black = "#1c2131"
+red = "#dc6583"
+green = "#68bb6c"
+yellow = "#d6a75c"
+blue = "#5e8eed"
+magenta = "#ce6ce0"
+cyan = "#25bcda"
+white = "#b6bac9"
+
+[colors.bright]
+black = "#1e2435"
+red = "#f26f90"
+green = "#72cd76"
+yellow = "#ebb765"
+blue = "#679cff"
+magenta = "#e276f6"
+cyan = "#28ceef"
+white = "#c8ccdd"
