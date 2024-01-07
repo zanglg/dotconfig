@@ -46,6 +46,15 @@ local M = {
             "MunifTanjim/nui.nvim",
         },
     },
+    {
+        "xiyaowong/transparent.nvim",
+        opts = {
+            exclude_groups = { "CursorLine" },
+        },
+        keys = {
+            { "<leader>tt", "<cmd>TransparentToggle<cr>", desc = "Toggle Transparent" },
+        },
+    },
 }
 
 return M
