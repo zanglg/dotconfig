@@ -27,14 +27,13 @@ return {
         end,
     },
     {
-        "smoka7/multicursors.nvim",
+        "brenton-leighton/multiple-cursors.nvim",
         opts = {},
         keys = {
-            { "<Leader>ms", "<cmd>MCstart<cr>", desc = "Select Cursor Word" },
-            { "<Leader>mp", "<cmd>MCpattern<cr>", desc = "Select Patterns" },
-            { "<Leader>mv", "<cmd>MCvisualPattern<cr>", desc = "Select Visual Patterns" },
-            { "<Leader>mu", "<cmd>MCunderCursor<cr>", desc = "Select Cursor Char" },
-            { "<Leader>mc", "<cmd>MCclear<cr>", desc = "Select Clear" },
+            { "<c-s-j>", "<Cmd>MultipleCursorsAddDown<CR>", desc = "MultipCursor Add Down" },
+            { "<c-s-k>", "<Cmd>MultipleCursorsAddUp<CR>", desc = "MultipCursor Add Up" },
+            { "<c-s-n>", "<Cmd>MultipleCursorsAddBySearch<CR>", desc = "MultipCursor Add Curr" },
+            { "<c-s-m>", "<Cmd>MultipleCursorsAddBySearchV<CR>", desc = "MultipCursor Add Curr in Visual" },
         },
     },
     {

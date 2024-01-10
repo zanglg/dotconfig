@@ -16,7 +16,7 @@
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lspkind.nvim": { "branch": "master", "commit": "7f26cf5e27e2bd910ce0ea00c514da2bf97423b8" },
   "lualine.nvim": { "branch": "master", "commit": "566b7036f717f3d676362742630518a47f132fff" },
-  "multicursors.nvim": { "branch": "main", "commit": "8e876fe9db46c1b76c151202b418df21eca07bad" },
+  "multiple-cursors.nvim": { "branch": "main", "commit": "9f41d2991f36e3558a83760fba8eb94529c68ea6" },
   "noice.nvim": { "branch": "main", "commit": "92433164e2f7118d4122c7674c3834d9511722ba" },
   "none-ls.nvim": { "branch": "main", "commit": "fbdcbf8e152529af846b3a333f039751829b84c2" },
   "nui.nvim": { "branch": "main", "commit": "80445d015d2b5f9af0d9e8bce63d303bc86eda8a" },
