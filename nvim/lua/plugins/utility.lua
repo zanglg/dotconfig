@@ -45,4 +45,13 @@ return {
             })
         end,
     },
+    {
+        "brenoprata10/nvim-highlight-colors",
+        opts = {
+            render = "first_column",
+        },
+        keys = {
+            { "<leader>tc", "<Cmd>HighlightColorsToggle<CR>", desc = "Toggle HighlightColors" },
+        },
+    },
 }
