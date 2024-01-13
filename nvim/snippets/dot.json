@@ -1,0 +1,42 @@
+{
+    "red": {
+        "prefix": "red",
+        "body": ["#D76364"],
+        "description": "Basic Color of Red"
+    },
+    "Brown": {
+        "prefix": "brown",
+        "body": ["#934B43"],
+        "description": "Basic Color of Brown"
+    },
+    "yellow": {
+        "prefix": "yellow",
+        "body": ["#F1D77E"],
+        "description": "Basic Color of Yellow"
+    },
+    "lime": {
+        "prefix": "lime",
+        "body": ["#B1CE46"],
+        "description": "Basic Color of Lime"
+    },
+    "green": {
+        "prefix": "green",
+        "body": ["#63E398"],
+        "description": "Basic Color of Green"
+    },
+    "cyan": {
+        "prefix": "cyan",
+        "body": ["#9DC3E7"],
+        "description": "Basic Color of Cyan"
+    },
+    "blue": {
+        "prefix": "blue",
+        "body": ["#5F97D2"],
+        "description": "Basic Color of Blue"
+    },
+    "violet": {
+        "prefix": "violet",
+        "body": ["#9394E7"],
+        "description": "Basic Color of Violet"
+    }
+}
