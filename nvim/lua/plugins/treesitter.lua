@@ -18,13 +18,15 @@ return {
                     "python",
                     "comment",
                     -- markup lang
+                    "dot",
                     "rst",
+                    "typst",
                     "markdown",
                     "markdown_inline",
-                    "dot",
                     -- make
-                    "make",
                     "bash",
+                    "make",
+                    "gn",
                     "ninja",
                     -- config file
                     "toml",
