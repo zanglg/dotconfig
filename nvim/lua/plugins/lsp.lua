@@ -85,4 +85,36 @@ return {
             })
         end,
     },
+    {
+        "williamboman/mason.nvim",
+        opts = {
+            ui = {
+                border = "rounded",
+            },
+        },
+        cmd = {
+            "Mason",
+            "MasonUpdate",
+            "MasonInstall",
+            "MasonUninstall",
+            "MasonUninstallAll",
+            "MasonLog",
+        },
+    },
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        dependencies = {
+            "williamboman/mason.nvim",
+        },
+        cmd = {
+            "MasonToolsInstall",
+            "MasonToolsInstallSync",
+            "MasonToolsUpdate",
+            "MasonToolsUpdateSync",
+            "MasonToolsClean",
+        },
+        opts = {
+            ensure_installed = {},
+        },
+    },
 }
