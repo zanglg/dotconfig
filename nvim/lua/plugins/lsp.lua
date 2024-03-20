@@ -18,11 +18,14 @@ return {
             { "<leader>dd", vim.diagnostic.setqflist, desc = "List Diagnostics", mode = { "n" } },
         },
         config = function()
+            -- disable lsp log
+            vim.lsp.set_log_level("OFF")
+
             -- how diagnostic are displayed
             vim.diagnostic.config({
                 underline = false,
-                virtual_text = false,
-                update_in_insert = false,
+                virtual_text = { prefix = "" },
+                update_in_insert = true,
                 float = { border = "rounded" },
             })
 
@@ -35,10 +38,6 @@ return {
 
             local on_attach = function(client, bufnr)
                 local lsp_attach = vim.api.nvim_create_augroup("LspAttach", { clear = true })
-                vim.api.nvim_create_autocmd("CursorHold", {
-                    callback = vim.diagnostic.open_float,
-                    group = lsp_attach,
-                })
                 if vim.fn.has("nvim-0.10") == 1 then
                     if client.server_capabilities.inlayHintProvider then
                         vim.api.nvim_create_autocmd("InsertEnter", {
