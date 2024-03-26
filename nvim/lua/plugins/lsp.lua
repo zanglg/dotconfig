@@ -1,7 +1,7 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        ft = { "c", "cpp", "rust", "python" },
+        event = "VeryLazy",
         keys = {
             { "K", vim.lsp.buf.hover, desc = "Hover", mode = { "n" } },
             { "gd", vim.lsp.buf.definition, desc = "Definition", mode = { "n" } },
@@ -62,6 +62,7 @@ return {
                 clangd = { on_attach = on_attach },
                 rust_analyzer = { on_attach = on_attach },
                 pylsp = { on_attach = on_attach },
+                taplo = { on_attach = on_attach },
             }
 
             for server, opts in pairs(servers) do
@@ -71,14 +72,13 @@ return {
     },
     {
         "nvimtools/none-ls.nvim",
-        ft = { "lua", "toml" },
+        event = "VeryLazy",
         config = function()
             local null_ls = require("null-ls")
 
             null_ls.setup({
                 sources = {
                     null_ls.builtins.formatting.stylua,
-                    null_ls.builtins.formatting.taplo,
                     null_ls.builtins.formatting.gn_format,
                 },
             })
