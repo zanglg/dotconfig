@@ -54,4 +54,18 @@ return {
             { "<leader>tc", "<Cmd>HighlightColorsToggle<CR>", desc = "Toggle HighlightColors" },
         },
     },
+    {
+        "famiu/bufdelete.nvim",
+        event = "BufAdd",
+        keys = {
+            { "<leader>bd", "<cmd>Bdelete<cr>", desc = "Buffer Delete" },
+            { "<leader>bn", "<cmd>bnext<cr>", desc = "Buffer Next" },
+            { "<leader>bp", "<cmd>bprevious<cr>", desc = "Buffer Previous" },
+        },
+    },
+    {
+        "axkirillov/hbac.nvim",
+        event = "BufAdd",
+        opts = { threshold = 10 },
+    },
 }

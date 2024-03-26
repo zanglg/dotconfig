@@ -10,11 +10,6 @@ set("i", "<c-o>", "<esc>o")
 -- edit helper
 set("n", "cc", "ciw")
 
--- buffer manager
-set("n", "<leader>bd", ":bdelete<cr>")
-set("n", "<leader>bn", ":bnext<cr>")
-set("n", "<leader>bp", ":bprevious<cr>")
-
 -- quickfix manager
 local toggle_quickfix = function()
     for _, win in pairs(vim.fn.getwininfo()) do
