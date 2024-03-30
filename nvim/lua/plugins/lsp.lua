@@ -7,7 +7,7 @@ return {
             { "gd", vim.lsp.buf.definition, desc = "Definition", mode = { "n" } },
             { "gD", vim.lsp.buf.declaration, desc = "Definition", mode = { "n" } },
             { "gr", vim.lsp.buf.references, desc = "References", mode = { "n" } },
-            { "gi", vim.lsp.buf.implementation, desc = "Implementation", mode = { "n" } },
+            { "gI", vim.lsp.buf.implementation, desc = "Implementation", mode = { "n" } },
             { "gt", vim.lsp.buf.type_definition, desc = "Type Definition", mode = { "n" } },
             { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
             { "<leader>cf", vim.lsp.buf.format, desc = "Format Document", mode = { "n", "v" } },
