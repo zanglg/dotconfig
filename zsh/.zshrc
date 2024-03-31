@@ -27,6 +27,11 @@ if which zoxide >/dev/null; then
 	eval "$(zoxide init $shell)"
 fi
 
+# ✨ Magical shell history
+if which atuin >/dev/null; then
+	eval "$(atuin init $shell)"
+fi
+
 # A customizable prompt for shell
 if which starship >/dev/null; then
 	eval "$(starship init $shell)"
@@ -40,11 +45,11 @@ fi
 # 🌸 A command-line fuzzy finder
 if which fzf >/dev/null; then
 	export FZF_DEFAULT_OPTS="\
- --color=border:bright-black --border\
- --color=bg:black,bg+:bright-black,fg:white,fg+:bright-white\
- --color=header:red,info:yellow,hl:blue,hl+:cyan\
- --color=pointer:red,prompt:magenta,info:yellow,marker:green\
- --height 40% --reverse"
+		--color=border:bright-black --border\
+		--color=bg:black,bg+:bright-black,fg:white,fg+:bright-white\
+		--color=header:red,info:yellow,hl:blue,hl+:cyan\
+		--color=pointer:red,prompt:magenta,info:yellow,marker:green\
+		--height 40% --reverse"
 fi
 
 # helper
