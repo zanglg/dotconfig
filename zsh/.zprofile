@@ -1,5 +1,7 @@
 # homebrew
 if [[ $(uname) == "Darwin" ]]; then
+	export HOMEBREW_PIP_INDEX_URL=http://mirrors.aliyun.com/pypi/simple
+	export HOMEBREW_API_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles/api
 	export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 	if [ -f /usr/local/Homebrew/bin/brew ]; then
 		eval $(/usr/local/Homebrew/bin/brew shellenv)

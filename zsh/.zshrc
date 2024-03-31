@@ -10,11 +10,11 @@ if which nvim >/dev/null; then
 fi
 
 # A modern replacement for ‘ls’
-if which exa >/dev/null; then
-	alias l='exa'
-	alias la='exa -a'
-	alias ll='exa -lah'
-	alias ls='exa --color=auto'
+if which eza >/dev/null; then
+	alias l='eza'
+	alias la='eza -a'
+	alias ll='eza -lah'
+	alias ls='eza --color=auto'
 fi
 
 # A cat(1) clone with wings
