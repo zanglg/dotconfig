@@ -6,7 +6,7 @@ zsh/.zsh_sessions
 nvim/.luarc.json
 
 # untracked sensitive info
-clash
+clash.meta
 exercism
 gh
 scoop
