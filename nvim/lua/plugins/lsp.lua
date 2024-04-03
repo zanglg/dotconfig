@@ -18,6 +18,9 @@ return {
             { "<leader>dd", vim.diagnostic.setqflist, desc = "List Diagnostics", mode = { "n" } },
         },
         config = function()
+            -- set default border for lsp
+            require("lspconfig.ui.windows").default_options.border = "rounded"
+
             -- disable lsp log
             vim.lsp.set_log_level("OFF")
 
