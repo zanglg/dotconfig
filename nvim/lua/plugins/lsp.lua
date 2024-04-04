@@ -1,7 +1,10 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        event = "VeryLazy",
+        dependencies = {
+            "nvimtools/none-ls.nvim",
+        },
+        event = "BufReadPre",
         keys = {
             { "K", vim.lsp.buf.hover, desc = "Hover", mode = { "n" } },
             { "gd", vim.lsp.buf.definition, desc = "Definition", mode = { "n" } },
@@ -75,7 +78,6 @@ return {
     },
     {
         "nvimtools/none-ls.nvim",
-        event = "VeryLazy",
         config = function()
             local null_ls = require("null-ls")
 
