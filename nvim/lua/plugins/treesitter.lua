@@ -5,6 +5,7 @@ return {
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             "HiPhish/rainbow-delimiters.nvim",
+            "danymat/neogen",
         },
         build = ":TSUpdate",
         config = function()
@@ -79,5 +80,12 @@ return {
         setup = function()
             require("rainbow-delimiters.setup").setup({})
         end,
+    },
+    {
+        "danymat/neogen",
+        opts = { snippet_engine = "luasnip" },
+        keys = {
+            { "<leader>ccg", "<cmd>Neogen<cr>", desc = "Code Comment Generation" },
+        },
     },
 }
