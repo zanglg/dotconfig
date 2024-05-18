@@ -26,8 +26,9 @@ return {
                     "markdown_inline",
                     -- make
                     "bash",
-                    "make",
                     "gn",
+                    "just",
+                    "make",
                     "ninja",
                     -- config file
                     "toml",
