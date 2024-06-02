@@ -1,0 +1,90 @@
+[colors]
+ansi = [
+    "#1c2131",
+    "#dc6583",
+    "#68bb6c",
+    "#d6a75c",
+    "#5e8eed",
+    "#ce6ce0",
+    "#25bcda",
+    "#b6bac9",
+]
+brights = [
+    "#1e2435",
+    "#f26f90",
+    "#72cd76",
+    "#ebb765",
+    "#679cff",
+    "#e276f6",
+    "#28ceef",
+    "#c8ccdd",
+]
+
+background = "#1c2131"
+foreground = "#b6bac9"
+
+compose_cursor = "#b0bf40"
+cursor_bg = "#b0bf40"
+cursor_border = "#b0bf40"
+cursor_fg = "#1c2131"
+
+selection_bg = "#2d354e"
+selection_fg = 'rgba(0% 0% 0% 0%)'
+
+scrollbar_thumb = "#272e44"
+split = "#323c57"
+
+[colors.indexed]
+
+[colors.tab_bar]
+background = "#1c2131"
+
+[colors.tab_bar.active_tab]
+bg_color = "#5e8eed"
+fg_color = "#1c2131"
+
+intensity = 'Bold'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.inactive_tab]
+bg_color = '#22283a'
+fg_color = "#6c7693"
+
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = '#272e44'
+fg_color = "#6c7693"
+
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.new_tab]
+bg_color = '#22283a'
+fg_color = "#dc6583"
+
+intensity = 'Bold'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#dc6583"
+fg_color = '#22283a'
+
+intensity = 'Bold'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[metadata]
+author = 'Zang Leigang <zang.lg@outlook.com>'
+name = 'nova'
+origin_url = 'https://github.com/zanglg/nova.nvim'

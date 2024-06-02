@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.color_scheme = "Batman"
+config.color_scheme = "nova"
 config.font = wezterm.font("MonaspiceAr Nerd Font")
 config.font_size = 14.0
 config.use_fancy_tab_bar = false
