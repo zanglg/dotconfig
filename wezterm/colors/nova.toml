@@ -37,11 +37,11 @@ split = "#323c57"
 [colors.indexed]
 
 [colors.tab_bar]
-background = "#1c2131"
+background = "#22283a"
 
 [colors.tab_bar.active_tab]
-bg_color = "#5e8eed"
-fg_color = "#1c2131"
+bg_color = "#2d354e"
+fg_color = "#6c7693"
 
 intensity = 'Bold'
 italic = false
