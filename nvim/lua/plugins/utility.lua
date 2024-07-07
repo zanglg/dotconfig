@@ -68,4 +68,16 @@ return {
         event = "BufAdd",
         opts = { threshold = 10 },
     },
+    {
+        "mangelozzi/nvim-rgflow.lua",
+        opts = {
+            default_trigger_mappings = false,
+            default_ui_mappings = true,
+            default_quickfix_mappings = true,
+        },
+        keys = {
+            { "<leader>rg", "<cmd>lua require('rgflow').open()<cr>", desc = "ripgrep" },
+            { "<leader>rc", "<cmd>lua require('rgflow').open_cword()<cr>", desc = "ripgrep cword" },
+        },
+    },
 }
