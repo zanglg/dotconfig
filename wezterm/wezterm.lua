@@ -7,7 +7,7 @@ config.color_scheme = "nova"
 
 -- font
 config.font_size = 18.0
-config.font = wezterm.font("Monaspace Argon")
+config.font = wezterm.font("Monaspace Neon")
 config.harfbuzz_features = {
     "calt=0",
     "liga=1",
