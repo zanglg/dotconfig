@@ -45,20 +45,7 @@ return {
             local on_attach = function(client, bufnr)
                 local lsp_attach = vim.api.nvim_create_augroup("LspAttach", { clear = true })
                 if client.server_capabilities.inlayHintProvider then
-                    vim.api.nvim_create_autocmd("InsertEnter", {
-                        buffer = bufnr,
-                        callback = function()
-                            vim.lsp.inlay_hint.enable(true)
-                        end,
-                        group = lsp_attach,
-                    })
-                    vim.api.nvim_create_autocmd("InsertLeave", {
-                        buffer = bufnr,
-                        callback = function()
-                            vim.lsp.inlay_hint.enable(false)
-                        end,
-                        group = lsp_attach,
-                    })
+                    vim.lsp.inlay_hint.enable(true)
                 end
             end
 
