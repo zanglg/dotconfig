@@ -9,3 +9,4 @@ if vim.loop.os_uname().sysname == "Darwin" and vim.fn.executable("im-select") ==
         group = vim.api.nvim_create_augroup("im-select", { clear = true }),
     })
 end
+
