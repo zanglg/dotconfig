@@ -7,7 +7,10 @@ config.color_scheme = "nova"
 
 -- font
 config.font_size = 18.0
-config.font = wezterm.font("Monaspace Neon")
+config.font = wezterm.font_with_fallback({
+    { family = "Monaspace Neon" },
+    { family = "LXGW WenKai" },
+})
 config.harfbuzz_features = {
     "calt=0",
     "liga=1",
@@ -61,7 +64,10 @@ config.mouse_bindings = {
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     -- font
     config.font_size = 12.0
-    config.font = wezterm.font("Monaspace Neon", { weight = "Medium" })
+    config.font = wezterm.font_with_fallback({
+        { family = "Monaspace Neon", weight = "Medium" },
+        { family = "LXGW WenKai Screen" },
+    })
 
     -- windows appearance
     config.window_background_opacity = 1.0
