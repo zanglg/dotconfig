@@ -8,7 +8,7 @@ config.color_scheme = "nova"
 -- font
 config.font_size = 18.0
 config.font = wezterm.font_with_fallback({
-    { family = "Monaspace Neon" },
+    { family = "Monaspace Argon" },
     { family = "LXGW WenKai" },
 })
 config.harfbuzz_features = {
@@ -65,7 +65,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     -- font
     config.font_size = 12.0
     config.font = wezterm.font_with_fallback({
-        { family = "Monaspace Neon", weight = "Medium" },
+        { family = "Monaspace Argon", weight = "Medium" },
         { family = "LXGW WenKai Screen" },
     })
 
