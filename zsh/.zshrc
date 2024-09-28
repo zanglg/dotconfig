@@ -1,3 +1,8 @@
+# zsh-autocomplete
+if [ ! -f /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]; then
+	source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
+
 # set nvim as default editor
 if which nvim >/dev/null; then
 	export EDITOR='nvim'
