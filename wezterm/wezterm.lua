@@ -68,6 +68,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
         { family = "Monaspace Argon", weight = "Medium" },
         { family = "LXGW WenKai Screen" },
     })
+    config.freetype_load_flags = "NO_HINTING"
 
     -- windows appearance
     config.window_background_opacity = 1.0
