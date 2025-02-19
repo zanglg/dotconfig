@@ -8,8 +8,8 @@ config.color_scheme = "nova"
 -- font
 config.font_size = 18.0
 config.font = wezterm.font_with_fallback({
-    { family = "Monaspace Argon" },
-    { family = "LXGW WenKai" },
+    { family = "Monaspace Neon" },
+    { family = "Noto Sans CJK SC" },
 })
 config.harfbuzz_features = {
     "calt=0",
@@ -23,6 +23,7 @@ config.harfbuzz_features = {
     "ss07=1",
     "ss08=1",
     "ss09=1",
+    "ss10=1",
 }
 
 -- tabbar
@@ -63,12 +64,7 @@ config.mouse_bindings = {
 -- windows override
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     -- font
-    config.font_size = 12.0
-    config.font = wezterm.font_with_fallback({
-        { family = "Monaspace Argon", weight = "Medium" },
-        { family = "LXGW WenKai Screen" },
-    })
-    config.freetype_load_flags = "NO_HINTING"
+    config.font_size = 14.0
 
     -- windows appearance
     config.window_background_opacity = 1.0
