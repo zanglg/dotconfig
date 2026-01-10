@@ -13,15 +13,17 @@ fi
 
 # A modern replacement for ‘ls’
 if which eza >/dev/null; then
-	alias l='eza'
-	alias la='eza -a'
-	alias ll='eza -lah'
 	alias ls='eza --color=auto'
-fi
-
-# A cat(1) clone with wings
-if which bat >/dev/null; then
-	alias cat='bat'
+	alias la='eza --color=auto -a'
+	alias  l='eza -lh'
+	alias ll='eza -lah'
+	alias lt='eza -lah --tree'
+elif which lsd >/dev/null; then
+	alias ls='lsd --color=auto --icon=never'
+	alias la='lsd --color=auto --icon=never -a'
+	alias  l='lsd -l'
+	alias ll='lsd -la'
+	alias lt='lsd -la --tree'
 fi
 
 # A smarter cd command.
