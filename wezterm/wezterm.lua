@@ -6,9 +6,9 @@ local act = wezterm.action
 config.color_scheme = "nova"
 
 -- font
-config.font_size = 18.0
+config.font_size = 16.0
 config.font = wezterm.font_with_fallback({
-    { family = "Monaspace Neon" },
+    { family = "Monaspace Argon" },
     { family = "Noto Sans CJK SC" },
 })
 config.harfbuzz_features = {

@@ -2,8 +2,8 @@
 style = { shape = "Underline" }
 
 [font]
-size = 17.0
-normal = { family = "MonaspiceAr Nerd Font", style = "Regular" }
+size = 16.0
+normal = { family = "Monaspace Argon", style = "Regular" }
 
 [terminal]
 osc52 = "CopyPaste"
