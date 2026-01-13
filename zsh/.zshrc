@@ -3,6 +3,11 @@ if [ -f /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]; then
 	source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fi
 
+# mise package manager
+if which mise >/dev/null; then
+	eval "$(mise activate zsh)"
+fi
+
 # set nvim as default editor
 if which nvim >/dev/null; then
 	export EDITOR='nvim'
@@ -13,17 +18,12 @@ fi
 
 # A modern replacement for ‘ls’
 if which eza >/dev/null; then
-	alias ls='eza --color=auto'
-	alias la='eza --color=auto -a'
-	alias  l='eza -lh'
+	alias ls='eza'
+	alias  l='eza -l'
+	alias la='eza -la'
+	alias lh='eza -lh'
 	alias ll='eza -lah'
 	alias lt='eza -lah --tree'
-elif which lsd >/dev/null; then
-	alias ls='lsd --color=auto --icon=never'
-	alias la='lsd --color=auto --icon=never -a'
-	alias  l='lsd -l'
-	alias ll='lsd -la'
-	alias lt='lsd -la --tree'
 fi
 
 # A smarter cd command.

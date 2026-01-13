@@ -1,0 +1,9 @@
+[tools]
+bat = "latest"
+eza = "latest"
+neovim = "latest"
+python = "latest"
+ripgrep = "latest"
+fd = "latest"
+starship = "latest"
+zoxide = "latest"
