@@ -1,5 +1,5 @@
 pcall(function()
-    require("nova").setup({ theme = "dark" })
+    require("nova").setup({ theme = "dark", popup_style = "bordered" })
 end)
 pcall(vim.cmd.colorscheme, "nova")
 
@@ -20,6 +20,14 @@ end)
 
 pcall(function()
     require("which-key").setup()
+end)
+
+pcall(function()
+    require("noice").setup({
+        cmdline = {
+            view = "cmdline",
+        },
+    })
 end)
 
 pcall(function()
@@ -51,7 +59,10 @@ end)
 
 pcall(function()
     require("flash").setup({
-        modes = { char = { keys = { "f", "F", "t", "T", ";" } } },
+        modes = {
+            search = { enabled = true },
+            char = { keys = { "f", "F", "t", "T", ";" } },
+        },
     })
 end)
 

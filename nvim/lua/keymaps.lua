@@ -52,6 +52,9 @@ for _, item in ipairs({
 end
 
 -- Navigation.
+map({ "n", "x", "o" }, "s", function()
+    require("flash").jump()
+end, "Flash")
 map("o", "r", "<cmd>lua require('flash').remote()<cr>", "Remote flash")
 map("n", "<leader>tn", command("NvimTreeToggle"), "Toggle nvim-tree")
 map("n", "<leader>ts", command("Outline!"), "Toggle outline")
