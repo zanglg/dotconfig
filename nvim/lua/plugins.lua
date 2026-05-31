@@ -19,6 +19,10 @@ pcall(function()
 end)
 
 pcall(function()
+    require("which-key").setup()
+end)
+
+pcall(function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
 
@@ -62,6 +66,15 @@ end)
 pcall(function()
     require("nvim-autopairs").setup({})
 end)
+
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client and client:supports_method("textDocument/completion", args.buf) then
+            vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+        end
+    end,
+})
 
 vim.lsp.enable({ "clangd", "rust_analyzer" })
 

@@ -67,7 +67,6 @@ map("n", "<C-l>", command("wincmd l"), "Move window right")
 pcall(function()
     local wk = require("which-key")
 
-    wk.setup()
     wk.add({
         { "g", group = "Goto" },
         { "]", group = "Next" },

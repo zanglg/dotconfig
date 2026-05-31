@@ -13,8 +13,9 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "nova.nvim": {
-      "rev": "48fdce03b839bc93dbae2dda996d5533dd1d53ff",
-      "src": "https://github.com/zanglg/nova.nvim"
+      "rev": "7fce50b3a965d91e736f61b9ff7bea4400175989",
+      "src": "https://github.com/zanglg/nova.nvim",
+      "version": "'codex/soft-palette'"
     },
     "nvim-autopairs": {
       "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",

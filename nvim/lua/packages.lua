@@ -3,7 +3,7 @@ if not vim.pack then
 end
 
 vim.pack.add({
-    { src = "https://github.com/zanglg/nova.nvim" },
+    { src = "https://github.com/zanglg/nova.nvim", version = "codex/soft-palette" },
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/folke/which-key.nvim" },
