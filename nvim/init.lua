@@ -1,12 +1,14 @@
-require("configs.opts")
-require("configs.lazy")
+local modules = {
+    "options",
+    "packages",
+    "plugins",
+    "actions",
+    "keymaps",
+}
 
-vim.api.nvim_create_autocmd("User", {
-    pattern = "VeryLazy",
-    callback = function()
-        require("configs.cmds")
-        require("configs.maps")
-    end,
-})
-
-vim.cmd([[colorscheme nova]])
+for _, module in ipairs(modules) do
+    local ok, err = pcall(require, module)
+    if not ok then
+        error(("failed to load %s:\n%s"):format(module, err))
+    end
+end
