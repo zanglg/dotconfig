@@ -3,6 +3,7 @@ theme = "github_dark"
 [editor]
 true-color = true
 default-yank-register = "+"
+mouse = false
 
 [editor.cursor-shape]
 insert = "bar"
