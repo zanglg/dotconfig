@@ -60,7 +60,7 @@ end)
 pcall(function()
     require("flash").setup({
         modes = {
-            search = { enabled = true },
+            search = { enabled = false },
             char = { keys = { "f", "F", "t", "T", ";" } },
         },
     })

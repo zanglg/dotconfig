@@ -4,12 +4,12 @@ if [ -f /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]; then
 fi
 
 # mise package manager
-if which mise >/dev/null; then
+if command -v mise >/dev/null 2>&1; then
 	eval "$(mise activate zsh)"
 fi
 
 # set nvim as default editor
-if which nvim >/dev/null; then
+if command -v nvim >/dev/null 2>&1; then
 	export EDITOR='nvim'
 
 	alias v='nvim'
@@ -17,7 +17,7 @@ if which nvim >/dev/null; then
 fi
 
 # A modern replacement for ‘ls’
-if which eza >/dev/null; then
+if command -v eza >/dev/null 2>&1; then
 	alias ls='eza'
 	alias  l='eza -l'
 	alias la='eza -la'
@@ -27,29 +27,29 @@ if which eza >/dev/null; then
 fi
 
 # A smarter cd command.
-if which zoxide >/dev/null; then
+if command -v zoxide >/dev/null 2>&1; then
 	eval "$(zoxide init zsh)"
 fi
 
 # ✨ Magical shell history
-if which atuin >/dev/null; then
+if command -v atuin >/dev/null 2>&1; then
 	export ATUIN_NOBIND="true"
 	eval "$(atuin init zsh)"
 	bindkey '^r' atuin-search
 fi
 
 # A customizable prompt for shell
-if which starship >/dev/null; then
+if command -v starship >/dev/null 2>&1; then
 	eval "$(starship init zsh)"
 fi
 
 # Rust task runner and build tool.
-if which cargo-make >/dev/null; then
+if command -v cargo-make >/dev/null 2>&1; then
 	alias cm='cargo make'
 fi
 
 # 🌸 A command-line fuzzy finder
-if which fzf >/dev/null; then
+if command -v fzf >/dev/null 2>&1; then
 	export FZF_DEFAULT_OPTS="\
 		--color=border:bright-black --border\
 		--color=bg:black,bg+:bright-black,fg:white,fg+:bright-white\

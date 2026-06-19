@@ -7,9 +7,6 @@ if [[ $(uname) == "Darwin" ]]; then
 		eval $(/usr/local/Homebrew/bin/brew shellenv)
 	fi
 
-	# macport
-	export PATH="/opt/local/bin:$PATH"
-	export PATH="/opt/local/sbin:$PATH"
 fi
 
 # rust toolchain
