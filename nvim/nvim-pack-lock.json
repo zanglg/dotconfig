@@ -50,7 +50,7 @@
       "src": "https://github.com/hedyhli/outline.nvim"
     },
     "plenary.nvim": {
-      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "rev": "74b06c6c75e4eb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rainbow-delimiters.nvim": {
@@ -60,10 +60,6 @@
     "telescope-live-grep-args.nvim": {
       "rev": "53e9df55b3651dd7cf77e172f1e8c9a17407acca",
       "src": "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
-    },
-    "telescope-symbols.nvim": {
-      "rev": "a6d0127a53d39b9fc2af75bd169d288166118aec",
-      "src": "https://github.com/nvim-telescope/telescope-symbols.nvim"
     },
     "telescope-zoxide": {
       "rev": "54bfe630bad08dc9891ec78c7cf8db38dd725c97",
