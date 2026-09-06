@@ -12,8 +12,6 @@ vim.opt.fileencodings = { "ucs-bom", "utf-8", "cp936", "gb18030", "latin1" }
 vim.opt.clipboard = "unnamedplus"
 vim.opt.whichwrap = "<,>,h,l,[,]"
 vim.opt.formatoptions = "tcqmMj"
-vim.opt.autocomplete = true
-vim.opt.complete = { ".^5", "w^5", "b^5", "o^10" }
 vim.opt.completeopt = { "menuone", "popup" }
 vim.opt.mouse = ""
 
