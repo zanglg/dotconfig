@@ -67,17 +67,15 @@ map("n", "<C-k>", command("wincmd k"), "Move window up")
 map("n", "<C-l>", command("wincmd l"), "Move window right")
 
 -- which-key.
-pcall(function()
-    local wk = require("which-key")
+local wk = require("which-key")
 
-    wk.add({
-        { "g", group = "Goto" },
-        { "]", group = "Next" },
-        { "[", group = "Prev" },
-        { "<leader>b", group = "Buffer" },
-        { "<leader>c", group = "Code" },
-        { "<leader>f", group = "Find" },
-        { "<leader>g", group = "Git" },
-        { "<leader>t", group = "Toggle" },
-    })
-end)
+wk.add({
+    { "g", group = "Goto" },
+    { "]", group = "Next" },
+    { "[", group = "Prev" },
+    { "<leader>b", group = "Buffer" },
+    { "<leader>c", group = "Code" },
+    { "<leader>f", group = "Find" },
+    { "<leader>g", group = "Git" },
+    { "<leader>t", group = "Toggle" },
+})
