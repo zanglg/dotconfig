@@ -17,9 +17,9 @@
       "src": "https://github.com/folke/noice.nvim"
     },
     "nova.nvim": {
-      "rev": "7fce50b3a965d91e736f61b9ff7bea4400175989",
+      "rev": "76c2cd30e9e2df781fc7b67feb186cd3e43e4ffb",
       "src": "https://github.com/zanglg/nova.nvim",
-      "version": "'codex/soft-palette'"
+      "version": "'dev'"
     },
     "nui.nvim": {
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",

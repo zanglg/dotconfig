@@ -1,7 +1,5 @@
-pcall(function()
-    require("nova").setup({ theme = "dark", popup_style = "bordered" })
-end)
-pcall(vim.cmd.colorscheme, "nova")
+require("nova").setup({ theme = "dark" })
+vim.cmd.colorscheme("nova")
 
 pcall(function()
     require("lualine").setup({
