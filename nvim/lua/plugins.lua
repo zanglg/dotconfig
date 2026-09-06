@@ -58,7 +58,10 @@ require("nvim-tree").setup()
 require("outline").setup({})
 require("nvim-autopairs").setup({})
 
+local lsp_group = vim.api.nvim_create_augroup("config-lsp", { clear = true })
+
 vim.api.nvim_create_autocmd("LspAttach", {
+    group = lsp_group,
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         if client and client:supports_method("textDocument/completion", args.buf) then
@@ -70,6 +73,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.enable({ "clangd", "rust_analyzer" })
 
 vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("config-treesitter", { clear = true }),
     callback = function()
         pcall(vim.treesitter.start)
     end,
