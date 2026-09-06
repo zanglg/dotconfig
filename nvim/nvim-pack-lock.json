@@ -58,7 +58,7 @@
       "src": "https://github.com/HiPhish/rainbow-delimiters.nvim"
     },
     "telescope-live-grep-args.nvim": {
-      "rev": "53e9df55b3651dd9fc2af75bd169d288166118aec",
+      "rev": "53e9df55b3651dd7cf77e172f1e8c9a17407acca",
       "src": "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
     },
     "telescope-symbols.nvim": {
