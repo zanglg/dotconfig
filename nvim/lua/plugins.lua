@@ -70,7 +70,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
-vim.lsp.enable({ "clangd", "rust_analyzer" })
+vim.lsp.enable({ "clangd", "rust_analyzer", "pyright" })
 
 vim.api.nvim_create_autocmd("FileType", {
     group = vim.api.nvim_create_augroup("config-treesitter", { clear = true }),
