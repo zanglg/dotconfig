@@ -12,7 +12,6 @@ vim.pack.add({
 
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
-    { src = "https://github.com/nvim-telescope/telescope-symbols.nvim" },
     { src = "https://github.com/nvim-telescope/telescope-live-grep-args.nvim" },
     { src = "https://github.com/jvgrootveld/telescope-zoxide" },
     { src = "https://github.com/nvim-tree/nvim-tree.lua" },
