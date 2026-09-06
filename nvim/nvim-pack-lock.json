@@ -17,7 +17,7 @@
       "src": "https://github.com/folke/noice.nvim"
     },
     "nova.nvim": {
-      "rev": "76c2cd30e9e2df781fc7b67feb186cd3e43e4ffb",
+      "rev": "2c7e2d343638e51975032dfbbe560ae2b5dd23b2",
       "src": "https://github.com/zanglg/nova.nvim",
       "version": "'dev'"
     },
