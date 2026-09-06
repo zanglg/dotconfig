@@ -14,11 +14,12 @@ vim.opt.whichwrap = "<,>,h,l,[,]"
 vim.opt.formatoptions = "tcqmMj"
 vim.opt.autocomplete = true
 vim.opt.complete = { ".^5", "w^5", "b^5", "o^10" }
-vim.opt.completeopt = { "menuone", "noselect", "popup" }
+vim.opt.completeopt = { "menuone", "popup", "preinsert" }
 vim.opt.mouse = ""
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.infercase = true
 
 vim.opt.laststatus = 3
 vim.opt.number = true
