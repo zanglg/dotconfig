@@ -50,7 +50,7 @@
       "src": "https://github.com/hedyhli/outline.nvim"
     },
     "plenary.nvim": {
-      "rev": "74b06c6c75e4eb3108ec01852001636d85a932b",
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rainbow-delimiters.nvim": {
