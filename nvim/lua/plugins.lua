@@ -16,26 +16,6 @@ require("lualine").setup({
 
 require("which-key").setup()
 
-require("noice").setup({
-    cmdline = {
-        view = "cmdline",
-    },
-    messages = {
-        view = "mini",
-        view_error = "mini",
-        view_warn = "mini",
-    },
-    routes = {
-        {
-            view = "mini",
-            filter = {
-                event = "msg_show",
-                kind = { "emsg", "echoerr", "lua_error", "rpc_error", "return_prompt" },
-            },
-        },
-    },
-})
-
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 
