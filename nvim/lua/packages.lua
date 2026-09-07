@@ -6,7 +6,6 @@ end
 -- reliably during startup.
 vim.pack.add({
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
-    { src = "https://github.com/MunifTanjim/nui.nvim" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
 })
 
@@ -14,7 +13,6 @@ vim.pack.add({
     { src = "https://github.com/zanglg/nova.nvim", version = "dev" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/folke/which-key.nvim" },
-    { src = "https://github.com/folke/noice.nvim" },
 
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/nvim-tree/nvim-tree.lua" },
