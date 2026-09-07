@@ -12,7 +12,7 @@ vim.opt.fileencodings = { "ucs-bom", "utf-8", "cp936", "gb18030", "latin1" }
 vim.opt.clipboard = "unnamedplus"
 vim.opt.whichwrap = "<,>,h,l,[,]"
 vim.opt.formatoptions = "tcqmMj"
-vim.opt.completeopt = { "menuone", "popup" }
+vim.opt.completeopt = { "menuone", "noselect", "popup" }
 vim.opt.mouse = ""
 
 vim.opt.ignorecase = true
