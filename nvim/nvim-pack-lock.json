@@ -13,7 +13,7 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "nova.nvim": {
-      "rev": "3fcbfdb1f14333153f841507af2c880e8691ee0a",
+      "rev": "ee8b5fec166033fb53ab58b24ea6d83c0f58cb31",
       "src": "https://github.com/zanglg/nova.nvim",
       "version": "'dev'"
     },
