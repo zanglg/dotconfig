@@ -31,13 +31,6 @@ if command -v zoxide >/dev/null 2>&1; then
 	eval "$(zoxide init zsh)"
 fi
 
-# ✨ Magical shell history
-if command -v atuin >/dev/null 2>&1; then
-	export ATUIN_NOBIND="true"
-	eval "$(atuin init zsh)"
-	bindkey '^r' atuin-search
-fi
-
 # A customizable prompt for shell
 if command -v starship >/dev/null 2>&1; then
 	eval "$(starship init zsh)"
@@ -52,6 +45,7 @@ fi
 if command -v fzf >/dev/null 2>&1; then
 	export FZF_DEFAULT_OPTS="\
 		--border --height 40% --reverse"
+	source <(fzf --zsh)
 fi
 
 # helper
