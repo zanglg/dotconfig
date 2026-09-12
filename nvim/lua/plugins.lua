@@ -1,4 +1,7 @@
-require("nova").setup({ theme = "dark" })
+require("nova").setup({
+    theme = "dark",
+    variant = "default",
+})
 vim.cmd.colorscheme("nova")
 
 require("lualine").setup({

@@ -10,7 +10,7 @@ vim.pack.add({
 })
 
 vim.pack.add({
-    { src = "https://github.com/zanglg/nova.nvim", version = "dev" },
+    { src = "https://github.com/zanglg/nova.nvim", version = "master" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/folke/which-key.nvim" },
 

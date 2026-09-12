@@ -51,11 +51,7 @@ fi
 # 🌸 A command-line fuzzy finder
 if command -v fzf >/dev/null 2>&1; then
 	export FZF_DEFAULT_OPTS="\
-		--color=border:bright-black --border\
-		--color=bg:black,bg+:bright-black,fg:white,fg+:bright-white\
-		--color=header:red,info:yellow,hl:blue,hl+:cyan\
-		--color=pointer:red,prompt:magenta,info:yellow,marker:green\
-		--height 40% --reverse"
+		--border --height 40% --reverse"
 fi
 
 # helper

@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 -- color scheme
-config.color_scheme = "nova"
+config.color_scheme = "Nova Dark"
 
 -- font
 config.font_size = 16.0
@@ -62,7 +62,7 @@ config.mouse_bindings = {
 }
 
 -- windows override
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+if wezterm.target_triple:find("windows") then
     -- font
     config.font_size = 14.0
 
