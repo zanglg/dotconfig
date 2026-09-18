@@ -27,23 +27,7 @@ config.harfbuzz_features = {
 }
 
 -- tabbar
-config.use_fancy_tab_bar = false
-wezterm.on("update-right-status", function(window, pane)
-    window:set_left_status(wezterm.format({
-        { Text = wezterm.pad_right("  ", 4) },
-    }))
-
-    -- figure out a way to center it
-    window:set_right_status(wezterm.format({
-        { Text = " " .. pane:get_title() .. " " },
-    }))
-end)
-
-wezterm.on("format-tab-title", function(tab, _, _, _, _)
-    return {
-        { Text = " " .. tab.tab_index + 1 .. " " },
-    }
-end)
+require("tabbar").apply_to_config(config)
 
 -- windows appearance
 config.initial_rows = 36
