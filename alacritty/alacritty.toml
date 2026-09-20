@@ -1,5 +1,5 @@
 [general]
-import = ["themes/nova-dark.toml"]
+import = ["../nova.nvim/extras/alacritty/nova-dark.toml"]
 
 [cursor]
 style = { shape = "Underline" }

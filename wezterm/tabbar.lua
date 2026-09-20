@@ -2,11 +2,33 @@ local wezterm = require("wezterm")
 local M = {}
 
 -- Match the Nova status bars in Neovim and tmux without changing terminal colors.
-local colors = {
-    bg = "#2d354e",
-    fg = "#b6bac9",
-    muted = "#6c7693",
-}
+local function load_nova_colors()
+    local path = wezterm.config_dir .. "/../nova.nvim/extras/palettes/nova.json"
+    local file, open_err = io.open(path, "r")
+    if not file then
+        error(("failed to open Nova palette %s: %s"):format(path, open_err))
+    end
+
+    local contents = file:read("*a")
+    file:close()
+
+    local palette_data = wezterm.json_parse(contents)
+    for _, palette in ipairs(palette_data.palettes or {}) do
+        if palette.slug == "nova-dark" then
+            return {
+                bg = palette.colors.selection,
+                fg = palette.colors.foreground,
+                muted = palette.colors.comment,
+                red = palette.colors.red,
+                yellow = palette.colors.yellow,
+            }
+        end
+    end
+
+    error("nova-dark palette not found in " .. path)
+end
+
+local colors = load_nova_colors()
 
 local function tab_title(tab)
     if tab.tab_title and tab.tab_title ~= "" then

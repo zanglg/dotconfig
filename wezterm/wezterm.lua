@@ -3,6 +3,9 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 -- color scheme
+config.color_scheme_dirs = {
+    wezterm.config_dir .. "/../nova.nvim/extras/wezterm",
+}
 config.color_scheme = "Nova Dark"
 
 -- font

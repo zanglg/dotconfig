@@ -12,11 +12,6 @@
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
-    "nova.nvim": {
-      "rev": "5ec8def6e7d82ae4390b477e10685e0e845b3297",
-      "src": "https://github.com/zanglg/nova.nvim",
-      "version": "'master'"
-    },
     "nvim-autopairs": {
       "rev": "430522f95fe4fb7c511ec64f8c1a90cc6a66c05c",
       "src": "https://github.com/windwp/nvim-autopairs"

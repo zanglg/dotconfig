@@ -1,0 +1,3 @@
+[submodule "nova.nvim"]
+	path = nova.nvim
+	url = https://github.com/zanglg/nova.nvim
