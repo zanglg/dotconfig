@@ -21,7 +21,14 @@ map("n", "<leader>bp", command("bprevious"), "Previous buffer")
 -- Code.
 map({ "n", "v" }, "<leader>cf", vim.lsp.buf.format, "Format")
 
--- Find.
+-- Quickfix-first search. / remains native buffer search.
+local quickfix = require("quickfix")
+map("n", "<leader>/", quickfix.grep_project, "Grep project to quickfix")
+map("n", "<leader>?", quickfix.grep_current_word, "Grep current word to quickfix")
+-- Intentionally replaces Vim's macro recording key.
+map("n", "q", quickfix.toggle, "Toggle quickfix")
+
+-- Find (Telescope remains available).
 for _, item in ipairs({
     { "<leader>ff", "find_files", "Find files" },
     { "<leader>fg", "live_grep_args", "Find string" },

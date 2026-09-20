@@ -32,6 +32,7 @@ vim.opt.splitkeep = "screen"
 
 if vim.fn.executable("rg") == 1 then
     vim.opt.grepprg = "rg --vimgrep --smart-case --follow --no-messages"
+    vim.opt.grepformat = "%f:%l:%c:%m"
 end
 
 if vim.uv.os_uname().sysname == "Darwin" and vim.fn.executable("im-select") == 1 then
