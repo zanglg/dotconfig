@@ -6,9 +6,6 @@ local colors = {
     bg = "#2d354e",
     fg = "#b6bac9",
     muted = "#6c7693",
-    blue = "#5e8eed",
-    badge_fg = "#1c2131",
-    match = "#afcf59",
 }
 
 local function tab_title(tab)
@@ -42,7 +39,7 @@ local function format_tab(tab, tabs, _, _, hover, max_width)
 
     return {
         { Background = { Color = colors.bg } },
-        { Foreground = { Color = tab.is_active and colors.match or (hover and colors.fg or colors.muted) } },
+        { Foreground = { Color = (tab.is_active or hover) and colors.fg or colors.muted } },
         { Attribute = { Intensity = tab.is_active and "Bold" or "Normal" } },
         { Text = prefix .. title },
         { Foreground = { Color = colors.muted } },
@@ -62,27 +59,23 @@ function M.apply_to_config(config)
     config.colors.tab_bar = {
         background = colors.bg,
         inactive_tab_edge = colors.bg,
-        active_tab = { bg_color = colors.bg, fg_color = colors.match, intensity = "Bold" },
+        active_tab = { bg_color = colors.bg, fg_color = colors.fg, intensity = "Bold" },
         inactive_tab = { bg_color = colors.bg, fg_color = colors.muted },
         inactive_tab_hover = { bg_color = colors.bg, fg_color = colors.fg },
         new_tab = { bg_color = colors.bg, fg_color = colors.muted },
-        new_tab_hover = { bg_color = colors.bg, fg_color = colors.match, intensity = "Bold" },
+        new_tab_hover = { bg_color = colors.bg, fg_color = colors.fg, intensity = "Bold" },
     }
 
     wezterm.on("format-tab-title", format_tab)
     wezterm.on("update-right-status", function(window)
-        window:set_left_status(wezterm.format({
-            { Background = { Color = colors.blue } },
-            { Foreground = { Color = colors.badge_fg } },
-            { Attribute = { Intensity = "Bold" } },
-            { Text = "  WEZTERM " },
-            { Background = { Color = colors.bg } },
-            { Foreground = { Color = colors.blue } },
-            { Attribute = { Intensity = "Normal" } },
-            { Text = " " },
-        }))
+        -- The tab bar already identifies WezTerm; avoid a redundant app label.
+        window:set_left_status("")
 
         local workspace = window:active_workspace():gsub("%c", " ")
+        if workspace == "default" then
+            window:set_right_status("")
+            return
+        end
         if wezterm.column_width(workspace) > 24 then
             workspace = wezterm.truncate_right(workspace, 23) .. "…"
         end
@@ -90,7 +83,13 @@ function M.apply_to_config(config)
             { Background = { Color = colors.bg } },
             { Foreground = { Color = colors.muted } },
             { Attribute = { Intensity = "Normal" } },
-            { Text = " " .. workspace .. "  " },
+            { Text = " • [" },
+            { Foreground = { Color = colors.fg } },
+            { Attribute = { Intensity = "Bold" } },
+            { Text = workspace },
+            { Foreground = { Color = colors.muted } },
+            { Attribute = { Intensity = "Normal" } },
+            { Text = "]  " },
         }))
     end)
 end
