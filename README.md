@@ -76,13 +76,12 @@ Applications that support XDG paths load their configuration directly from this 
 `nova.nvim` is a first-level Git submodule and is the single source of truth for shared colors. Generated theme files are consumed directly rather than copied into application directories:
 
 - **Neovim** prepends `~/.config/nova.nvim` to `runtimepath`.
-- **tmux** selects `nova-dark.conf` or `nova-light.conf` from `nova.nvim/extras/tmux/`, then applies the matching personal status-line layout (Dark: `tmux/statusline.conf`, Light: `tmux/statusline-light.conf`).
+- **tmux** sources `nova-dark.conf` or `nova-light.conf` from `nova.nvim/extras/tmux/`. A small Python 3 loader exposes the selected semantic colors from `nova.nvim/extras/palettes/nova.json` as tmux user options, then applies the shared `tmux/statusline.conf`.
 - **WezTerm** loads its scheme from `nova.nvim/extras/wezterm/`; the custom tab bar reads semantic colors from `extras/palettes/nova.json`.
 - **Alacritty** imports `nova.nvim/extras/alacritty/nova-dark.toml`.
 - **Helix** uses relative symbolic links in `helix/themes/` that point to `nova.nvim/extras/helix/`.
 
 This keeps color generation in Nova while leaving editor behavior, status-line layout, and tab-bar layout in this repository.
-
 
 ### Switching tmux between Dark and Light
 
@@ -100,7 +99,7 @@ tmux source-file ~/.config/tmux/tmux.conf
 
 To switch instantly within tmux, press the configured prefix (`Ctrl-y`) followed by **L** for Light or **D** for Dark. These bindings reload only the theme, preserving the current session and the other tmux settings. Runtime switches do not change the saved default; the selected appearance in `tmux/tmux.conf` is used when the full configuration is reloaded.
 
-`tmux/theme.conf` loads both the selected generated Nova palette and its corresponding status-line layout. The original Dark status line is left unchanged, rather than overwritten by Light colors.
+`tmux/theme.conf` sources the generated Nova tmux theme, runs `tmux/load-palette.py` to set `@nova-*` options from the matching `nova.json` palette, and sources one `tmux/statusline.conf` for both appearances. The status-line layout contains no copied hexadecimal colors; updating Nova's palette updates both themes automatically. The loader requires Python 3.
 
 ## Updating Nova
 
