@@ -9,6 +9,10 @@ vim.opt.writebackup = false
 vim.opt.undofile = false
 
 vim.opt.fileencodings = { "ucs-bom", "utf-8", "cp936", "gb18030", "latin1" }
+if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
+    vim.g.clipboard = "osc52"
+end
+
 vim.opt.clipboard = "unnamedplus"
 vim.opt.whichwrap = "<,>,h,l,[,]"
 vim.opt.formatoptions = "tcqmMj"
